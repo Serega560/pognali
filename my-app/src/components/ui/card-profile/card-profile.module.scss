@@ -1,0 +1,68 @@
+.card-profile {
+    background-color: #a98080;
+    border-radius: 20px;
+
+    &__figure {
+        
+    }
+
+    &__image {
+        
+    }
+
+    &__name {
+        margin: 0;
+        padding: 0;
+
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 1;
+        color: #1D2E5B; 
+    }
+
+    &__hashtags {
+        margin: 0;
+        padding: 0;
+
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 1.15;
+        color: #000;
+    }
+
+    &__btn-call {
+        padding: 15px 24px;
+
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 1;
+        text-transform: uppercase;
+        color: #161C35;
+
+        border-radius: 25px;
+        border: none;
+        background-color: #A8D2F4;
+    }
+
+    &__likes-number {
+        margin: 0;
+        padding: 0;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 1;
+        text-transform: uppercase;
+        color: #161C35;
+    }
+
+    &__btn-likes {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: none;
+        background-color: #E2E5F2;
+    }
+    
+    &__level {
+
+    }
+}
