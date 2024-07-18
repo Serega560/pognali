@@ -1,0 +1,16 @@
+.catalog {
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 62px;
+    }
+
+    &__show-more {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        margin: 0 0 9px;
+    }
+}
