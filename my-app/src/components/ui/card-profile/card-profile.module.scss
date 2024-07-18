@@ -1,18 +1,41 @@
 .card-profile {
-    background-color: #a98080;
+    background-color: #fff;
     border-radius: 20px;
+    overflow: hidden;
+
+    display: grid;
+    grid-template-columns: minmax(200px, 285px) 55px auto 53px auto auto 103px;
+    gap: 20px 0;
+    // justify-content: space-between;
+
+    transition: box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+        box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.25);
+    }
 
     &__figure {
-        
+        grid-row: 1/4;
+        grid-column: 1/2;
     }
 
     &__image {
-        
+        overflow: hidden;
+        border-radius: 0;
+
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
     &__name {
+        grid-row: 1/2;
+        grid-column: span 3;
+
+        max-width: 255px;
         margin: 0;
-        padding: 0;
+        padding: 46px 0 0;
 
         font-weight: 700;
         font-size: 30px;
@@ -20,7 +43,32 @@
         color: #1D2E5B; 
     }
 
+    &__state {
+        grid-row: 1/4;
+        grid-column: 2/3;
+
+        margin: 57px 11px 0 36px;
+
+        width: 8px;
+        height: 8px;
+        background-color: #F97676;
+        border-radius: 50%;
+
+        &--offline {
+            background-color: #F97676; 
+        }
+
+        &--online {
+            background-color: #81E31E; 
+        }
+    }
+
     &__hashtags {
+        grid-row: 2/3;
+        grid-column: span 3;
+
+        max-width: 255px;
+
         margin: 0;
         padding: 0;
 
@@ -28,6 +76,12 @@
         font-size: 20px;
         line-height: 1.15;
         color: #000;
+    }
+
+    &__btn-call-wrapper {
+        // display: flex;        
+        margin-bottom: 48px;
+        margin-right: 3px;
     }
 
     &__btn-call {
@@ -42,9 +96,19 @@
         border-radius: 25px;
         border: none;
         background-color: #A8D2F4;
+
+        cursor: pointer;
+    }
+
+    &__likes-number-wrapper {
+        margin-bottom: 48px;
+        display: flex;
+        align-items: center;
     }
 
     &__likes-number {
+        flex-shrink: 1;
+
         margin: 0;
         padding: 0;
         font-weight: 700;
@@ -55,14 +119,51 @@
     }
 
     &__btn-likes {
+        margin-right: 3px;
+
         width: 50px;
         height: 50px;
         border-radius: 50%;
         border: none;
         background-color: #E2E5F2;
+
+        display: inline-block;
+
+        cursor: pointer;
+    }
+
+    &__transport {
+        ul {
+            display: flex;
+
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+        
+        li {
+            width: 22px;
+            height: 22px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
     }
     
     &__level {
+        background-color: #000;
+        margin-right: 43px;
+    }
 
+    &__countries {
+        grid-row: 1/3;
+        grid-column: span 2;
+
+        margin-right: 43px;
+        padding: 46px 0 0;
+
+        span {
+            display: none;
+        }
     }
 }
