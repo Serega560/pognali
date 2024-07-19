@@ -1,20 +1,20 @@
 import React from 'react';
-import { Card } from '../../types/card';
+import { CardData } from '../../types/card-data';
 
 import CardProfile from "../../ui/card-profile/card-profile";
 import './profiles-list.module.scss'
 
 type CardsProfileProps = {
-  cards: Card[] | null;
+  cardsData: CardData[] | null;
 };
 
-function ProfilesList({cards}: CardsProfileProps): JSX.Element {
+function ProfilesList({cardsData}: CardsProfileProps): JSX.Element {
     return (
       <section className="profiles-list">
-        {cards?.length ? (
+        {cardsData?.length ? (
           <>
             <ul className="profiles-list__list">
-              {cards?.map((card) => <CardProfile card={card} key={card.id} />)}
+              {cardsData?.map((cardData) => <CardProfile cardData={cardData} key={cardData.id} />)}
             </ul>
           </>
         ) : null}

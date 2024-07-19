@@ -1,15 +1,15 @@
 import React from 'react';
-import { Card } from '../../types/card';
+import { CardData } from '../../types/card-data';
 import './card-profile.module.scss';
 // import Level from '../level/level';
 
 
 type CardProfileProps = {
-  card: Card;
+  cardData: CardData;
 };
 
-function CardProfile({card}: CardProfileProps): JSX.Element {
-  const {name, image, hashtags, likes} = card;
+function CardProfile({cardData}: CardProfileProps): JSX.Element {
+  const {name, image, hashtags, likes} = cardData;
 
   return (
     <div className="card-profile">

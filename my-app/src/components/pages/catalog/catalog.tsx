@@ -10,7 +10,7 @@ function Catalog(): JSX.Element {
     return (
       <>
         <div className="catalog__wrapper">
-          <ProfilesList cards={cardList} />
+          <ProfilesList cardsData={cardList} />
           <div className="catalog__show-more">
             <BtnShowMore />
           </div>
