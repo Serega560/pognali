@@ -1,37 +1,38 @@
 @import "./global.scss";
+@import "./components/Footer/Footer.module.scss";
 
 @font-face {
     font-style: normal;
     font-weight: 300;
     font-family: "Roboto";
-  
+
     font-display: swap;
     src: url("./assets/static/Roboto-Light.woff2") format("woff2");
   }
-  
+
   @font-face {
     font-style: normal;
     font-weight: 400;
     font-family: "Roboto";
-  
+
     font-display: swap;
     src: url("./assets/static/Roboto-Regular.woff2") format("woff2");
   }
-  
+
   @font-face {
     font-style: normal;
     font-weight: 500;
     font-family: "Roboto";
-  
+
     font-display: swap;
     src: url("./assets/static/Roboto-Medium.woff2") format("woff2");
   }
-  
+
   @font-face {
     font-style: normal;
     font-weight: 700;
     font-family: "Roboto";
-  
+
     font-display: swap;
     src: url("./assets/static/Roboto-Bold.woff2") format("woff2");
   }
@@ -41,4 +42,3 @@
     font-style: normal;
     font-weight: 400;
   }
-  
