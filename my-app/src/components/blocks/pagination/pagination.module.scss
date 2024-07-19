@@ -40,6 +40,7 @@
         border-radius: 50%;
 
         cursor: pointer;
+        user-select: none;
 
         span {
             font-weight: 700;
@@ -49,8 +50,14 @@
             color: #1D2E5B;
         }
 
-        &.active {
+        &:hover {
+            opacity: 0.6;
+        }
+
+        &.active,
+        &:active {
             background-color: #4D99D6;
+            opacity: 1;
         }
     }
 
@@ -72,6 +79,8 @@
         height: 20px;
         background-color: transparent;
         border: none;
+
+        user-select: none;
         cursor: pointer;
 
         display: flex;

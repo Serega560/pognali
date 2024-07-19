@@ -102,6 +102,16 @@
         background-color: #A8D2F4;
 
         cursor: pointer;
+        user-select: none;
+
+        &:hover,
+        &:focus {
+            background-color: #4D99D6;
+        }
+
+        &:active {
+            color: rgba(#161C35, 0.3);
+        }
     }
 
     &__likes-number-wrapper {
