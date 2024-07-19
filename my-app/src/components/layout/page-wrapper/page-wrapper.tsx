@@ -2,11 +2,11 @@ import Catalog from "../../pages/catalog/catalog";
 import "./page-wrapper.module.scss"
 
 // Обёртка для контента страниц
-function PageWrapper({ ...prop }) {
+function PageWrapper() {
     return (
       <>
         <main className="page-wrapper__main">
-          <Catalog {...prop} />
+          <Catalog />
         </main>
       </>
     );

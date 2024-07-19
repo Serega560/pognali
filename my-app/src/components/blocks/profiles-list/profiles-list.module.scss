@@ -1,0 +1,15 @@
+@import "../../../global/reboot.scss";
+@import "../../../global/utils.scss";
+@import "../../../variables.scss";
+
+.profiles-list {
+   &__list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+   }
+}

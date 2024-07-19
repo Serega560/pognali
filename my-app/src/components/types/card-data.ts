@@ -1,4 +1,4 @@
-export type Card = {
+export type CardData = {
     id: number;
     name: string;
     online: boolean;
