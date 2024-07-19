@@ -1,12 +1,12 @@
-import { ReactComponent as Go } from '../../assets/img/Go.svg'
-import { ReactComponent as Telegram}  from '../../assets/img/telegram.svg'
-import { ReactComponent as Vk}  from '../../assets/img/vk.svg'
-import { ReactComponent as Youtube}  from '../../assets/img/youtube.svg'
+import { ReactComponent as Go } from '../../../assets/img/Go.svg'
+import { ReactComponent as Telegram}  from '../../../assets/img/telegram.svg'
+import { ReactComponent as Vk}  from '../../../assets/img/vk.svg'
+import { ReactComponent as Youtube}  from '../../../assets/img/youtube.svg'
 
 function Footer() {
     return (
         <footer className="footer">
-            <div className="wrapper">
+            <div className="footer-container">
                 <div className="logo">
                     <Go/>
                 </div>
