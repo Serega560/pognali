@@ -13,7 +13,7 @@
     align-items: center;
 
     @include vp-767 {
-        flex-direction: column;
+        padding: 0;
     }
 
     &__page-list {
@@ -22,6 +22,10 @@
         list-style-type: none;
 
         display: flex;
+
+        @include vp-767 {
+            display: none;
+        }
     }
 
     &__page-item {
@@ -53,21 +57,40 @@
     &__arrows {
         display: flex;
         gap: 29px;
+
+        @include vp-767 {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0;
+        }
     }
 
     &__arrow {
+        padding: 0;
         width: 13px;
         height: 20px;
         background-color: transparent;
         border: none;
         cursor: pointer;
 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @include vp-767 {
+            width: unset;
+            height: 51px;
+        }
+
         // &--prev {
 
         // }
 
         &--next {
-            transform: rotate(180deg);
+            @include vp-767 {
+                border-left: 1px solid #EDEFF6;
+            }
         }
     }
 }
