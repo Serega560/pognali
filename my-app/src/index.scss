@@ -1,75 +1,22 @@
-@import "./global.scss";
-@import "./components/ui/card-profile/card-profile.module.scss";
-@import "./components/directions/directions.module.scss";
-@import "./components/ui/level/level.module.scss";
-@import "./components/blocks/profiles-list/profiles-list.module.scss";
-@import "./components/blocks/pagination/pagination.module.scss";
+// Global
+// ---------------------------------
+
+@import "./variables";
+@import "./mixins";
+@import "./global/fonts";
+@import "./global/reboot";
+@import "./global/utils";
+@import "./global/container";
+
+// Blocks & components
+// ---------------------------------
 @import "./components/layout/page-wrapper/page-wrapper.module.scss";
 @import "./components/pages/catalog/catalog.module.scss";
 @import "./components/ui/title/title.module.scss";
 @import "./components/ui/buttons/btn-show-more/btn-show-more.module.scss";
 
-@font-face {
-  font-style: normal;
-  font-weight: 300;
-  font-family: "Roboto";
-
-  font-display: swap;
-  src: url("./assets/static/Roboto-Light.woff2") format("woff2");
-}
-
-@font-face {
-  font-style: normal;
-  font-weight: 400;
-  font-family: "Roboto";
-
-  font-display: swap;
-  src: url("./assets/static/Roboto-Regular.woff2") format("woff2");
-}
-
-@font-face {
-  font-style: normal;
-  font-weight: 500;
-  font-family: "Roboto";
-
-  font-display: swap;
-  src: url("./assets/static/Roboto-Medium.woff2") format("woff2");
-}
-
-@font-face {
-  font-style: normal;
-  font-weight: 700;
-  font-family: "Roboto";
-
-  font-display: swap;
-  src: url("./assets/static/Roboto-Bold.woff2") format("woff2");
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-html,
-body {
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
-  min-width: 320px;
-}
-
-html {
-  font-family: $ff-roboto;
-  font-style: normal;
-  font-weight: 400;
-
-  overflow-x: hidden;
-}
-  
-img,
-video {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
+@import "./components/directions/directions.module.scss";
+@import "./components/blocks/profiles-list/profiles-list.module.scss";
+@import "./components/ui/card-profile/card-profile.module.scss";
+@import "./components/ui/level/level.module.scss";
+@import "./components/blocks/pagination/pagination.module.scss";

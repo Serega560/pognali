@@ -1,5 +1,8 @@
-.catalog {
+@import "../../../global/reboot.scss";
+@import "../../../global/utils.scss";
+@import "../../../variables.scss";
 
+.catalog {
     &__wrapper {
         display: flex;
         flex-direction: column;

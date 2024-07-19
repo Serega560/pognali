@@ -1,3 +1,8 @@
+@import "../../../global/reboot.scss";
+@import "../../../global/utils.scss";
+@import "../../../variables.scss";
+
+
 .pagination {
     background-color: #fff;
     padding: 25px 30px;
@@ -6,6 +11,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @include vp-767 {
+        flex-direction: column;
+    }
 
     &__page-list {
         margin: 0;
