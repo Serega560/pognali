@@ -3,16 +3,22 @@
 @import "../../../variables.scss";
 
 .footer {
-  border-radius: 30px 30px 0 0;
-  padding: 48px 40px 42px 58px;
-  box-shadow: 0 -5px 20px 0 rgba(0, 0, 0, 0.25);
-  background: $color-default-white;
-
-  @include vp-767 {
-    padding: 37px 40px 101px 58px;
-  }
+  background-color: #AED0EB;
 
   .footer-container {
+    border-radius: 30px 30px 0 0;
+    box-shadow: 0 -5px 20px 0 rgba(0, 0, 0, 0.25);
+    padding-top: 48px;
+    padding-bottom: 42px;
+    background-color: $color-default-white;
+
+    @include vp-767 {
+      padding: 37px 40px 101px 58px;
+    }
+  }
+
+
+  .container {
     align-items: center;
     display: flex;
     flex-direction: row;
@@ -28,7 +34,7 @@
     .logo-main {
       position: absolute;
       top: 13px;
-      left: 0;
+      left: 60px;
 
       svg {
         @include vp-1439 {
