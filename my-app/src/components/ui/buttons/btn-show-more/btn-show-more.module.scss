@@ -14,22 +14,35 @@
     cursor: pointer;
     user-select: none;
 
+    svg {
+        width: 26px;
+        height: 26px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        transition: opacity 0.3s ease-in-out;
+    }
+
     span {
-        &:first-child {
-            width: 26px;
-            height: 26px;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 1;
+        text-transform: uppercase;
+        color: #1D2E5B;
+    }
 
-            display: flex;
-            justify-content: center;
-            align-items: center;
+    &:hover,
+    &:focus {
+        svg {
+            opacity: 0.6;
         }
+    }
 
-        &:last-child {
-            font-weight: 700;
-            font-size: 20px;
-            line-height: 1;
-            text-transform: uppercase;
-            color: #1D2E5B;
+    &:active {
+        svg {
+            opacity: 0.3;
         }
     }
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import { ReactComponent as ArrowNext } from '../../../assets/img/arrowNext.svg'
 import './pagination.module.scss'
 
 function Pagination() {
@@ -21,10 +22,10 @@ function Pagination() {
 
         <div className="pagination__arrows">
             <button className="pagination__arrow pagination__arrow--prev">
-                ←
+                <ArrowNext/>
             </button>
             <button className="pagination__arrow pagination__arrow--next">
-                →
+                <ArrowNext/>
             </button>
         </div>
         
