@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.scss';
 import App from './components/app/app';
 import reportWebVitals from './reportWebVitals';
+import Footer from './components/blocks/footer/footer';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -10,6 +11,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <App />
+      <Footer />
   </React.StrictMode>
 );
 
