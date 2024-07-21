@@ -1,0 +1,121 @@
+@import "../../../global/reboot.scss";
+@import "../../../global/utils.scss";
+@import "../../../variables.scss";
+
+.header {
+  background: $color-midnight-express;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.header__container {
+  display: grid;
+  grid-template-columns: min-content 1fr 221px;
+  align-items: center;
+  min-height: 150px;
+}
+
+.header__logo {
+  position: relative;
+  padding-right: 13px;
+}
+
+.header__logo-img {
+  svg {
+    width: 200px;
+    height: 50px;
+  }
+}
+
+.header__logo-text {
+  position: absolute;
+  top: 13px;
+  right: 0;
+
+  svg {
+    width: 129px;
+    height: 20px;
+  }
+
+  svg path {
+    fill: $color-default-white;
+  }
+}
+
+.header__nav {
+  padding-left: 145px;
+}
+
+.header__nav-list {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.header__nav-list::before {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 2px;
+  background-color: $color-default-white;
+  left: -105px;
+  top: 10px;
+}
+
+.header__nav-item a {
+  text-transform: uppercase;
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: 500;
+  color: $color-default-white;
+
+  @include hover-focus {
+    @media (hover: hover) {
+      &:hover:not(.focus-visible) {
+        color: $color-jordy-blue;
+      }
+    }
+  }
+
+  &:active {
+    color: $color-picton-blue;
+      opacity: 30%;
+  }
+}
+
+.header__contacts-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: end;
+  gap: 7px;
+}
+
+.header__contacts-item a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: $color-jordy-blue;
+
+  @include hover-focus {
+    @media (hover: hover) {
+      &:hover:not(.focus-visible) {
+        background-color: $color-picton-blue;
+      }
+    }
+  }
+
+  &:active {
+    svg {
+      opacity: 30%;
+    }
+  }
+}
+
