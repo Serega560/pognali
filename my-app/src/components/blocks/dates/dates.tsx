@@ -8,7 +8,7 @@ interface DatesProps {
 const Dates: React.FC<DatesProps> = ({children}) => {
     return (
         <div className="dates">
-            <div className="header">
+            <div className="dates-header">
                 <div>
                     <h3>Шаг 1. Даты пребывания</h3>
                     <p>Укажите предпочтительное количество попутчиков, которых
