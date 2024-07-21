@@ -6,6 +6,7 @@ import { ReactComponent as Bicycle } from '../../../assets/img/bicycle.svg'
 import { ReactComponent as Onfoot } from '../../../assets/img/onfoot.svg'
 import { CardData } from '../../types/card-data';
 import './card-profile.module.scss';
+import Level from '../level/level';
 // import Level from '../level/level';
 
 
@@ -76,7 +77,7 @@ function CardProfile({cardData}: CardProfileProps): JSX.Element {
       <div className="card-profile__level">
         <span>левел:</span>
         <div className="card-profile__level-container">
-
+          <Level/>
         </div>
       </div>
 
