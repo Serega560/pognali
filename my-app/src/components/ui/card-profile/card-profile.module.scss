@@ -8,20 +8,60 @@
     overflow: hidden;
 
     display: grid;
-    grid-template-columns: minmax(200px, 285px) 55px auto 53px auto auto 103px;
-    gap: 20px 0;
-    // justify-content: space-between;
+    grid-template-columns: minmax(170px, 285px) 55px 153px 53px auto auto 105px;
+    grid-template-rows: auto auto 1fr;
+    gap: 0;
+    
+    min-width: 950px;
 
     transition: box-shadow 0.3s ease-in-out;
     cursor: pointer;
+
+    @media (max-width: 1340px) {
+        min-width: 850px;
+    }
+
+    @media (max-width: 1240px) {
+        grid-template-columns: minmax(190px, 285px) 35px 153px 53px auto auto 105px;
+        min-width: unset;
+    }
+
+    @include vp-1023 {
+        grid-template-columns: minmax(190px, 190px) 202px auto auto 62px;
+        grid-template-rows: auto 1fr auto auto;
+        padding: 35px 25px 25px 35px;
+    }
+
+    @include vp-767 {
+        grid-template-columns: minmax(70px, 70px) auto 45px;
+        grid-template-rows: 1fr auto auto auto auto auto;
+        gap: 0px 14px;
+        padding: 15px 20px 24px;
+    }
 
     &:hover {
         box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.25);
     }
 
+    // картинка
     &__figure {
         grid-row: 1/4;
         grid-column: 1/2;
+
+        @media (max-width: 1340px) {
+            grid-row: 1/5;
+            grid-column: 1/2;  
+        }
+
+        @include vp-1023 {
+            grid-row: 1/4;
+            grid-column: 1/2; 
+        }
+
+        @include vp-767 {
+            grid-row: 1/3;
+            grid-column: 1/2; 
+        }
     }
 
     &__image {
@@ -31,28 +71,87 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+
+        @include vp-1023 {
+            border-radius: 20px;
+        }
+
+        @include vp-767 {
+            border-radius: 50%;
+        }
     }
 
+    // имя
     &__name {
         grid-row: 1/2;
         grid-column: span 3;
 
-        max-width: 255px;
         margin: 0;
-        padding: 46px 0 0;
+        padding: 45px 6px 18px;
 
         font-weight: 700;
         font-size: 30px;
         line-height: 1;
-        color: #1D2E5B; 
+        color: #1D2E5B;
+
+        display: flex;
+        flex: 0 1 auto;
+
+        @media (max-width: 1340px) {
+            padding: 45px 16px 18px 6px;  
+        }
+
+        @include vp-1023 {
+            grid-row: 1/2;
+            grid-column: 2/4;
+
+            padding: 0 0 0 33px;
+            margin-top: -1px;
+            margin-bottom: 33px;
+            max-width: unset;
+        }
+
+        @include vp-767 {
+            grid-row: 1/2;
+            grid-column: 2/3; 
+
+            font-size: 20px;
+
+            margin: 0;
+            padding: 0;
+        }
     }
 
-    &__state {
+    // статус онлайн-офлайн
+    &__state-wrapper {
         grid-row: 1/4;
         grid-column: 2/3;
 
-        margin: 57px 11px 0 36px;
+        margin: 57px 11px auto 36px;
 
+        display: flex;
+
+        @media (max-width: 1240px) {
+            margin: 57px 11px auto 16px;
+        }
+
+        @include vp-1023 {
+            grid-row: 1/2;
+            grid-column: 4/5;
+
+            margin: 9px 0 0;
+        }
+
+        @include vp-767 {
+            grid-row: 1/2;
+            grid-column: 3/4; 
+
+            margin: 8px 2px 0 0;
+            justify-content: flex-end;
+        }
+    }
+
+    &__state {
         width: 8px;
         height: 8px;
         background-color: #F97676;
@@ -65,36 +164,85 @@
         &--online {
             background-color: #81E31E; 
         }
+
+        @include vp-767 {
+            width: 6px;
+            height: 6px;  
+        }
     }
 
+    // хештеги
     &__hashtags {
         grid-row: 2/3;
         grid-column: span 3;
 
-        max-width: 255px;
+        max-width: 234px;
 
         margin: 0;
-        padding: 0;
+        padding: 0 0 0 7px;
 
         font-weight: 400;
         font-size: 20px;
         line-height: 1.15;
         color: #000;
+
+        @include vp-1023 {
+            grid-row: 2/3;
+            grid-column: 2/5; 
+
+            max-width: 300px;
+            margin: -15px 0 0;
+            padding: 0 0 0 36px;
+        }
+
+        @include vp-767 {
+            grid-row: 3/4;
+            grid-column: 1/4; 
+
+            font-size: 15px;
+            line-height: 120%;
+
+            max-width: unset;
+            margin: 0;
+            padding: 13px 0 0 6px;
+        }
     }
 
+    // кнока позвать
     &__btn-call-wrapper {
-        // display: flex;        
-        margin-bottom: 48px;
-        margin-right: 3px;
+        margin-top: 41px;
+
+        grid-row: 3/4;
+        grid-column: 3/4;
+
+        @include vp-1023 {
+            grid-row: 3/4;
+            grid-column: 2/3; 
+
+            margin: 0;
+            padding: 13px 3px 0 29px;
+        }
+
+        @include vp-767 {
+            grid-row: 6/7;
+            grid-column: 1/4; 
+
+            width: 100%;
+            max-width: 100%;
+
+            margin: 0;
+            padding: 14px 0 0 0;
+        }
     }
 
     &__btn-call {
-        padding: 15px 24px;
+        padding: 18px 24px 12px;
 
         font-weight: 700;
         font-size: 20px;
         line-height: 1;
         text-transform: uppercase;
+        text-align: center;
         color: #161C35;
 
         border-radius: 25px;
@@ -102,12 +250,65 @@
         background-color: #A8D2F4;
 
         cursor: pointer;
+        user-select: none;
+
+        &:hover,
+        &:focus {
+            background-color: #4D99D6;
+        }
+
+        &:active {
+            color: rgba(#161C35, 0.3);
+        }
+
+        @include vp-1023 {
+            padding: 18px 34px 12px;
+        }
+
+        @include vp-767 {
+            font-size: 17px;
+            line-height: 100%;
+
+            width: 100%;
+            padding: 12px 34px 11px;
+        }
     }
 
+    // кнопка лайк и кол-во лайков
     &__likes-number-wrapper {
-        margin-bottom: 48px;
         display: flex;
-        align-items: center;
+
+        margin-top: 41px;
+        padding-top: 16px;
+
+        min-width: 87px;
+
+        @media (max-width: 1340px) {
+            min-width: unset;
+        }
+
+        @include vp-1023 {
+            grid-row: 3/4;
+            grid-column: 4/5;
+
+            margin: 0;
+            padding: 0;
+            
+            align-items: center;
+            transform: translate(-36px, 8px);
+        }
+
+        @media (max-width: 1023px) and (min-width: 800px) {
+            transform: translate(3px, 8px);
+        }
+
+        @include vp-767 {
+            grid-row: 2/3;
+            grid-column: 2/3;
+
+            align-items: flex-start;
+            padding: 2px 0 0 36px;
+        }
     }
 
     &__likes-number {
@@ -120,10 +321,16 @@
         line-height: 1;
         text-transform: uppercase;
         color: #161C35;
+
+        @include vp-767 {
+            font-size: 14px;
+            line-height: 114%;
+        }
     }
 
-    &__btn-likes {
+    &__btn-like {
         margin-right: 3px;
+        margin-top: 41px;
 
         width: 50px;
         height: 50px;
@@ -131,43 +338,421 @@
         border: none;
         background-color: #E2E5F2;
 
-        display: inline-block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
         cursor: pointer;
+
+        @include vp-1023 {
+            grid-row: 3/4;
+            grid-column: 3/4; 
+
+            width: 56px;
+            margin: 0;
+            margin-top: 13px;
+            //margin-left: auto;
+        }
+
+        @media (max-width: 1023px) and (min-width: 800px) {
+            margin-left: auto;
+        }
+
+        @include vp-767 {
+            width: 30px;
+            height: 30px;
+
+            grid-row: 2/3;
+            grid-column: 2/3; 
+
+            transform: translate(-37px, 0);
+            margin: 0;
+        }
+
+        svg {
+            width: 20px;
+            height: 20px;
+            color: #192144;
+
+            @include vp-767 {
+                width: 12px;
+                height: 12px;
+            }
+        }
     }
 
+    // транспорт
     &__transport {
+        margin-top: 41px;
+        padding-top: 14px;
+
+        @media (max-width: 1240px) {
+            margin-top: 0;
+            margin-bottom: 35px;
+
+            grid-row: 4/5;
+            grid-column: 3/5;
+        }
+
+        @include vp-1023 {
+            grid-row: 1/3;
+            grid-column: 5/6;
+
+            margin: 0;
+            padding: 0;
+        }
+
+        @include vp-767 {
+            grid-row: 5/6;
+            grid-column: 1/3;
+
+            display: flex;
+            flex-direction: column;
+        }
+
+        & > span {
+            display: none;
+
+            @include vp-767 {
+                display: block;
+
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 114%;
+            }         
+        }
+
         ul {
             display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 11px;
 
             margin: 0;
             padding: 0;
             list-style-type: none;
+
+            @include vp-1023 {
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 7px;
+            }
+
+            @include vp-767 {
+                flex-direction: row;
+
+                gap: 1px;
+            }
         }
         
         li {
-            width: 22px;
-            height: 22px;
+            width: 25px;
+            height: 25px;
             display: flex;
             justify-content: center;
             align-items: center;
+
+            svg {
+                opacity: 0.15;
+            }
+
+            &.active {
+                svg {
+                    opacity: 1;
+                }
+            }
+
+            @include vp-767 {
+                width: 32px;
+                height: 32px;
+
+                position: relative;
+
+                &::before{
+                    position: absolute;
+                    content: "";
+                    width: 32px;
+                    height: 32px;
+                    border-radius: 50%;
+                    background-color: #EDEFF6;
+                }
+
+                svg {
+                    height: 17px;
+                }
+            }
+        }
+    }
+
+    &__transport-badge {
+        display: none;
+
+        @include vp-767 {
+            display: block;
+
+            position: relative;
+
+            transform: translate(-7px, 0);
+            margin-bottom: 10px;
+
+            &::after {
+                position: absolute;
+                content: "";
+                background-color: #EDEFF6;
+                width: 200%;
+                height: 1px;
+                top:50%;
+                left:0;
+                transform:translate(-50%, 100%);
+            }
+
+            span {
+                @include vp-767 {
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 114%;
+
+                    position: relative;
+                    z-index: 2;
+
+                    background-color: #fff;
+                    padding: 0 12px;
+                }            
+            }
         }
     }
     
+    // уровень
     &__level {
-        background-color: #000;
-        margin-right: 43px;
+        margin-top: 41px;
+        margin-bottom: 15px;
+
+        transform: translate(1px, -1px);
+
+        @media (max-width: 1240px) {
+            grid-row: 3/4;
+            grid-column: 7/8;
+        }
+
+        @include vp-1023 {
+            grid-row: 3/4;
+            grid-column: 5/6;
+
+            margin: 0;
+
+            transform: translate(2px, 9px);
+        }
+
+        @include vp-767 {
+            grid-row: 5/6;
+            grid-column: 3/4;
+
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            transform: translate(-2px, 5px);
+        }
+
+        & > span {
+            display: none;
+
+            @include vp-767 {
+                display: block;
+
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 114%;
+            }         
+        }
     }
 
-    &__countries {
+    &__level-badge {
+        display: none;
+
+        @include vp-767 {
+            display: block;
+
+            position: relative;
+
+            transform: translate(-9px, -5px);
+
+            &::after {
+                position: absolute;
+                content: "";
+                background-color: #EDEFF6;
+                width: 250%;
+                height: 1px;
+                top:50%;
+                right: 0;
+                transform:translate(50%, 100%);
+            }
+
+            span {
+                @include vp-767 {
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 114%;
+
+                    position: relative;
+                    z-index: 2;
+
+                    background-color: #fff;
+                    padding: 0 12px;
+                }            
+            }
+        }
+    }
+
+    // хочет посетить - страны
+    &__country {
         grid-row: 1/3;
         grid-column: span 2;
 
-        margin-right: 43px;
-        padding: 46px 0 0;
+        padding: 49px 0 0;
+
+        @media (max-width: 1340px) {
+            margin-right: 20px;
+        }
+
+        @include vp-1023 {
+            grid-row: 4/5;
+            grid-column: 1/6;
+
+            margin: 0;
+            padding: 0;
+        }
+
+        @include vp-767 {
+            grid-row: 4/5;
+            grid-column: 1/4;
+        }
+    }
+
+    &__country-badge {
+        display: none;
+
+        @include vp-1023 {
+            display: block;
+            padding: 18px 0 15px;
+
+            position: relative;
+
+            transform: translate(37px, 0);
+
+            &::after {
+                position: absolute;
+                content: "";
+                background-color: #EDEFF6;
+                width: 200%;
+                height: 1px;
+                top:50%;
+                left:0;
+                transform:translate(-50%, 100%);
+
+                @include vp-767 {
+                    width: 300%;
+                }
+            }
+        }
+
+        @include vp-767 {
+            padding: 10px 0 14px;
+            transform: translate(-7px, 0);
+        }
 
         span {
-            display: none;
+            @include vp-1023 {
+                font-weight: 400;
+                font-size: 15px;
+                line-height: 107%;
+
+                position: relative;
+                z-index: 2;
+
+                background-color: #fff;
+                padding: 0 12px;
+            }
+
+            @include vp-767 {
+                font-size: 14px;
+                line-height: 114%;
+            }            
+        }
+    }
+
+    &__country-list {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 12px;
+
+        @include vp-1023 {
+            flex-direction: row;
+            gap: 15px;
+        }
+
+        @include vp-767 {
+            flex-direction: column;
+            gap: 10px;
+            margin-left: 5px;
+            margin-bottom: 9px;
+        }
+    }
+
+    &__country-item {
+        display: flex;
+        align-items: flex-end;
+        gap: 18px;
+
+        @media (max-width: 1340px) {
+            gap: 6px;
+        }
+
+        @include vp-1023 {
+            gap: 13px;
+        }
+
+        @include vp-767 {
+            gap: 14px;
+        }
+    }
+
+    &__country-flag {
+        width: 35px;
+        height: 24px;
+        border-radius: 2px;
+        background-color: #a53131;
+
+        @include vp-1023 {
+            width: 40px;
+            height: 24px;
+        }
+
+        @include vp-767 {
+            width: 26px;
+            height: 18px;
+        }
+    }
+
+    &__country-name {
+        margin: 0;
+        padding: 0;
+
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 100%;
+        text-transform: uppercase;
+        color: #1D2E5B;
+
+        @include vp-767 {
+            font-size: 15px;
+            line-height: 107%;
         }
     }
 }

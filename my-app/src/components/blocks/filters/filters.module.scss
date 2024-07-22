@@ -1,0 +1,14 @@
+@import "../../../global/reboot.scss";
+@import "../../../global/utils.scss";
+@import "../../../variables.scss";
+
+.filters {
+    background-color: #CCE5FA;
+    width: 285px;
+    height: 814px;
+
+    @include vp-1023 {
+        width: 100%;
+        height: 550px;
+    }
+}
