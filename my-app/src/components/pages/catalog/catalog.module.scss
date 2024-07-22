@@ -5,8 +5,27 @@
 .catalog {
     &__wrapper {
         display: flex;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+        gap: 15px;
+
+        @include vp-1023 {
+            flex-direction: column;
+        }
+    }
+
+    &__inner-wrapper {
+        display: flex;
         flex-direction: column;
         gap: 62px;
+
+        @include vp-1023 {
+            gap: 49px;
+        }
+
+        @include vp-767 {
+            gap: 20px;
+        }
     }
 
     &__show-more {
@@ -15,5 +34,17 @@
         align-items: center;
 
         margin: 0 0 9px;
+
+        transform: translate(-23px, -1px);
+
+        @include vp-1023 {
+            transform: translate(10px, 0);
+            margin: 0;
+        }
+
+        @include vp-767 {
+            transform: translate(5px, 2px);
+            margin: 0;
+        }
     }
 }

@@ -34,9 +34,7 @@ function CardProfile({cardData}: CardProfileProps): JSX.Element {
       </div>
 
       <div className="card-profile__state-wrapper">
-        <div className="card-profile__state card-profile__state--offline">
-        
-        </div>
+        <div className="card-profile__state card-profile__state--offline"></div>
       </div>
       
       <p
@@ -57,7 +55,9 @@ function CardProfile({cardData}: CardProfileProps): JSX.Element {
       
 
       <div className="card-profile__transport">
-        <span>транспорт:</span>
+        <div className="card-profile__transport-badge">
+          <span>транспорт:</span>
+        </div>
         <ul className="card-profile__transport-list">
           <li className="card-profile__transport-item">
             <Plane />
@@ -75,14 +75,18 @@ function CardProfile({cardData}: CardProfileProps): JSX.Element {
       </div>
 
       <div className="card-profile__level">
-        <span>левел:</span>
+        <div className="card-profile__level-badge">
+          <span>левел:</span>
+        </div>
         <div className="card-profile__level-container">
           <Level/>
         </div>
       </div>
 
       <div className="card-profile__country">
-        <span>хочет посетить:</span>
+        <div className="card-profile__country-badge">
+          <span>хочет посетить:</span>
+        </div>
         <div>
           <ul className="card-profile__country-list">
             <li className="card-profile__country-item">
