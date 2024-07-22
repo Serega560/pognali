@@ -1,6 +1,12 @@
 import React from 'react';
+import { ReactComponent as Heart}  from '../../../assets/img/heart.svg'
+import { ReactComponent as Plane } from '../../../assets/img/plane.svg'
+import { ReactComponent as Bus } from '../../../assets/img/bus.svg'
+import { ReactComponent as Bicycle } from '../../../assets/img/bicycle.svg'
+import { ReactComponent as Onfoot } from '../../../assets/img/onfoot.svg'
 import { CardData } from '../../types/card-data';
 import './card-profile.module.scss';
+import Level from '../level/level';
 // import Level from '../level/level';
 
 
@@ -27,7 +33,9 @@ function CardProfile({cardData}: CardProfileProps): JSX.Element {
         <b>{name}</b>
       </div>
 
-      <div className="card-profile__state card-profile__state--offline"></div>
+      <div className="card-profile__state-wrapper">
+        <div className="card-profile__state card-profile__state--offline"></div>
+      </div>
       
       <p
         className="card-profile__hashtags"
@@ -38,29 +46,67 @@ function CardProfile({cardData}: CardProfileProps): JSX.Element {
         <button className="card-profile__btn-call btn">Позвать!</button>
       </div>
       
-      <button className="card-profile__btn-likes"></button>
+      <button className="card-profile__btn-like">
+        <Heart />
+      </button>
       <div className="card-profile__likes-number-wrapper">
         <span className="card-profile__likes-number">{likes}</span>
       </div>
       
 
       <div className="card-profile__transport">
-        <ul>
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-          <li>4</li>
+        <div className="card-profile__transport-badge">
+          <span>транспорт:</span>
+        </div>
+        <ul className="card-profile__transport-list">
+          <li className="card-profile__transport-item">
+            <Plane />
+          </li>
+          <li className="card-profile__transport-item">
+            <Bus />
+          </li>
+          <li className="card-profile__transport-item">
+            <Bicycle />
+          </li>
+          <li className="card-profile__transport-item">
+            <Onfoot />
+          </li>
         </ul>
       </div>
 
-      <div className="card-profile__level"></div>
+      <div className="card-profile__level">
+        <div className="card-profile__level-badge">
+          <span>левел:</span>
+        </div>
+        <div className="card-profile__level-container">
+          <Level/>
+        </div>
+      </div>
 
-      <div className="card-profile__countries">
-        <span>хочет посетить:</span>
+      <div className="card-profile__country">
+        <div className="card-profile__country-badge">
+          <span>хочет посетить:</span>
+        </div>
         <div>
-          <ul>
-            <li></li>
-            <li></li>
+          <ul className="card-profile__country-list">
+            <li className="card-profile__country-item">
+              <div className="card-profile__country-flag">
+          
+              </div>
+              <span className="card-profile__country-name">шри-ланка</span>
+            </li>
+            <li className="card-profile__country-item">
+              <div className="card-profile__country-flag">
+          
+              </div>
+              <span className="card-profile__country-name">тайланд</span>
+            </li>
+            <li className="card-profile__country-item">
+              <div className="card-profile__country-flag">
+          
+              </div>
+              <span className="card-profile__country-name">сейшелы</span>
+            </li>
           </ul>
         </div>
       </div>
