@@ -12,8 +12,8 @@ function CountryItem({countryData}: CountryItemProps): JSX.Element {
   const {country, flag} = countryData;
 
   return (
-    <div className="">
-      <picture className="">
+    <li className="country__item">
+      <picture className="country__flag">
         <img
           src={flag}
           className=""
@@ -23,10 +23,10 @@ function CountryItem({countryData}: CountryItemProps): JSX.Element {
         />
       </picture>
 
-      <div className="">
+      <div className="country__name">
         <b>{country}</b>
       </div>
-    </div>
+    </li>
   );
 }
 

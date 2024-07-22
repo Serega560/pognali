@@ -6,7 +6,7 @@ const countriesMocks = [
     },
     {
         id: 2,
-        country: "Белорусь",
+        country: "Беларусь",
         flag: "https://upload.wikimedia.org/wikipedia/commons/8/85/Flag_of_Belarus.svg",
     },
     {
@@ -31,26 +31,31 @@ const countriesMocks = [
     },
     {
         id: 7,
+        country: "Россия",
+        flag: "https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Russia.svg",
+    },
+    {
+        id: 8,
         country: "Шри-Ланка",
         flag: "https://upload.wikimedia.org/wikipedia/commons/1/11/Flag_of_Sri_Lanka.svg",
     },
     {
-        id: 8,
+        id: 9,
         country: "Турция",
         flag: "https://upload.wikimedia.org/wikipedia/commons/b/b4/Flag_of_Turkey.svg",
     },
     {
-        id: 9,
+        id: 10,
         country: "Украина",
         flag: "https://upload.wikimedia.org/wikipedia/commons/4/49/Flag_of_Ukraine.svg",
     },
     {
-        id: 10,
+        id: 11,
         country: "Англия",
         flag: "https://upload.wikimedia.org/wikipedia/commons/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg",
     },
     {
-        id: 11,
+        id: 12,
         country: "Америка",
         flag: "https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg",
     },

@@ -2,3 +2,7 @@
 @import "../../../global/utils.scss";
 @import "../../../variables.scss";
 
+
+.route__counties-item:not(:first-child) {
+    display: none;
+}
