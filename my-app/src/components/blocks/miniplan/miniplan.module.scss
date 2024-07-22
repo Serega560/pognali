@@ -1,0 +1,31 @@
+.plan-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+
+  .plan-item {
+    position: relative;
+
+    &:before {
+      position: absolute;
+      content: '';
+      width: 7px;
+      height: 6px;
+      background-color: #000000;
+      border-radius: 50%;
+      top: 10px;
+      left: -24px;
+      opacity: 30%;
+    }
+
+    span {
+      opacity: 60%;
+      font-size: 20px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    };
+  }
+}

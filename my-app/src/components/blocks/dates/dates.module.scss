@@ -1,0 +1,32 @@
+.dates {
+  background-color: $color-default-white;
+  border-radius: 30px;
+  padding: 101px 152px 106px 159px;
+}
+
+.content {
+  background-color: $color-default-white;
+}
+
+.dates-header {
+  display: grid;
+  grid-template-columns: 660px 1fr;
+  column-gap: 170px;
+  border-bottom: 1px solid #E1E3E9;
+  padding-bottom: 55px;
+
+  h3 {
+    margin: 0;
+    margin-bottom: 33px;
+    color: #1D2E5B;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 36px;
+  }
+
+  p {
+    margin: 0;
+    font-size: 20px;
+    line-height: 24px;
+  }
+}

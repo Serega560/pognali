@@ -10,15 +10,11 @@
     padding: 0 60px;
   
     @include vp-1439 {
-      width: 91.6%;
+      margin: 0;
+      padding: 0 40px;
     }
-  
-    @include vp-1023 {
-      width: 80%;
-    }
-  
+    
     @include vp-767 {
-      width: 100%;
       padding: 0 25px;
     }
   }
