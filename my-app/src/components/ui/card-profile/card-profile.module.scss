@@ -97,6 +97,8 @@
         display: flex;
         flex: 0 1 auto;
 
+        transition: opacity 0.3s ease-in-out;
+
         @media (max-width: 1340px) {
             padding: 45px 16px 18px 6px;  
         }
@@ -119,6 +121,22 @@
 
             margin: 0;
             padding: 0;
+        }
+
+        b {
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        &:hover {
+            b {
+                opacity: 0.6;
+            }
+        }
+
+        &:active {
+            b {
+                opacity: 0.3;
+            }
         }
     }
 
@@ -252,6 +270,8 @@
         cursor: pointer;
         user-select: none;
 
+        transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+
         &:hover,
         &:focus {
             background-color: #4D99D6;
@@ -336,13 +356,16 @@
         height: 50px;
         border-radius: 50%;
         border: none;
-        background-color: #E2E5F2;
+        background-color: transparent;
 
         display: flex;
         justify-content: center;
         align-items: center;
 
         cursor: pointer;
+        user-select: none;
+
+        transition: background-color 0.3s ease-in-out;
 
         @include vp-1023 {
             grid-row: 3/4;
@@ -351,7 +374,6 @@
             width: 56px;
             margin: 0;
             margin-top: 13px;
-            //margin-left: auto;
         }
 
         @media (max-width: 1023px) and (min-width: 800px) {
@@ -367,16 +389,62 @@
 
             transform: translate(-37px, 0);
             margin: 0;
+
+            background-color: #E2E5F2;
         }
 
         svg {
             width: 20px;
             height: 20px;
-            color: #192144;
+            color: rgba(#192144, 0.5);
+            transition: color 0.3s ease-in-out;
 
             @include vp-767 {
                 width: 12px;
                 height: 12px;
+            }
+        }
+
+        &:hover,
+        &:focus {
+            background-color: #E2E5F2;
+
+            svg {
+                color: rgba(#192144, 0.3);
+            }
+        }
+
+        &:active {
+            background-color: #E2E5F2;
+
+            svg {
+                color: rgba(#192144, 0.1);
+            }
+        }
+
+        &.active {
+            background-color: #F9EAEA;
+
+            svg {
+                color: rgba(#F02323, 1);
+                fill: #F02323;
+            }
+
+            &:hover,
+            &:focus {
+                background-color: #F9D8D8;
+
+                svg {
+                    color: rgba(#F02323, 1);
+                }
+            }
+
+            &:active {
+                background-color: #F9D8D8;
+    
+                svg {
+                    color: rgba(#F02323, 0.3);
+                }
             }
         }
     }
@@ -386,9 +454,16 @@
         margin-top: 41px;
         padding-top: 14px;
 
+        @media (max-width: 1340px) {
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+
         @media (max-width: 1240px) {
             margin-top: 0;
             margin-bottom: 35px;
+            padding-right: 0;
+            padding-left: 0;
 
             grid-row: 4/5;
             grid-column: 3/5;
@@ -454,12 +529,12 @@
             align-items: center;
 
             svg {
-                opacity: 0.15;
+                color: rgba(#1D2E5B, 0.15);
             }
 
             &.active {
                 svg {
-                    opacity: 1;
+                    color: rgba(#1D2E5B, 1);
                 }
             }
 
@@ -480,6 +555,9 @@
 
                 svg {
                     height: 17px;
+
+                    position: relative;
+                    z-index: 3;
                 }
             }
         }
