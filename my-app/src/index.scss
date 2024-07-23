@@ -11,11 +11,12 @@
 // Blocks & components
 // ---------------------------------
 @import "./components/layout/page-wrapper/page-wrapper.module.scss";
+@import "./components/pages/form/form.module.scss";
 @import "./components/pages/catalog/catalog.module.scss";
 @import "./components/ui/title/title.module.scss";
 @import "./components/ui/buttons/btn-show-more/btn-show-more.module.scss";
-
-@import "./components/directions/directions.module.scss";
+@import "./components/blocks/heading/heading.module.scss";
+@import "./components/blocks/directions-profile/directions-profile.module.scss";
 @import "./components/blocks/profiles-list/profiles-list.module.scss";
 @import "./components/blocks/header/header.module.scss";
 @import "./components/blocks/footer/footer.module.scss";
@@ -27,3 +28,6 @@
 @import "./components/blocks/miniplan/miniplan.module.scss";
 @import "./components/blocks/filters/filters.module.scss";
 @import "./components/blocks/route/route.module.scss";
+@import "./components/ui/input-hashtags/input-hashtags.module.scss";
+@import "./components/ui/input-transport/input-transport.module.scss";
+
