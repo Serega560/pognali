@@ -1,3 +1,4 @@
+import React from 'react';
 import './level.module.scss'
 
 function Level() {
