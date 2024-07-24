@@ -2,7 +2,7 @@ import React from 'react';
 import ProfileLevel from '../../ui/profile-level/profile-level';
 import InputHashtags from '../../ui/input-hashtags/input-hashtags';
 import InputTransport from '../../ui/input-transport/input-transport';
-import Avatar from '../../../assets/img/directions/avatar.jpg'
+import Avatar from '../../../assets/img/directions/avatar.jpg';
 import './directions-profile.module.scss'
 
 function DirectionsProfile() {
