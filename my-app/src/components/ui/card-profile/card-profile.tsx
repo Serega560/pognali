@@ -93,7 +93,15 @@ function CardProfile({ cardData }: CardProfileProps): JSX.Element {
             {countries.map((country, index) => (
               <li key={index} className="card-profile__country-item">
                 <div className="card-profile__country-flag">
-                  {country.flag}
+                  <picture className="card-profile__country-flag-figure">
+                    <img
+                      src={country.flag}
+                      className="card-profile__country-flag-image"
+                      width={35}
+                      height={24}
+                      alt="Флаг."
+                    />
+                </picture>
                 </div>
                 <span className="card-profile__country-name">{country.name}</span>
               </li>
