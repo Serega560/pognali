@@ -7,15 +7,14 @@ import { ReactComponent as Onfoot } from '../../../assets/img/onfoot.svg'
 import { CardData } from '../../types/card-data';
 import './card-profile.module.scss';
 import Level from '../level/level';
-// import Level from '../level/level';
 
 
 type CardProfileProps = {
   cardData: CardData;
 };
 
-function CardProfile({cardData}: CardProfileProps): JSX.Element {
-  const {name, image, hashtags, likes} = cardData;
+function CardProfile({ cardData }: CardProfileProps): JSX.Element {
+  const { name, image, hashtags, likes, online, transport, countries, level } = cardData;
 
   return (
     <div className="card-profile">
@@ -29,18 +28,13 @@ function CardProfile({cardData}: CardProfileProps): JSX.Element {
         />
       </picture>
 
-      <div className="card-profile__name">
-        <b>{name}</b>
-      </div>
+      <div className="card-profile__name"><b>{name}</b></div>
 
       <div className="card-profile__state-wrapper">
-        <div className="card-profile__state card-profile__state--offline"></div>
+        <div className={`card-profile__state ${online ? 'card-profile__state--online' : 'card-profile__state--offline'}`}></div>
       </div>
       
-      <p
-        className="card-profile__hashtags"
-        dangerouslySetInnerHTML={{ __html: hashtags }}
-      />
+      <p className="card-profile__hashtags">{hashtags}</p>
 
       <div className="card-profile__btn-call-wrapper">
         <button className="card-profile__btn-call btn">Позвать!</button>
@@ -53,24 +47,31 @@ function CardProfile({cardData}: CardProfileProps): JSX.Element {
         <span className="card-profile__likes-number">{likes}</span>
       </div>
       
-
       <div className="card-profile__transport">
         <div className="card-profile__transport-badge">
           <span>транспорт:</span>
         </div>
         <ul className="card-profile__transport-list">
-          <li className="card-profile__transport-item">
-            <Plane />
-          </li>
-          <li className="card-profile__transport-item">
-            <Bus />
-          </li>
-          <li className="card-profile__transport-item">
-            <Bicycle />
-          </li>
-          <li className="card-profile__transport-item">
-            <Onfoot />
-          </li>
+          {transport.plane && (
+            <li className="card-profile__transport-item">
+              <Plane />
+            </li>
+          )}
+          {transport.bus && (
+            <li className="card-profile__transport-item">
+              <Bus />
+            </li>
+          )}
+          {transport.bicycle && (
+            <li className="card-profile__transport-item">
+              <Bicycle />
+            </li>
+          )}
+          {transport.onfoot && (
+            <li className="card-profile__transport-item">
+              <Onfoot />
+            </li>
+          )}
         </ul>
       </div>
 
@@ -79,7 +80,7 @@ function CardProfile({cardData}: CardProfileProps): JSX.Element {
           <span>левел:</span>
         </div>
         <div className="card-profile__level-container">
-          <Level/>
+          <Level level={level} />
         </div>
       </div>
 
@@ -89,24 +90,14 @@ function CardProfile({cardData}: CardProfileProps): JSX.Element {
         </div>
         <div>
           <ul className="card-profile__country-list">
-            <li className="card-profile__country-item">
-              <div className="card-profile__country-flag">
-          
-              </div>
-              <span className="card-profile__country-name">шри-ланка</span>
-            </li>
-            <li className="card-profile__country-item">
-              <div className="card-profile__country-flag">
-          
-              </div>
-              <span className="card-profile__country-name">тайланд</span>
-            </li>
-            <li className="card-profile__country-item">
-              <div className="card-profile__country-flag">
-          
-              </div>
-              <span className="card-profile__country-name">сейшелы</span>
-            </li>
+            {countries.map((country, index) => (
+              <li key={index} className="card-profile__country-item">
+                <div className="card-profile__country-flag">
+                  {country.flag}
+                </div>
+                <span className="card-profile__country-name">{country.name}</span>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
