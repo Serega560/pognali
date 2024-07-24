@@ -17,7 +17,7 @@ root.render(
   <React.StrictMode>
     <Header />
     <App />
-      <Route countriesData={countriesMocks}/>
+      {/*<Route countriesData={countriesMocks}/>*/}
       <Plan/>
       <Footer />
   </React.StrictMode>
