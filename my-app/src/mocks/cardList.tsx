@@ -11,7 +11,11 @@ const cardList = [
             bicycle: false,
             onfoot: false,
         },
-        countries: ["шри-ланка", "Таиланд", "сейшелы"],
+        countries: [
+            {name: "Шри-ланка", flag: ""}, 
+            {name: "Таиланд", flag: ""}, 
+            {name: "сейшелы", flag: ""}
+        ],
         level: 99,
         likes: 1500,
     },
@@ -27,7 +31,10 @@ const cardList = [
             bicycle: false,
             onfoot: true,
         },
-        countries: ["бельгия", "чехия"],
+        countries: [
+            {name: "бельгия", flag: ""}, 
+            {name: "чехия", flag: ""}
+        ],
         level: 80,
         likes: 1500,
     },
@@ -43,7 +50,11 @@ const cardList = [
             bicycle: true,
             onfoot: false,
         },
-        countries: ["сша", "австралия", "доминика"],
+        countries: [
+            {name: "сша", flag: ""}, 
+            {name: "австралия", flag: ""},
+            {name: "доминика", flag: ""}
+        ],
         level: 25,
         likes: 170,
     },
@@ -59,39 +70,13 @@ const cardList = [
             bicycle: false,
             onfoot: false,
         },
-        countries: ["Великобритания", "Германия"],
+        countries: [
+            {name: "Великобритания", flag: ""}, 
+            {name: "Германия", flag: ""}
+        ],
         level: 50,
         likes: 23,
     },
   ];
   
   export default cardList;
-
-// const cardList = [
-//     {
-//         id: 0,
-//         name: "Таня Фирсова",
-//         image: "https://i.ibb.co/Cmgp1tP/Rectangle-4.png",
-//         hashtags: "#ЗОЖ #ПП #Фитнес #пляж  #авокадо #смузи",
-//     },
-//     {
-//         id: 1,
-//         name: "Петя Демин",
-//         image: "https://i.ibb.co/Cmgp1tP/Rectangle-4.png",
-//         hashtags: "#бургер #бар #футбол #концерт #крафт",
-//     },
-//     {
-//         id: 2,
-//         name: "Марк Смолов",
-//         image: "https://i.ibb.co/Cmgp1tP/Rectangle-4.png",
-//         hashtags: "#рэп #тату #хайпбист #кроссовки #суприм",
-//     },
-//     {
-//         id: 3,
-//         name: "Лариса Роговая",
-//         image: "https://i.ibb.co/Cmgp1tP/Rectangle-4.png",
-//         hashtags: "#образование #карьера #учеба #линкедин",
-//     },
-//   ];
-  
-//   export default cardList;
