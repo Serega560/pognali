@@ -11,4 +11,65 @@
     font-size: 36px;
     line-height: 36px;
   }
+
+  .planstep {
+    display: flex;
+    flex-direction: column;
+    row-gap: 44px;
+  }
+
+  .group-input {
+    display: flex;
+    flex-direction: column;
+    row-gap: 14px;
+    border-top: 1px solid #E1E3E9;
+    padding-top: 30px;
+    border-bottom: 1px solid #E1E3E9;
+    padding-bottom: 30px;
+    width: 1012px;
+    margin-bottom: 350px;
+
+    .companies,
+    .days {
+      display: flex;
+      align-items: center;
+      column-gap: 32px;
+
+      span {
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 18px;
+        color: #1D2E5B;
+        width: 160px;
+      }
+    }
+  }
+
+  .buttons-input {
+    display: flex;
+    align-items: center;
+    border: 1px solid #CBCED9;
+    border-radius: 4px;
+
+    button {
+      border: none;
+      padding: 0;
+      width: 60px;
+      padding: 23px 17px;
+      background-color: $color-default-white;
+    }
+    input {
+      border: none;
+      width: 60px;
+      outline: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #1D2E5B;
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 18px;
+      padding: 23px 20px;
+    }
+  }
 }
