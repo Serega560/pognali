@@ -1,5 +1,5 @@
 import React from 'react';
-import Level from '../../ui/level/level';
+import ProfileLevel from '../../ui/profile-level/profile-level';
 import InputHashtags from '../../ui/input-hashtags/input-hashtags';
 import InputTransport from '../../ui/input-transport/input-transport';
 import './directions-profile.module.scss'
@@ -10,7 +10,7 @@ function DirectionsProfile() {
         <div className="directions-profile__container container">
           <div className="directions-profile__wrapper">
             <div className="directions-profile__level">
-              <Level />
+              <ProfileLevel />
             </div>
             <div className="directions-profile__image">
               <picture className="directions-profile__figure">

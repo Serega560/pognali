@@ -21,6 +21,11 @@
       margin: -188px 0 0;
       padding: 0 0 0 64px;
 
+      @media (max-width: 1100px) {
+         gap: 24px 35px;
+         padding: 0 0 0 14px;
+      }
+
       @include vp-1023 {
          grid-template-columns: 95px 1fr 94px;
          gap: 41px 0;
@@ -44,7 +49,7 @@
       width: 95px;
       height: 95px;
 
-      transform: translate(0, 42px);
+      transform: translate(1px, 42px);
 
       @include vp-1023 {
          grid-row: 1/2;
@@ -59,7 +64,7 @@
 
          width: 100%;
          height: 100px;
-         transform: translate(0, 0);
+         transform: translate(-1px, 0);
 
          display: flex;
          justify-content: flex-end;
@@ -183,6 +188,8 @@
 
       display: flex;
       justify-content: flex-end;
+
+      margin: 0 0 0 49px;
 
       @include vp-1023 {
          grid-row: 1/2;
