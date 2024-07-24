@@ -1,7 +1,8 @@
 import React from 'react';
-import Level from '../../ui/level/level';
+import ProfileLevel from '../../ui/profile-level/profile-level';
 import InputHashtags from '../../ui/input-hashtags/input-hashtags';
 import InputTransport from '../../ui/input-transport/input-transport';
+import Avatar from '../../../assets/img/directions/avatar.jpg'
 import './directions-profile.module.scss'
 
 function DirectionsProfile() {
@@ -10,13 +11,14 @@ function DirectionsProfile() {
         <div className="directions-profile__container container">
           <div className="directions-profile__wrapper">
             <div className="directions-profile__level">
-              <Level />
+              <ProfileLevel />
             </div>
-            <div className="directions-profile__image">
+            <div className="directions-profile__image-wrapper">
               <picture className="directions-profile__figure">
                 <img 
-                  src="" 
-                  alt="" 
+                  className="directions-profile__image"
+                  src={Avatar} 
+                  alt="Фотография вашего профиля." 
                 />
               </picture>
             </div>

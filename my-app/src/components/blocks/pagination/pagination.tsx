@@ -21,10 +21,10 @@ function Pagination() {
         </ul>
 
         <div className="pagination__arrows">
-            <button className="pagination__arrow pagination__arrow--prev">
+            <button className="pagination__arrow pagination__arrow--prev" type="button">
                 <ArrowNext/>
             </button>
-            <button className="pagination__arrow pagination__arrow--next">
+            <button className="pagination__arrow pagination__arrow--next" type="button">
                 <ArrowNext/>
             </button>
         </div>
