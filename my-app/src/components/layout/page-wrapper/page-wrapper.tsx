@@ -5,7 +5,7 @@ import "./page-wrapper.module.scss"
 function PageWrapper() {
     return (
       <>
-        <main className="page-wrapper__main container">
+        <main className="page-wrapper__main">
           <Catalog />
         </main>
       </>
