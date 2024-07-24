@@ -72,7 +72,7 @@
    }
 
    // изображение
-   &__image {
+   &__image-wrapper {
       grid-row: 1/2;
       grid-column: 3/4;
 
@@ -81,7 +81,7 @@
       height: 237px;
       overflow: hidden;
 
-      background-color: aqua;
+      background-color: #fff;
 
       @include vp-1023 {
          grid-row: 1/2;
@@ -90,6 +90,8 @@
          border-radius: 7px;
          width: 94px;
          height: 94px;
+
+         background-color: #DFE3F0;
       }
 
       @include vp-767 {
@@ -99,6 +101,40 @@
          border-radius: 70px;
          width: 100px;
          height: 100px;
+      }
+   }
+
+   &__figure {
+      border-radius: 24px;
+      width: 220px;
+      height: 237px;
+
+      @include vp-1023 {
+         border-radius: 7px;
+         width: 94px;
+         height: 94px;
+      }
+
+      @include vp-767 {
+         border-radius: 70px;
+         width: 100px;
+         height: 100px;
+      }
+
+      img {
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+
+         border-radius: 24px;
+
+         @include vp-1023 {
+            border-radius: 7px;
+         }
+
+         @include vp-767 {
+            border-radius: 70px;
+         }
       }
    }
 
