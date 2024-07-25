@@ -1,0 +1,97 @@
+.entertainment {
+  background-color: $color-default-white;
+  border-radius: 30px;
+  padding: 101px 152px 106px 159px;
+}
+
+.entertainment-header {
+  display: grid;
+  grid-template-columns: 660px 1fr;
+  grid-template-rows: auto;
+  column-gap: 170px;
+
+  .entertainment-heading {
+    margin-bottom: 55px;
+  }
+
+  h3 {
+    margin: 0;
+    margin-bottom: 33px;
+    color: #1D2E5B;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 36px;
+  }
+
+  p {
+    margin: 0;
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+
+.entertainment-form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 100px;
+  row-gap: 40px;
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    row-gap: 52px;
+
+    label {
+      font-weight: 600;
+      font-size: 30px;
+      color: #1D2E5B;
+    }
+
+    textarea {
+      width: 730px;
+      outline: none;
+
+
+    }
+  }
+}
+
+button {
+  display: flex;
+  align-items: center;
+  padding: 29px 34px;
+  justify-content: space-between;
+  background-color: #A8D2F4;
+  border-radius: 20px;
+  width: 286px;
+  border: none;
+
+  @include hover-focus {
+    @media (hover: hover) {
+      &:hover:not(.focus-visible) {
+        background-color: #4D99D6;
+      }
+    }
+  }
+
+  &:active {
+    background-color: #4D99D6;
+
+    span {
+      opacity: 30%;
+    }
+
+    svg {
+      opacity: 30%;
+    }
+  }
+
+  span {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1D2E5B;
+    line-height: 24px;
+  }
+}
+
+
