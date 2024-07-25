@@ -3,77 +3,35 @@
 @import "../../../variables.scss";
 
 
-.route__counties-item:not(:first-child) {
-  display: none;
-}
 
 .route {
-  background-color: $color-default-white;
-  border-radius: 30px;
-  padding: 101px 152px 106px 159px;
-
-  .route__header {
     display: grid;
-    grid-template-columns: 660px 1fr;
-    grid-template-rows: auto;
-    column-gap: 170px;
+    grid-template-columns: 1fr 220px;
 
-    .route__heading {
-      margin-bottom: 55px;
+    .plan-list {
+        grid-column: 2/3;
+        grid-row: 1/3;
     }
-  }
+}
 
-  h3 {
-    margin: 0;
-    margin-bottom: 33px;
-    color: #1D2E5B;
-    font-weight: 700;
-    font-size: 36px;
-    line-height: 36px;
-  }
+.route__header {    
+    display: grid;
+    grid-template-columns: 1fr 220px;
+    grid-column: 1/3;
+    grid-row: 1/2;
+}
 
-  p {
-    margin: 0;
-    font-size: 20px;
-    line-height: 24px;
-  }
-  a {
-    display: flex;
-    align-items: center;
-    padding: 29px 34px;
-    column-gap: 14px;
-    background-color: #A8D2F4;
-    border-radius: 20px;
-    width: 286px;
-    margin-top: 30px;
+.route__title {
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
 
-    @include hover-focus {
-      @media (hover: hover) {
-        &:hover:not(.focus-visible) {
-          background-color: #4D99D6;
-        }
-      }
-    }
+.route__notion {
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
 
-    &:active {
-      background-color: #4D99D6;
-
-      span {
-        opacity: 30%;
-      }
-
-      svg {
-        opacity: 30%;
-      }
-    }
-  }
-
-  span {
-    font-size: 24px;
-    font-weight: 700;
-    color: #1D2E5B;
-    line-height: 24px;
-  }
-
+.route__counties-list {
+    display: none;
 }
 
