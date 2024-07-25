@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ReactComponent as Heart}  from '../../../assets/img/heart.svg'
 import { ReactComponent as Plane } from '../../../assets/img/plane.svg'
 import { ReactComponent as Bus } from '../../../assets/img/bus.svg'
@@ -15,6 +15,11 @@ type CardProfileProps = {
 
 function CardProfile({ cardData }: CardProfileProps): JSX.Element {
   const { name, image, hashtags, likes, online, transport, countries, level } = cardData;
+  const [isLiked, setIsLiked] = useState(false);
+
+  const handleLikeClick = () => {
+    setIsLiked(!isLiked);
+  };
 
   return (
     <div className="card-profile">
@@ -40,7 +45,7 @@ function CardProfile({ cardData }: CardProfileProps): JSX.Element {
         <button className="card-profile__btn-call btn">Позвать!</button>
       </div>
       
-      <button className="card-profile__btn-like">
+      <button className={`card-profile__btn-like ${isLiked ? 'active' : ''}`} onClick={handleLikeClick}>
         <Heart />
       </button>
       <div className="card-profile__likes-number-wrapper">
