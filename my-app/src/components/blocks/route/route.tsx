@@ -63,14 +63,16 @@ function Route({ countriesData }: CountriesItemProps): JSX.Element {
           Добавить страну
         </p>
       </div>
-      <a href="#">
-        <span>Следующий шаг</span>
-        <NextStep />
-      </a>
-      <a href="#">
-        <span>Предыдущий шаг</span>
-        <NextStep />
-      </a>
+      <div className="group-btn">
+                <button className="route-btn" type="button">
+                    <span>Следующий шаг</span>
+                    <NextStep/>
+                </button>
+                <button className="route-btn" type="button">
+                    <NextStep/>
+                    <span>На шаг назад</span>
+                </button>
+            </div>
     </section>
   );
 }
