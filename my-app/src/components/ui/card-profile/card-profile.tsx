@@ -52,26 +52,18 @@ function CardProfile({ cardData }: CardProfileProps): JSX.Element {
           <span>транспорт:</span>
         </div>
         <ul className="card-profile__transport-list">
-          {transport.plane && (
-            <li className="card-profile__transport-item">
-              <Plane />
-            </li>
-          )}
-          {transport.bus && (
-            <li className="card-profile__transport-item">
-              <Bus />
-            </li>
-          )}
-          {transport.bicycle && (
-            <li className="card-profile__transport-item">
-              <Bicycle />
-            </li>
-          )}
-          {transport.onfoot && (
-            <li className="card-profile__transport-item">
-              <Onfoot />
-            </li>
-          )}
+          <li className={`card-profile__transport-item ${transport.plane ? 'active' : ''}`}>
+            <Plane />
+          </li>
+          <li className={`card-profile__transport-item ${transport.bus ? 'active' : ''}`}>
+            <Bus />
+          </li>
+          <li className={`card-profile__transport-item ${transport.bicycle ? 'active' : ''}`}>
+            <Bicycle />
+          </li>
+          <li className={`card-profile__transport-item ${transport.onfoot ? 'active' : ''}`}>
+            <Onfoot />
+          </li>
         </ul>
       </div>
 
