@@ -5,9 +5,16 @@
 
 
 .route {
+
+  background-color: $color-default-white;
+  border-radius: 60px;
+  padding: 101px 152px 106px 159px;
+
+
+  .route__header {
     display: grid;
     grid-template-columns: 1fr 220px;
-
+  }
     .plan-list {
         grid-column: 2/3;
         grid-row: 1/3;

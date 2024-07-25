@@ -21,10 +21,10 @@ function Entertainment() {
                     <textarea
                         id="textarea1"
                         name="textarea1"
-                        rows={7}
+                        rows={3}
                         cols={20}
                         placeholder="План действий"
-                        value=""
+                        // value=""
                     />
                 </div>
                 <div className="form-group">
@@ -32,17 +32,23 @@ function Entertainment() {
                     <textarea
                         id="textarea2"
                         name="textarea2"
-                        rows={7}
+                        rows={3}
                         cols={50}
-                        placeholder="Пить пиво и лазить по старым замкам, наслаждаться архитектурой и вот это все."
-                        value=""
+                        placeholder="План действий"
+                        // value=""
                     />
                 </div>
             </div>
-            <button className="entertainment-btn" type="button">
-                <span>Отправить</span>
-                <NextStep/>
-            </button>
+            <div className="group-btn">
+                <button className="entertainment-btn" type="button">
+                    <span>Отправить</span>
+                    <NextStep/>
+                </button>
+                <button className="entertainment-btn btn-back" type="button">
+                    <NextStep/>
+                    <span>На шаг назад</span>
+                </button>
+            </div>
         </div>
     );
 }

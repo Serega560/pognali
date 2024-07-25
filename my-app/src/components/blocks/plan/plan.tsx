@@ -9,7 +9,7 @@ function Plan() {
         <section className="plan">
             <div className="container">
                 <h2>Добавить план:</h2>
-                <div className="planstep">
+                <div className="plan-step">
                     <Dates>
                         <MiniPlan/>
                     </Dates>
