@@ -9,18 +9,18 @@
 
 .route {
   background-color: $color-default-white;
-  border-radius: 30px;
+  border-radius: 60px;
   padding: 101px 152px 106px 159px;
+
 
   .route__header {
     display: grid;
     grid-template-columns: 660px 1fr;
     grid-template-rows: auto;
     column-gap: 170px;
-
-    .route__heading {
-      margin-bottom: 55px;
-    }
+    margin-bottom: 480px;
+    border-bottom: 1px solid #E1E3E9;
+    padding-bottom: 55px;
   }
 
   h3 {
@@ -37,15 +37,18 @@
     font-size: 20px;
     line-height: 24px;
   }
-  a {
+
+  .route-btn {
     display: flex;
     align-items: center;
     padding: 29px 34px;
     column-gap: 14px;
     background-color: #A8D2F4;
     border-radius: 20px;
-    width: 286px;
+    width: 289px;
     margin-top: 30px;
+    border: none;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;;
 
     @include hover-focus {
       @media (hover: hover) {
@@ -75,5 +78,11 @@
     line-height: 24px;
   }
 
+  li:nth-child(2) {
+    span {
+      opacity: 1;
+    }
+  }
 }
+
 
