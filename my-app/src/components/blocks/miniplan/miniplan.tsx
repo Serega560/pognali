@@ -11,7 +11,7 @@ function MiniPlan() {
                 <span>развлечения</span>
             </li>
         </ul>
-    )
+    );
 }
 
 export default MiniPlan
