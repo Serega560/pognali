@@ -46,24 +46,20 @@ function CardProfile({ cardData }: CardProfileProps): JSX.Element {
       <div className="card-profile__likes-number-wrapper">
         <span className="card-profile__likes-number">{likes}</span>
       </div>
-      
+
       <div className="card-profile__transport">
         <div className="card-profile__transport-badge">
           <span>транспорт:</span>
         </div>
         <ul className="card-profile__transport-list">
-          <li className={`card-profile__transport-item ${transport.plane ? 'active' : ''}`}>
-            <Plane />
-          </li>
-          <li className={`card-profile__transport-item ${transport.bus ? 'active' : ''}`}>
-            <Bus />
-          </li>
-          <li className={`card-profile__transport-item ${transport.bicycle ? 'active' : ''}`}>
-            <Bicycle />
-          </li>
-          <li className={`card-profile__transport-item ${transport.onfoot ? 'active' : ''}`}>
-            <Onfoot />
-          </li>
+          {Object.entries(transport).map(([key, value]) => (
+            <li key={key} className={`card-profile__transport-item ${value ? 'active' : ''}`}>
+              {key === 'plane' && <Plane />}
+              {key === 'bus' && <Bus />}
+              {key === 'bicycle' && <Bicycle />}
+              {key === 'onfoot' && <Onfoot />}
+            </li>
+          ))}
         </ul>
       </div>
 
