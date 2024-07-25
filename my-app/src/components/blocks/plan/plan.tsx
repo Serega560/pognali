@@ -13,7 +13,7 @@ function Plan() {
                     <Dates>
                         <MiniPlan/>
                     </Dates>
-                    {/*<Route/>*/}
+                    <Route/>
                     <Entertainment />
                 </div>
             </div>

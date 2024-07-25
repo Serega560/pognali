@@ -12,52 +12,13 @@
 
   .route__header {
     display: grid;
-    grid-template-columns: 660px 1fr;
-    grid-template-rows: auto;
-    column-gap: 170px;
-    margin-bottom: 480px;
-    border-bottom: 1px solid #E1E3E9;
-    padding-bottom: 55px;
+    grid-template-columns: 1fr 220px;
   }
-
-  h3 {
-    margin: 0;
-    margin-bottom: 33px;
-    color: #1D2E5B;
-    font-weight: 700;
-    font-size: 36px;
-    line-height: 36px;
-  }
-
-  p {
-    margin: 0;
-    font-size: 20px;
-    line-height: 24px;
-  }
-
-  .route-btn {
-    display: flex;
-    align-items: center;
-    padding: 29px 34px;
-    column-gap: 14px;
-    background-color: #A8D2F4;
-    border-radius: 20px;
-    width: 289px;
-    margin-top: 30px;
-    border: none;
-    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;;
-
-    @include hover-focus {
-      @media (hover: hover) {
-        &:hover:not(.focus-visible) {
-          background-color: #4D99D6;
-        }
-      }
+    .plan-list {
+        grid-column: 2/3;
+        grid-row: 1/3;
     }
-
-    &:active {
-      background-color: #4D99D6;
-
+}
 
       .route__header {
         display: grid;
@@ -71,19 +32,12 @@
         grid-row: 1/2;
       }
 
-      .route__notion {
-        grid-column: 1/2;
-        grid-row: 2/3;
-      }
-
-      li:nth-child(2) {
-        span {
-          opacity: 1;
-        }
-      }
-    }
-  }
+.route__notion {
+    grid-column: 1/2;
+    grid-row: 2/3;
 }
 
-
+.route__counties-list {
+    display: block;
+}
 
