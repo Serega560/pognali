@@ -8,22 +8,23 @@ import "./catalog.module.scss"
 
 
 function Catalog(): JSX.Element {
-    return (
-      <>
-        <div className="catalog__wrapper">
-          <div className="catalog__filters">
-            <Filters />
+  return (
+    <>
+
+      <div className="catalog__wrapper">
+        <section className="catalog__filters">
+          <Filters />
+        </section>
+        <div className="catalog__inner-wrapper">
+          <ProfilesList cardsData={cardList} />
+          <div className="catalog__show-more">
+            <BtnShowMore />
           </div>
-          <div className="catalog__inner-wrapper">
-            <ProfilesList cardsData={cardList} />
-            <div className="catalog__show-more">
-              <BtnShowMore />
-            </div>
-            <Pagination />
-          </div>
+          <Pagination />
         </div>
-      </>
-    );
-  }
-  
-  export default Catalog;
+      </div>
+    </>
+  );
+}
+
+export default Catalog;

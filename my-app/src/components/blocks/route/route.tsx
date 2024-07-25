@@ -1,11 +1,8 @@
 import React from 'react';
 import { CountryData } from '../../types/country-data';
 import CountryItem from "../../ui/country-item/country-item";
-
-
-//
-
-
+import MiniPlan from "../miniplan/miniplan";
+import { ReactComponent as NextStep } from '../../../assets/img/nextstep.svg';
 
 type CountriesItemProps = {
   countriesData: CountryData[] | null;
@@ -21,12 +18,8 @@ function Route({ countriesData }: CountriesItemProps): JSX.Element {
         <p className="route__notion">
           Укажите страны, которые вы хотели бы посетить. Это может быть одна или сразу несколько.
         </p>
+        <MiniPlan />
       </div>
-      <ul className="rout__options-list">
-        <li className="rout__options-item">даты</li>
-        <li className="rout__options-item">маршрут</li>
-        <li className="rout__options-item">развлечения</li>
-      </ul>
       <ul className="route__counties-list">
         <li className="route__counties-item counties">
           {countriesData?.length ? (
@@ -70,6 +63,14 @@ function Route({ countriesData }: CountriesItemProps): JSX.Element {
           Добавить страну
         </p>
       </div>
+      <a href="#">
+        <span>Следующий шаг</span>
+        <NextStep />
+      </a>
+      <a href="#">
+        <span>Предыдущий шаг</span>
+        <NextStep />
+      </a>
     </section>
   );
 }
