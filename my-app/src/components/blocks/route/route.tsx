@@ -3,6 +3,11 @@ import { CountryData } from '../../types/country-data';
 import CountryItem from "../../ui/country-item/country-item";
 import MiniPlan from "../miniplan/miniplan";
 import { ReactComponent as NextStep } from '../../../assets/img/nextstep.svg';
+import { letterArray } from '../../../const';
+import { useAppDispatch, useAppSelector } from '../../../hooks/hooks';
+import { setLetter } from '../../../store/app-slice';
+import { useGetCountriesNamesQuery } from '../../../store/countries-api';
+import { Country } from '../../../types';
 
 type CountriesItemProps = {
   countriesData: CountryData[] | null;
@@ -76,6 +81,5 @@ function Route({ countriesData }: CountriesItemProps): JSX.Element {
     </section>
   );
 }
-
 
 export default Route;

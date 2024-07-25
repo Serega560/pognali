@@ -3,6 +3,8 @@ import "./page-wrapper.module.scss"
 
 // Обёртка для контента страниц
 function PageWrapper() {
+
+  
     return (
       <>
         <main className="page-wrapper__main">
