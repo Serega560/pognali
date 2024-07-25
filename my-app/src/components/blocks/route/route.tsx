@@ -20,8 +20,8 @@ import { Country } from '../../../types';
 
 function Route(): JSX.Element {
     const dispatch = useAppDispatch();
-    const choosenLetter = useAppSelector(state => state.appSlice.choosenLetter);
-    const { data: filteredCountries, isLoading } = useGetCountriesNamesQuery(choosenLetter);
+    const choosenLetter = useAppSelector(state => state.appSlice.choosenLetter); //здесь выбранная буква
+    const { data: filteredCountries, isLoading } = useGetCountriesNamesQuery(choosenLetter); //filteredCountries это массив объектов со странами по выбранной букве
     return (
         <div className="route">
             <div className="route__header">
@@ -74,6 +74,7 @@ function Route(): JSX.Element {
                 <p>
                     Добавить страну
                 </p>
+                {/* отрисовываем буквы */}
                 <ul className="route__letters-list">
                     {letterArray.map((letter: string, index: number) => {
                         return (
@@ -85,11 +86,12 @@ function Route(): JSX.Element {
                         )
                     })}
                 </ul>
-                <ul className="step__search-results-list">
+                {/* отрисовываем названия стран */}
+                <ul className="route__counties-list">
                     {isLoading && <div>Loading...</div>}
                     {filteredCountries?.map((country: Country) => {
                         return (
-                            <li className="step__search-results-item" key={country.name}>{country.name}</li>
+                            <li className="route__counties-item counties" key={country.name}>{country.name}</li>
                         )
                     })}
                 </ul>
