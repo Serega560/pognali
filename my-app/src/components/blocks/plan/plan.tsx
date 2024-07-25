@@ -72,4 +72,5 @@ function Plan() {
     );
 }
 
-export default Plan
+export default Plan;
+

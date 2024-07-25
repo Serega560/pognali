@@ -12,7 +12,7 @@ import "./catalog.module.scss"
 function Catalog(): JSX.Element {
     return (
       <section className="catalog">
-        <Heading />
+        <Heading heading={"попутчики"}/>
         <CountrySorting />
         <div className="catalog__wrapper container">
           <section className="catalog__filters">
