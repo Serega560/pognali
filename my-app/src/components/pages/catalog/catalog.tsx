@@ -10,6 +10,7 @@ import "./catalog.module.scss"
 
 
 function Catalog(): JSX.Element {
+
     return (
       <section className="catalog">
         <Heading heading={"попутчики"}/>
@@ -31,3 +32,4 @@ function Catalog(): JSX.Element {
   }
   
   export default Catalog;
+

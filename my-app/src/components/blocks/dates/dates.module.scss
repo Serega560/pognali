@@ -1,36 +1,118 @@
 .dates {
   background-color: $color-default-white;
-  border-radius: 30px;
+  border-radius: 60px;
   padding: 101px 152px 106px 159px;
-}
 
-.content {
-  background-color: $color-default-white;
-}
+  .dates-header {
+    display: grid;
+    grid-template-columns: 660px 1fr;
+    grid-template-rows: auto;
+    column-gap: 170px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #E1E3E9;
+    padding-bottom: 55px;
 
-.dates-header {
-  display: grid;
-  grid-template-columns: 660px 1fr;
-  grid-template-rows: auto;
-  column-gap: 170px;
+    h3 {
+      margin: 0;
+      margin-bottom: 33px;
+      color: #1D2E5B;
+      font-weight: 700;
+      font-size: 36px;
+      line-height: 36px;
+    }
 
-  .dates-heading {
-    margin-bottom: 55px;
+    p {
+      margin: 0;
+      font-size: 20px;
+      line-height: 24px;
+    }
   }
 
-  h3 {
-    margin: 0;
-    margin-bottom: 33px;
-    color: #1D2E5B;
-    font-weight: 700;
-    font-size: 36px;
-    line-height: 36px;
+  .group-input-checkbox {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #E1E3E9;
+    padding-bottom: 30px;
+    margin-bottom: 350px;
   }
 
-  p {
-    margin: 0;
-    font-size: 20px;
-    line-height: 24px;
+  .group-input {
+    display: flex;
+    flex-direction: column;
+    row-gap: 14px;
+
+    .companies,
+    .days {
+      display: flex;
+      align-items: center;
+      column-gap: 32px;
+
+      span {
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 18px;
+        color: #1D2E5B;
+        width: 160px;
+      }
+    }
+  }
+
+  .group-checkbox {
+    margin-top: 25px;
+
+    label {
+      display: flex;
+      column-gap: 19px;
+      position: relative;
+
+      &:before {
+        content: "";
+        position: absolute;
+        width: 36px;
+        height: 36px;
+        border: 1px solid #CBCED9;
+        top: -4px;
+        left: -18px;
+        border-radius: 4px;
+      }
+    }
+
+    span {
+      font-size: 20px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+  }
+
+  .buttons-input {
+    display: flex;
+    align-items: center;
+    border: 1px solid #CBCED9;
+    border-radius: 4px;
+
+    button {
+      border: none;
+      padding: 0;
+      width: 60px;
+      padding: 23px 17px;
+      background-color: $color-default-white;
+      cursor: pointer;
+    }
+
+    input {
+      border: none;
+      width: 60px;
+      outline: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #1D2E5B;
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 18px;
+      padding: 23px 20px;
+    }
   }
 
   a {
@@ -43,6 +125,8 @@
     background-color: #A8D2F4;
     border-radius: 20px;
     width: 286px;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    cursor: pointer;
 
     @include hover-focus {
       @media (hover: hover) {
@@ -71,4 +155,11 @@
     color: #1D2E5B;
     line-height: 24px;
   }
+
+  li:nth-child(1) {
+    span {
+      opacity: 1;
+    }
+  }
 }
+
