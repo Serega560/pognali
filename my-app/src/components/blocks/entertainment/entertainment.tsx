@@ -39,7 +39,7 @@ function Entertainment() {
                     />
                 </div>
             </div>
-            <button type="button">
+            <button className="btn" type="button">
                 <span>Отправить</span>
                 <NextStep/>
             </button>
