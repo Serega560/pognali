@@ -384,106 +384,118 @@
     &__btn-like {
         margin-right: 3px;
         margin-top: 41px;
-
+      
         width: 50px;
         height: 50px;
         border-radius: 50%;
         border: none;
         background-color: transparent;
-
+      
         display: flex;
         justify-content: center;
         align-items: center;
-
+      
         cursor: pointer;
         user-select: none;
-
+      
         transition: background-color 0.3s ease-in-out;
-
+      
         @media (max-width: 1240px) {
-            grid-row: 4/5;
-            grid-column: 4/5;
+          grid-row: 4/5;
+          grid-column: 4/5;
         }
-
+      
         @include vp-1023 {
-            grid-row: 3/4;
-            grid-column: 3/4; 
-
-            width: 56px;
-            margin: 0;
-            margin-top: 13px;
+          grid-row: 3/4;
+          grid-column: 3/4;
+      
+          width: 56px;
+          margin: 0;
+          margin-top: 13px;
         }
-
+      
         @media (max-width: 1023px) and (min-width: 800px) {
-            margin-left: auto;
+          margin-left: auto;
         }
-
+      
         @include vp-767 {
-            width: 30px;
-            height: 30px;
-
-            grid-row: 2/3;
-            grid-column: 2/3; 
-
-            transform: translate(-37px, 0);
-            margin: 0;
-
-            background-color: #E2E5F2;
+          width: 30px;
+          height: 30px;
+      
+          grid-row: 2/3;
+          grid-column: 2/3;
+      
+          transform: translate(-37px, 0);
+          margin: 0;
+      
+          background-color: #E2E5F2;
         }
-
+      
         svg {
-            width: 20px;
-            height: 20px;
-            color: rgba(#192144, 0.5);
-            transition: color 0.3s ease-in-out;
-
-            @include vp-767 {
-                width: 12px;
-                height: 12px;
-            }
+          width: 20px;
+          height: 20px;
+          color: rgba(#192144, 0.5);
+          transition: color 0.3s ease-in-out;
+      
+          @include vp-767 {
+            width: 12px;
+            height: 12px;
+          }
+      
+          path {
+            transition: fill 0.3s ease-in-out;
+          }
         }
-
+      
         &:hover,
         &:focus {
-            background-color: #E2E5F2;
-
-            svg {
-                color: rgba(#192144, 0.3);
-            }
+          background-color: #E2E5F2;
+      
+          svg {
+            color: rgba(#192144, 0.3);
+          }
         }
-
+      
         &:active {
-            background-color: #E2E5F2;
-
-            svg {
-                color: rgba(#192144, 0.1);
-            }
+          background-color: #E2E5F2;
+      
+          svg {
+            color: rgba(#192144, 0.1);
+          }
         }
-
+      
         &.active {
-            background-color: #F9EAEA;
-
+          background-color: #F9EAEA;
+      
+          svg {
+            color: rgba(#F02323, 1);
+            path {
+              fill: rgba(#F02323, 1);
+            }
+          }
+      
+          &:hover,
+          &:focus {
+            background-color: #F9D8D8;
+      
             svg {
-                color: rgba(#F02323, 1);
-                fill: #F02323;
+              color: rgba(#F02323, 1);
+              path {
+                fill: rgba(#F02323, 1);
+              }
             }
-
-            &:hover,
-            &:focus {
-                background-color: #F9D8D8;
-
-                svg {
-                    color: rgba(#F02323, 1);
-                }
+          }
+      
+          &:active {
+            background-color: #F9D8D8;
+      
+            svg {
+              color: rgba(#F02323, 0.3);
+              path {
+                fill: rgba(#F02323, 0.3);
+              }
             }
-
-            &:active {
-                background-color: #F9D8D8;
-    
-                svg {
-                    color: rgba(#F02323, 0.3);
-                }
-            }
+          }
         }
     }
 
