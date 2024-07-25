@@ -63,10 +63,10 @@ const Dates: React.FC<DatesProps> = ({children}) => {
                         <span>чел.</span>
                     </div>
                 </div>
-                <link>
+                <a>
                     <span>Следующий шаг</span>
                     <NextStep/>
-                </link>
+                </a>
             </div>
         </div>
     );
