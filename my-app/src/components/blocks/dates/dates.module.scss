@@ -4,16 +4,15 @@
   padding: 101px 152px 106px 159px;
 }
 
-.content {
-  background-color: $color-default-white;
-}
-
 .dates-header {
   display: grid;
   grid-template-columns: 660px 1fr;
+  grid-template-rows: auto;
   column-gap: 170px;
-  border-bottom: 1px solid #E1E3E9;
-  padding-bottom: 55px;
+
+  .dates-heading {
+    margin-bottom: 55px;
+  }
 
   h3 {
     margin: 0;
@@ -27,6 +26,45 @@
   p {
     margin: 0;
     font-size: 20px;
+    line-height: 24px;
+  }
+
+  a {
+    grid-column: 1/2;
+    grid-row: 3/4;
+    display: flex;
+    align-items: center;
+    padding: 29px 34px;
+    column-gap: 14px;
+    background-color: #A8D2F4;
+    border-radius: 20px;
+    width: 286px;
+
+    @include hover-focus {
+      @media (hover: hover) {
+        &:hover:not(.focus-visible) {
+          background-color: #4D99D6;
+        }
+      }
+    }
+
+    &:active {
+      background-color: #4D99D6;
+
+      span {
+        opacity: 30%;
+      }
+
+      svg {
+        opacity: 30%;
+      }
+    }
+  }
+
+  span {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1D2E5B;
     line-height: 24px;
   }
 }

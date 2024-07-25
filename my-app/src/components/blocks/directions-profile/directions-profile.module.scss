@@ -1,0 +1,249 @@
+@import "../../../global/reboot.scss";
+@import "../../../global/utils.scss";
+@import "../../../variables.scss";
+
+.directions-profile {
+   padding: 0 0 64px;
+
+   @include vp-1023 {
+      padding: 66px 0 51px;
+   }
+
+   @include vp-767 {
+      padding: 24px 0 33px;
+   }
+
+   &__wrapper {
+      display: grid;
+      grid-template-columns: 1fr 95px 299px;
+      gap: 24px 39px;
+
+      margin: -188px 0 0;
+      padding: 0 0 0 64px;
+
+      @media (max-width: 1100px) {
+         gap: 24px 35px;
+         padding: 0 0 0 14px;
+      }
+
+      @include vp-1023 {
+         grid-template-columns: 95px 1fr 94px;
+         gap: 41px 0;
+
+         margin: 0;
+         padding: 0 35px;
+      }
+
+      @include vp-767 {
+         grid-template-columns: 1fr 1fr;
+         gap: 18px 35px;
+         padding: 0;
+      }
+   }
+
+   // уровень
+   &__level {
+      grid-row: 1/2;
+      grid-column: 2/3;
+
+      width: 95px;
+      height: 95px;
+
+      transform: translate(1px, 42px);
+
+      @include vp-1023 {
+         grid-row: 1/2;
+         grid-column: 1/2;
+
+         transform: translate(0, 0);
+      }
+
+      @include vp-767 {
+         grid-row: 1/2;
+         grid-column: 1/2;
+
+         width: 100%;
+         height: 100px;
+         transform: translate(-1px, 0);
+
+         display: flex;
+         justify-content: flex-end;
+      }
+   }
+
+   // изображение
+   &__image-wrapper {
+      grid-row: 1/2;
+      grid-column: 3/4;
+
+      border-radius: 24px;
+      width: 220px;
+      height: 237px;
+      overflow: hidden;
+
+      background-color: #fff;
+
+      @include vp-1023 {
+         grid-row: 1/2;
+         grid-column: 3/4;
+
+         border-radius: 7px;
+         width: 94px;
+         height: 94px;
+
+         background-color: #DFE3F0;
+      }
+
+      @include vp-767 {
+         grid-row: 1/2;
+         grid-column: 2/3;
+
+         border-radius: 70px;
+         width: 100px;
+         height: 100px;
+      }
+   }
+
+   &__figure {
+      border-radius: 24px;
+      width: 220px;
+      height: 237px;
+
+      @include vp-1023 {
+         border-radius: 7px;
+         width: 94px;
+         height: 94px;
+      }
+
+      @include vp-767 {
+         border-radius: 70px;
+         width: 100px;
+         height: 100px;
+      }
+
+      img {
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+
+         border-radius: 24px;
+
+         @include vp-1023 {
+            border-radius: 7px;
+         }
+
+         @include vp-767 {
+            border-radius: 70px;
+         }
+      }
+   }
+
+   // кнопка сменить фото
+   &__upload-image {
+      display: none;
+
+      @include vp-1023 {
+         grid-row: 2/3;
+         grid-column: 1/4;
+
+         display: flex;
+         width: 100%;
+
+         margin: 0 0 10px;
+      }
+
+      @include vp-767 {
+         grid-row: 2/3;
+         grid-column: 1/3;
+
+         margin: 0 0 15px;
+      }
+   }
+   
+   &__upload-image-btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+
+      border: none;
+      border-radius: 10px;
+      background-color: #DFE3F0;
+      padding: 22px 55px 20px;
+
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 0.9;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      text-align: center;
+      color: #161C35;
+
+      transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+
+      @include vp-767 {
+         border-radius: 20px;
+         padding: 11px 5px 11px;
+
+         letter-spacing: -0.5px;
+      }
+
+      &:hover,
+      &:focus {
+         background-color: #D1D7E9;
+      }
+
+      &:active {
+         background-color: #DFE3F0;
+         color: rgba(#1D2E5B, 0.3);
+      }
+   }
+
+   // хештеги
+   &__hashtags {
+      grid-row: 2/3;
+      grid-column: 1/2;
+
+      @include vp-1023 {
+         grid-row: 3/4;
+         grid-column: 1/4;
+
+         width: 100%;
+      }
+
+      @include vp-767 {
+         grid-row: 3/4;
+         grid-column: 1/3;
+      }
+   }
+
+   // транспорт
+   &__transport {
+      grid-row: 2/3;
+      grid-column: 2/4;
+
+      display: flex;
+      justify-content: flex-end;
+
+      margin: 0 0 0 49px;
+
+      @include vp-1023 {
+         grid-row: 1/2;
+         grid-column: 2/3;
+
+         justify-content: center;
+
+         margin: 0 58px;
+
+         transform: translate(-3px, 0);
+      }
+
+      @include vp-767 {
+         grid-row: 4/5;
+         grid-column: 1/3;
+
+         margin: 0;
+         transform: translate(0, 0);
+      }
+   }
+}

@@ -1,0 +1,65 @@
+@import "../../../global/reboot.scss";
+@import "../../../global/utils.scss";
+@import "../../../variables.scss";
+
+.heading {
+    margin: -2px 0 0;
+    background-color: #192144;
+    border-radius: 0 0 55px 55px;
+
+    @include vp-1023 {
+        border-radius: 0 0 60px 60px;
+    }
+
+    @include vp-767 {
+        border-radius: 0 0 20px 20px;
+    }
+
+    &__wrapper {
+        padding: 74px 0 0 64px;
+
+        @include vp-1023 {
+            padding: 76px 0 0 35px;
+        }
+
+        @include vp-767 {
+            padding: 41px 0 0 0;
+        }
+    }
+
+    &__name {
+        position: relative;
+        display: inline-block;
+
+        h1 {
+            margin: 0;
+            padding: 0 0 69px;
+
+            font-weight: 700;
+            font-size: 60px;
+            line-height: 1;
+            font-variant: all-small-caps;
+            color: #fff;
+
+            @include vp-1023 {
+                padding: 0 0 66px;
+            }
+
+            @include vp-767 {
+                font-size: 36px;
+
+                padding: 0 0 13px;
+            }
+        }
+
+        &::after {
+            position: absolute;
+            content: "";
+            width: 94%;
+            height: 8px;
+            background-color: #4D99D6;
+            border-radius: 4px;
+            bottom: -4px;
+        }
+    }
+}

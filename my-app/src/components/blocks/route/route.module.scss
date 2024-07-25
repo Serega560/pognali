@@ -3,6 +3,7 @@
 @import "../../../variables.scss";
 
 
+
 .route {
     display: grid;
     grid-template-columns: 1fr 220px;
@@ -33,3 +34,4 @@
 .route__counties-list {
     display: none;
 }
+
