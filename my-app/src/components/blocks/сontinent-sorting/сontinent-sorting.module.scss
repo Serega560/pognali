@@ -3,30 +3,88 @@
 @import "../../../variables.scss";
 
 .continent-sorting {
-    .continent-sorting__list {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  padding: 0 20px 74px;
+
+  @include vp-1023 {
+    padding: 0 5px 56px 71px;
+
+    background-color: #E2E5F2;
+    border-radius: 0 0 60px 60px;
+
+    padding-top: 184px;
+  }
+
+  &__badge {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+
+    @include vp-1023 {
+      display: none;
+    }
+
+    @include vp-767 {
       display: flex;
-      justify-content: center;
-      padding: 0;
-      list-style: none;
-      margin-bottom: 20px;
-  
-      .continent-sorting__item {
-        margin: 0 10px;
-      }
-  
-      .continent-sorting__button {
-        padding: 10px 20px;
-        font-size: 16px;
-        cursor: pointer;
-        background-color: #e0e0e0;
-        border: none;
-        border-radius: 5px;
-  
-        &.active {
-          background-color: #007bff;
-          color: #fff;
-        }
-      }
+    }
+
+    svg {
+      transform: translate(0, -3px);
+    }
+
+    span {
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 1;
+      text-transform: uppercase;
+      color: #192144;
     }
   }
+
+  &__list {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 28px;
+
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @include vp-1023 {
+      gap: 24px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__button {
+    margin: 0;
+    padding: 0;
+
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1;
+    letter-spacing: -1.3px;
+    text-transform: uppercase;
+    color: #192144;
+    opacity: 0.3;
+
+    cursor: pointer;
+    background-color: transparent;
+
+    border: none;
+
+    &.active {
+      opacity: 1;
+    }
+  }
+}
   
