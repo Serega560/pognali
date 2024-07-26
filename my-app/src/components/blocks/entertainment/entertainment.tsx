@@ -10,8 +10,8 @@ function Entertainment() {
          <div className="entertainment-header">
             <div className="entertainment-heading">
                <h3>Шаг 3. Развлечения</h3>
-               <p>Наконец, расскажите о своих планах времяпровождения.
-                  Можно писать в свободной форме и ставить тэги.
+               <p>Наконец, расскажите о&nbsp;своих планах времяпровождения.
+                  Можно писать в&nbsp;свободной форме и&nbsp;ставить тэги.
                </p>
             </div>
             <MiniPlan/>

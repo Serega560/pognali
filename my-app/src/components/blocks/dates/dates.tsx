@@ -23,9 +23,9 @@ const Dates: React.FC<DatesProps> = ({children}) => {
       <div className="dates" id="dates">
          <div className="dates-header">
             <div className="dates-heading">
-               <h3>Шаг 1. Даты пребывания</h3>
+               <h3>Шаг 1. Даты&nbsp;пребывания</h3>
                <p>Укажите предпочтительное количество попутчиков, которых
-                  вы хотели бы позвать в поездку, и ее предполагаемую длительность.</p>
+                  вы&nbsp;хотели&nbsp;бы позвать в&nbsp;поездку, и&nbsp;ее&nbsp;предполагаемую длительность.</p>
             </div>
             {children}
          </div>
@@ -33,43 +33,40 @@ const Dates: React.FC<DatesProps> = ({children}) => {
             <div className="group-input">
                <div className="companies">
                   <span className="companies-text">ищу попутчиков:</span>
-                  <label htmlFor="companions">
-                     <div className="buttons-input">
-                        <button onClick={decrementCompanions}><Minus/></button>
-                        <input
-                           type="number"
-                           id="companions"
-                           value={companions}
-                           onChange={(e) => setCompanions(Number(e.target.value))}
-                           min="0"
-                        />
-                        <button onClick={incrementCompanions}><Plus/></button>
-                     </div>
+                  <label className="buttons-input" htmlFor="companions">
+                     <button onClick={decrementCompanions}><Minus/></button>
+                     <input
+                        type="number"
+                        id="companions"
+                        value={companions}
+                        onChange={(e) => setCompanions(Number(e.target.value))}
+                        min="0"
+                     />
+                     <button onClick={incrementCompanions}><Plus/></button>
                   </label>
                   <span>чел.</span>
                </div>
                <div className="days">
                   <span className="companies-text">длительность:</span>
-                  <label htmlFor="days">
-                     <div className="buttons-input">
-                        <button onClick={decrementDays}><Minus/></button>
-                        <input
-                           type="number"
-                           id="days"
-                           value={days}
-                           onChange={(e) => setDays(Number(e.target.value))}
-                           min="0"
-                        />
-                        <button onClick={incrementDays}><Plus/></button>
-                     </div>
+                  <label className="buttons-input" htmlFor="days">
+                     <button onClick={decrementDays}><Minus/></button>
+                     <input
+                        type="number"
+                        id="days"
+                        value={days}
+                        onChange={(e) => setDays(Number(e.target.value))}
+                        min="0"
+                     />
+                     <button onClick={incrementDays}><Plus/></button>
                   </label>
                   <span>дн.</span>
                </div>
             </div>
             <div className="group-checkbox">
-               <label>
+               <label className="custom-checkbox">
                   <input type="checkbox"/>
-                  <span>можно с детьми</span>
+                  <span className="checkbox-box"></span>
+                  <span>Можно с детьми</span>
                </label>
             </div>
          </div>

@@ -6,6 +6,10 @@
   flex-direction: column;
   row-gap: 20px;
 
+  @include vp-1439 {
+    display: none;
+  }
+
   .plan-item {
     position: relative;
 

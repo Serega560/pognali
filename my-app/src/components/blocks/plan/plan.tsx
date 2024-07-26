@@ -7,7 +7,7 @@ function Plan() {
 
     return (
         <section className="plan">
-            <div className="container">
+            <div className="container container-plan">
                 <h2>Добавить план:</h2>
                 <div className="plan-step">
                     <Dates>
