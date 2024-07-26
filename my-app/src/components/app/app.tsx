@@ -1,6 +1,21 @@
-import PageWrapper from "../layout/page-wrapper/page-wrapper";
-import "./app.module.scss"
+import { Route, Routes } from "react-router-dom";
+import Header from "../blocks/header/header";
+import Catalog from "../pages/catalog/catalog";
+import Footer from "../blocks/footer/footer";
+import MainPage from "../pages/main/main-page";
+import { AppRoute } from "../../const";
+import Form from "../pages/form/form";
 
 export default function App() {
-  return <PageWrapper />;
+  return (
+    <>
+    <Header />
+    <Routes>
+      <Route path={AppRoute.Root} element={<MainPage />} />
+      <Route path={AppRoute.Catalog} element={<Form />} />
+      <Route path={AppRoute.Form} element={<Catalog />} />
+    </Routes>
+    <Footer />
+  </>
+  )
 }
