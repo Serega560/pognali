@@ -67,8 +67,9 @@ const Dates: React.FC<DatesProps> = ({children}) => {
                </div>
             </div>
             <div className="group-checkbox">
-               <label>
+               <label className="custom-checkbox">
                   <input type="checkbox"/>
+                  <span className="checkbox-box"></span>
                   <span>можно с детьми</span>
                </label>
             </div>
