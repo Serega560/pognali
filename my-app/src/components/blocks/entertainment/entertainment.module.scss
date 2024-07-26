@@ -35,6 +35,48 @@
   }
 }
 
+.entertainment-body {
+  display:grid;
+  grid-template-columns: auto 130px;
+  column-gap: 30px;
+
+  .group-country {
+    display: flex;
+    flex-direction: column;
+    row-gap: 210px;
+
+    div:nth-child(1n) {
+      width: 70px;
+      height: 47px;
+      background-color: #b6b9c0;
+      border-radius: 3px;
+      position: relative;
+    }
+
+    div:nth-child(1n)::before {
+      position: absolute;
+      content:"";
+      width: 14px;
+      height: 14px;
+      background-color: #1D2E5B;
+      top: 17px;
+      left: -49px;
+      border-radius: 50%;
+    }
+
+
+    div:not(:first-child)::after {
+      position: absolute;
+      content:"";
+      width: 2px;
+      height: 250px;
+      background-color: #1D2E5B;
+      top: -229px;
+      left: -43px;
+    }
+  }
+}
+
 .entertainment-form {
   display: flex;
   flex-direction: column;
@@ -115,19 +157,37 @@
     }
   }
 
-  button:nth-child(2) {
+  .btn-back {
     background-color: $color-default-white;
+
+    @include hover-focus {
+      @media (hover: hover) {
+        &:hover:not(.focus-visible) {
+          background-color: $color-default-white;
+
+          span {
+            opacity: 70%;
+          }
+
+          svg {
+            opacity: 70%;
+          }
+        }
+      }
+    }
+
+    &:active {
+      span {
+        opacity: 30%;
+      }
+
+      svg {
+        opacity: 30%;
+      }
+    }
 
     svg {
       transform: rotate(180deg);
-    }
-  }
-}
-
-.group-btn {
-  .btn-back {
-    &:hover {
-      background-color: $color-default-white;
     }
   }
 }
