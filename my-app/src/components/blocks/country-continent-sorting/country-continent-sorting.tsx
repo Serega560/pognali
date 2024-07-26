@@ -4,18 +4,25 @@ import CountrySorting from '../country-sorting/country-sorting';
 import './country-continent-sorting.module.scss';
 
 function CountryContinentSorting(): JSX.Element {
-    const [isExpanded, setIsExpanded] = useState(false); // состояние для разворачивания/сворачивания
-  
-    return (
-      <div className="country-continent-sorting">
+  const [isExpanded, setIsExpanded] = useState(false); // состояние для разворачивания/сворачивания
+
+  return (
+    <div className="country-continent-sorting container">
+      <div className="country-continent-sorting__wrapper">
         <ContinentSorting />
-        <button className="toggle-button" onClick={() => setIsExpanded(!isExpanded)}>
-          {isExpanded ? 'СВЕРНУТЬ' : 'ФИЛЬТРАЦИЯ ПО СТРАНАМ'}
-        </button>
+
+        <div className="country-continent-sorting__toggle-button-wrapper">
+          <button className="country-continent-sorting__toggle-button" onClick={() => setIsExpanded(!isExpanded)}>
+            <span className={`country-continent-sorting__toggle-button-icon ${isExpanded ? 'close' : 'open'}`}></span>
+            {isExpanded ? 'свернуть' : 'показать все'}
+          </button>
+        </div>
+        
         {isExpanded && <CountrySorting />}
       </div>
-    );
-  }
-  
-  export default CountryContinentSorting;
+    </div>
+  );
+}
+
+export default CountryContinentSorting;
 
