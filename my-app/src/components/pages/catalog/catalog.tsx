@@ -5,7 +5,8 @@ import cardList from '../../../mocks/cardList';
 import BtnShowMore from '../../ui/buttons/btn-show-more/btn-show-more';
 import Pagination from '../../blocks/pagination/pagination';
 import Filters from '../../blocks/filters/filters';
-import CountrySorting from '../../blocks/country-sorting/country-sorting';
+//import CountrySorting from '../../blocks/country-sorting/country-sorting';
+import CountryContinentSorting from '../../blocks/country-continent-sorting/country-continent-sorting';
 import "./catalog.module.scss"
 
 
@@ -14,7 +15,7 @@ function Catalog(): JSX.Element {
     return (
       <section className="catalog">
         <Heading heading={"попутчики"}/>
-        <CountrySorting />
+        <CountryContinentSorting />
         <div className="catalog__wrapper container">
           <section className="catalog__filters">
             <Filters />

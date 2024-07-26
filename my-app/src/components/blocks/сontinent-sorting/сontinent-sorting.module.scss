@@ -1,0 +1,32 @@
+@import "../../../global/reboot.scss";
+@import "../../../global/utils.scss";
+@import "../../../variables.scss";
+
+.continent-sorting {
+    .continent-sorting__list {
+      display: flex;
+      justify-content: center;
+      padding: 0;
+      list-style: none;
+      margin-bottom: 20px;
+  
+      .continent-sorting__item {
+        margin: 0 10px;
+      }
+  
+      .continent-sorting__button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #e0e0e0;
+        border: none;
+        border-radius: 5px;
+  
+        &.active {
+          background-color: #007bff;
+          color: #fff;
+        }
+      }
+    }
+  }
+  

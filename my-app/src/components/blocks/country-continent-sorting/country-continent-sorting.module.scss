@@ -1,0 +1,133 @@
+@import "../../../global/reboot.scss";
+@import "../../../global/utils.scss";
+@import "../../../variables.scss";
+
+// .country-continent-sorting {
+//     .toggle-button {
+//       display: block;
+//       margin: 0 auto 20px;
+//       padding: 10px 20px;
+//       font-size: 16px;
+//       cursor: pointer;
+//       background-color: #007bff;
+//       color: #fff;
+//       border: none;
+//       border-radius: 5px;
+//     }
+//   }
+  
+.country-continent-sorting {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+
+  .toggle-button {
+    display: block;
+    margin: 0 auto 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+  }
+
+  .sorting-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .country-sorting__inner-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .country-sorting__letters-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+  }
+
+  .country-sorting__letter-item {
+    margin: 5px;
+  }
+
+  .country-sorting__letter-button {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #007bff;
+  }
+
+  .country-sorting__letter-button.active {
+    background-color: #007bff;
+    color: #fff;
+  }
+
+  .country-sorting__countries-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .country-sorting__countries-item {
+    margin: 5px 0;
+  }
+
+  @media (min-width: 768px) {
+    .country-sorting__inner-wrapper {
+      flex-direction: row;
+    }
+
+    .country-sorting__letters-list {
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .country-sorting__countries-list {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .country-sorting__countries-item {
+      margin: 5px 0;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .country-sorting__inner-wrapper {
+      flex-direction: column;
+    }
+
+    .country-sorting__letters-list {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .country-sorting__countries-list {
+      display: none; /* Скрыть список стран по умолчанию */
+    }
+
+    .country-sorting__countries-item {
+      margin: 5px 10px;
+    }
+
+    .country-sorting__letters-list .active + .country-sorting__countries-list {
+      display: flex; /* Показать список стран для активной буквы */
+    }
+  }
+}

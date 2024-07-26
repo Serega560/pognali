@@ -1,0 +1,78 @@
+@import "../../../global/reboot.scss";
+@import "../../../global/utils.scss";
+@import "../../../variables.scss";
+
+.country-sorting {
+    .country-sorting-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  
+      .country-sorting__inner-wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+  
+        .country-sorting__letters-list {
+          list-style: none;
+          padding: 0;
+          display: flex;
+          flex-direction: column;
+          margin-right: 20px;
+  
+          .country-sorting__letter-item {
+            margin: 5px 0;
+  
+            .country-sorting__letter-button {
+              padding: 10px;
+              font-size: 16px;
+              cursor: pointer;
+              border: 1px solid #007bff;
+              border-radius: 5px;
+              background-color: transparent;
+              color: #007bff;
+            }
+  
+            .country-sorting__letter-button.active {
+              background-color: #007bff;
+              color: #fff;
+            }
+          }
+        }
+  
+        .country-sorting__counties-list {
+          list-style: none;
+          padding: 0;
+  
+          .country-sorting__counties-item {
+            margin: 5px 0;
+          }
+        }
+      }
+    }
+  
+    .country-sorting__desktop {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+  
+      .country-sorting__group {
+        margin-bottom: 20px;
+  
+        .country-sorting__letter-title {
+          font-size: 24px;
+          margin-bottom: 10px;
+        }
+  
+        .country-sorting__counties-list {
+          list-style: none;
+          padding: 0;
+  
+          .country-sorting__counties-item {
+            margin: 5px 0;
+          }
+        }
+      }
+    }
+  }
+  
