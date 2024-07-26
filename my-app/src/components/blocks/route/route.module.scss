@@ -12,7 +12,18 @@
 
   .route__header {
     display: grid;
-    grid-template-columns: 1fr 220px;
+    grid-template-columns: 660px 1fr;
+    grid-template-rows: auto;
+    column-gap: 170px;
+    margin-bottom: 50px;
+    border-bottom: 1px solid #E1E3E9;
+    padding-bottom: 55px;
+
+    li:nth-child(2) {
+      span {
+        opacity: 1;
+      }
+    }
   }
     .plan-list {
         grid-column: 2/3;
@@ -28,16 +39,101 @@
       }
 
       .route__title {
-        grid-column: 1/2;
-        grid-row: 1/2;
+        margin: 0;
+        margin-bottom: 33px;
+        color: #1D2E5B;
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 36px;
+
       }
 
 .route__notion {
-    grid-column: 1/2;
-    grid-row: 2/3;
+  margin: 0;
+  font-size: 20px;
+  line-height: 24px;
 }
 
 .route__counties-list {
     display: block;
 }
 
+.group-btn {
+  display: flex;
+  justify-content: space-between;
+
+  .route-btn {
+    display: flex;
+    align-items: center;
+    padding: 29px 34px;
+    justify-content: space-between;
+    background-color: #A8D2F4;
+    border-radius: 20px;
+    width: 286px;
+    border: none;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    cursor: pointer;
+
+
+    @include hover-focus {
+      @media (hover: hover) {
+        &:hover:not(.focus-visible) {
+          background-color: #4D99D6;
+        }
+      }
+    }
+
+    &:active {
+      background-color: #4D99D6;
+
+      span {
+        opacity: 30%;
+      }
+
+      svg {
+        opacity: 30%;
+      }
+    }
+
+    span {
+      font-size: 24px;
+      font-weight: 700;
+      color: #1D2E5B;
+      line-height: 24px;
+    }
+  }
+
+  .btn-back {
+    background-color: $color-default-white;
+
+    @include hover-focus {
+      @media (hover: hover) {
+        &:hover:not(.focus-visible) {
+          background-color: $color-default-white;
+
+          span {
+            opacity: 70%;
+          }
+
+          svg {
+            opacity: 70%;
+          }
+        }
+      }
+    }
+
+    &:active {
+      span {
+        opacity: 30%;
+      }
+
+      svg {
+        opacity: 30%;
+      }
+    }
+
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+}

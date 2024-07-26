@@ -2,14 +2,15 @@ import React, {useState} from 'react'
 import {ReactComponent as Plus} from '../../../assets/img/plusbutton.svg'
 import {ReactComponent as Minus} from '../../../assets/img/minusbutton.svg'
 import {ReactComponent as NextStep} from '../../../assets/img/nextstep.svg';
+import {Link} from "react-router-dom";
 
 interface DatesProps {
    children: React.ReactNode;
 }
 
 const Dates: React.FC<DatesProps> = ({children}) => {
-   const [companions, setCompanions] = useState(2);
-   const [days, setDays] = useState(3);
+   const [companions, setCompanions] = useState(0);
+   const [days, setDays] = useState(0);
 
    // Обработчики для увеличения и уменьшения значений
    const incrementCompanions = () => setCompanions(prevCompanions => prevCompanions + 1);
@@ -19,7 +20,7 @@ const Dates: React.FC<DatesProps> = ({children}) => {
    const decrementDays = () => setDays(prevDays => Math.max(prevDays - 1, 0));
 
    return (
-      <div className="dates">
+      <div className="dates" id="dates">
          <div className="dates-header">
             <div className="dates-heading">
                <h3>Шаг 1. Даты пребывания</h3>
@@ -62,7 +63,7 @@ const Dates: React.FC<DatesProps> = ({children}) => {
                         <button onClick={incrementDays}><Plus/></button>
                      </div>
                   </label>
-                  <span>чел.</span>
+                  <span>дн.</span>
                </div>
             </div>
             <div className="group-checkbox">
@@ -72,7 +73,7 @@ const Dates: React.FC<DatesProps> = ({children}) => {
                </label>
             </div>
          </div>
-         <a>
+         <a href="#route">
             <span>Следующий шаг</span>
             <NextStep/>
          </a>
