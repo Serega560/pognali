@@ -3,6 +3,16 @@
   border-radius: 60px;
   padding: 101px 152px 106px 159px;
 
+  @include vp-1439 {
+    padding: 48px 40px 56px;
+    border-radius: 30px;
+  }
+
+  @include vp-767 {
+    padding: 24px 25px 23px;
+    border-radius: 10px;
+  }
+
   .dates-header {
     display: grid;
     grid-template-columns: 660px 1fr;
@@ -12,6 +22,17 @@
     border-bottom: 1px solid #E1E3E9;
     padding-bottom: 55px;
 
+    @include vp-1439 {
+      display: flex;
+      padding-bottom: 14px;
+      margin-bottom: 40px;
+    }
+
+    @include vp-767 {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
     h3 {
       margin: 0;
       margin-bottom: 33px;
@@ -19,13 +40,29 @@
       font-weight: 700;
       font-size: 36px;
       line-height: 36px;
+
+      @include vp-1439 {
+        margin-bottom: 71px;
+      }
+
+      @include vp-767 {
+        font-size: 20px;
+        line-height: 20px;
+        margin-bottom: 16px;
+      }
     }
 
     p {
       margin: 0;
       font-size: 20px;
       line-height: 24px;
+
+      @include vp-767 {
+        font-size: 13px;
+        line-height: 20px;
+      }
     }
+
   }
 
   .group-input-checkbox {
@@ -34,6 +71,13 @@
     border-bottom: 1px solid #E1E3E9;
     padding-bottom: 30px;
     margin-bottom: 350px;
+
+    @include vp-1439 {
+      flex-direction: column;
+      position: relative;
+      border-bottom: 0 solid #E1E3E9;
+      padding-bottom: 0;
+    }
   }
 
   .group-input {
@@ -41,11 +85,43 @@
     flex-direction: column;
     row-gap: 14px;
 
+    @include vp-1439 {
+      row-gap: 125px;
+    }
+
+    @include vp-767 {
+      row-gap: 20px;
+      margin-bottom: 28px;
+    }
+
     .companies,
     .days {
       display: flex;
       align-items: center;
       column-gap: 32px;
+
+      @include vp-1439 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      @include vp-767 {
+        column-gap: 0;
+        grid-template-columns: 1fr;
+      }
+
+      label {
+        @include vp-1439 {
+          grid-column: 1/3;
+          grid-row: 2/3;
+          margin-top: 24px;
+        }
+
+        @include vp-767 {
+          grid-column: 1/2;
+          margin-top: 8px;
+        }
+      }
 
       span {
         font-size: 20px;
@@ -53,6 +129,27 @@
         line-height: 18px;
         color: #1D2E5B;
         width: 160px;
+
+        @include vp-1439 {
+          grid-column: 1/2;
+          grid-row: 1/2;
+
+          &:nth-of-type(2) {
+            opacity: 30%;
+            justify-self: self-end;
+            width: 40px;
+
+            @include vp-767 {
+              grid-column: 1/2;
+              grid-row: 1/2;
+            }
+          }
+        }
+
+        @include vp-767 {
+          font-size: 16px;
+          line-height: 16px;
+        }
       }
     }
   }
@@ -60,21 +157,90 @@
   .group-checkbox {
     margin-top: 25px;
 
-    label {
-      display: flex;
-      column-gap: 19px;
-      position: relative;
+    @include vp-1439 {
+      position: absolute;
+      top: 150px;
+      left: 0;
+      margin: 0;
+      border-bottom: 1px solid #E1E3E9;
+      padding-bottom: 25px;
+      width: 100%;
+    }
 
-      &:before {
-        content: "";
-        position: absolute;
-        width: 36px;
-        height: 36px;
-        border: 1px solid #CBCED9;
-        top: -4px;
-        left: -18px;
-        border-radius: 4px;
+    @include vp-767 {
+      position: static;
+      border: none;
+      padding: 0;
+    }
+
+    .custom-checkbox input[type="checkbox"] {
+      display: none;
+    }
+
+    .custom-checkbox {
+      display: inline-flex;
+      align-items: center;
+      cursor: pointer;
+      font-size: 20px;
+      user-select: none;
+    }
+
+    .custom-checkbox .checkbox-box {
+      width: 36px;
+      height: 36px;
+      border: 1px solid #CBCED9;
+      background-color: #fff;
+      border-radius: 4px;
+      position: relative;
+      transition: background-color 0.3s, border-color 0.3s;
+
+      @include vp-767 {
+        width: 26px;
+        height: 26px;
       }
+    }
+
+    .checkbox-box {
+      @include vp-1439 {
+        margin-right: 22px;
+      }
+
+      @include vp-767 {
+        margin-right: 13px;
+      }
+    }
+
+    .checkbox-box::after {
+      content: "";
+      position: absolute;
+      display: none;
+      left: 12px;
+      top: 11px;
+      width: 11px;
+      height: 12px;
+      opacity: 30%;
+      background: url('../../../assets/img/vector.svg');
+    }
+
+    input[type="checkbox"]:hover + .checkbox-box {
+      border-color: #959BB2;
+    }
+
+    input[type="checkbox"]:hover + .checkbox-box::after {
+      opacity: 1;
+    }
+
+    input[type="checkbox"]:active + .checkbox-box {
+      border-color: #959BB2;
+      background-color: #E2E5F1;
+    }
+
+    input[type="checkbox"]:checked + .checkbox-box::after {
+      display: block;
+    }
+
+    input[type="checkbox"]:checked:active + .checkbox-box::after {
+      opacity: 30%;
     }
 
     span {
@@ -82,6 +248,18 @@
       font-weight: 500;
       text-transform: uppercase;
       letter-spacing: 1px;
+      margin-left: 19px;
+      vertical-align: middle;
+
+      @include vp-1439 {
+        margin-left: 0;
+      }
+
+      @include vp-767 {
+        font-size: 15px;
+        line-height: 15px;
+        text-transform: none;
+      }
     }
   }
 
@@ -98,6 +276,15 @@
       padding: 23px 17px;
       background-color: $color-default-white;
       cursor: pointer;
+
+      @include vp-1439 {
+        width: 180px;
+      }
+
+      @include vp-767 {
+        width: 70px;
+        padding: 9px 15px;
+      }
     }
 
     input {
@@ -112,6 +299,16 @@
       font-weight: 500;
       line-height: 18px;
       padding: 23px 20px;
+      text-align: center;
+
+      @include vp-1439 {
+        width: 180px;
+      }
+
+      @include vp-767 {
+        width: 70px;
+        padding: 9px 15px;
+      }
     }
   }
 
@@ -127,6 +324,16 @@
     width: 286px;
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
     cursor: pointer;
+
+    @include vp-767 {
+      width: 221px;
+      border-radius: 30px;
+      padding: 5px 33px;
+
+      svg {
+        display: none;
+      }
+    }
 
     @include hover-focus {
       @media (hover: hover) {
@@ -154,6 +361,12 @@
     font-weight: 700;
     color: #1D2E5B;
     line-height: 24px;
+
+    @include vp-767 {
+      font-size: 17px;
+      line-height: 30px;
+      text-transform: uppercase;
+    }
   }
 
   li:nth-child(1) {
