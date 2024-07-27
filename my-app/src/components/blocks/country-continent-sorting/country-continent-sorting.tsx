@@ -9,7 +9,15 @@ function CountryContinentSorting(): JSX.Element {
   return (
     <div className="country-continent-sorting container">
       <div className="country-continent-sorting__wrapper">
-        <ContinentSorting />
+        <div className="country-continent-sorting__continent-wrapper">
+          <ContinentSorting />
+
+          <button className="country-continent-sorting__toggle-button-tablet" onClick={() => setIsExpanded(!isExpanded)}>
+            {isExpanded ? 'свернуть' : 'показать все'}
+            <span className={`country-continent-sorting__toggle-button-icon-tablet ${isExpanded ? 'close' : 'open'}`}></span>
+          </button>
+        </div>
+        
 
         <div className="country-continent-sorting__toggle-button-wrapper">
           <button className="country-continent-sorting__toggle-button" onClick={() => setIsExpanded(!isExpanded)}>

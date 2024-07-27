@@ -5,6 +5,9 @@
 .directions-profile {
    padding: 0 0 64px;
 
+   position: relative;
+   z-index: 20;
+
    @include vp-1023 {
       padding: 66px 0 51px;
    }

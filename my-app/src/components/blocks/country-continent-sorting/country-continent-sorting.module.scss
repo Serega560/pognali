@@ -15,6 +15,10 @@
     margin: -120px 0 0;
   }
 
+  @include vp-767 {
+    margin: -20px 0 0;
+  }
+
   &__wrapper {
     display: flex;
     flex-direction: column;
@@ -23,8 +27,13 @@
       background-color: #E2E5F2;
       border-radius: 0 0 60px 60px;
     }
+
+    @include vp-767 {
+      border-radius: 0 0 20px 20px;
+    }
   }
 
+  // большая кнопка показать все/свернуть
   &__toggle-button-wrapper {
     order: 3;
 
@@ -33,6 +42,11 @@
     @include vp-1023 {
       margin: 0 0 79px;
       padding: 0 76px;
+    }
+
+    @include vp-767 {
+      margin: 0 0 28px;
+      padding: 0 25px;
     }
   }
 
@@ -119,13 +133,134 @@
 
     }
 
-    &.open {
+    // &.open {
 
-    }
+    // }
 
     @include vp-1023 {
       padding: 0 18px;
       transform: translate(-5px, 7px);
     }
+  }
+
+  // обертка континентов и кнопки -- для таблета
+  &__continent-wrapper {
+    @include vp-1023 {
+      padding: 0 65px 56px 71px;
+  
+      background-color: #E2E5F2;
+      border-radius: 0 0 60px 60px;
+  
+      padding-top: 184px;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    @include vp-767 {
+      padding: 0 25px;
+    }
+  }
+
+  // кнопка показать все/свернуть рядом с континентами
+  &__toggle-button-tablet {
+    display: none;
+
+    @include vp-1023 {
+      display: flex;
+      justify-content: space-between;
+      gap: 43px;
+
+      border: none;
+      background-color: transparent;
+      margin: 0;
+      padding: 0;
+
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 1;
+      text-transform: uppercase;
+      color: #192144;
+      letter-spacing: -1px;
+    }
+  }
+
+  &__toggle-button-icon-tablet {
+
+    @include vp-1023 {
+      display: block;
+
+      position: relative;
+      width: 22px;
+      height: 20px;
+
+      margin: 0;
+      padding: 0;
+
+      &.close {
+        padding: 0 5px 0 33px;
+        transform: translate(5px, 7px);
+
+        &::before {
+          position: absolute;
+          content: "";
+          width: 26px;
+          height: 3px;
+          border-radius: 2px;
+          background-color: #192144;
+          top: 0;
+          left: 0;
+
+          transform: rotate(45deg);
+        }
+        
+        &::after {
+          position: absolute;
+          content: "";
+          width: 26px;
+          height: 3px;
+          border-radius: 2px;
+          background-color: #192144;
+          top: 0;
+          left: 0;
+
+          transform: rotate(-45deg);
+        }
+      }
+
+      &.open {
+        transform: translate(0, 5px);
+        width: 6px;
+        height: 6px;
+        background-color: #192144;
+        border-radius: 50%;
+
+        position: relative;
+
+        &::before {
+          position: absolute;
+          content: "";
+          width: 6px;
+          height: 6px;
+          background-color: #192144;
+          border-radius: 50%;
+          top: 0;
+          left: -13px;
+        }
+        
+        &::after {
+          position: absolute;
+          content: "";
+          width: 6px;
+          height: 6px;
+          background-color: #192144;
+          border-radius: 50%;
+          top: 0;
+          left: 13px;
+        }
+      }
+    }
+    
   }
 }
