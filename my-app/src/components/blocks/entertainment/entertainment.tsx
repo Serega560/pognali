@@ -2,9 +2,13 @@ import React from "react";
 import {Link} from "react-router-dom";
 import MiniPlan from "../miniplan/miniplan";
 import {ReactComponent as NextStep} from '../../../assets/img/nextstep.svg';
+import { useAppSelector } from "../../../hooks/hooks";
 
 
 function Entertainment() {
+
+   const choosenCountries = useAppSelector((state) => state.appSlice.choosenCountries);
+
    return (
       <div className="entertainment" id="entertainment">
          <div className="entertainment-header">
@@ -18,8 +22,10 @@ function Entertainment() {
          </div>
          <div className="entertainment-body">
             <div className="entertainment-form">
-               <div className="form-group">
-                  <label htmlFor="textarea1">Босния</label>
+            {choosenCountries.map((country) => {
+               return (
+                  <div className="form-group" key={country.name}>
+                  <label htmlFor="textarea1">{country.name}</label>
                   <textarea
                      id="textarea1"
                      name="textarea1"
@@ -29,7 +35,20 @@ function Entertainment() {
                      // value=""
                   />
                </div>
-               <div className="form-group">
+               )
+            })}
+               {/* <div className="form-group">
+                  <label htmlFor="textarea1">Босния</label>
+                  <textarea
+                     id="textarea1"
+                     name="textarea1"
+                     rows={3}
+                     cols={20}
+                     placeholder="План действий"
+                     // value=""
+                  />
+               </div> */}
+               {/* <div className="form-group">
                   <label htmlFor="textarea2">Чехия</label>
                   <textarea
                      id="textarea2"
@@ -39,11 +58,18 @@ function Entertainment() {
                      placeholder="План действий"
                      // value=""
                   />
-               </div>
+               </div> */}
             </div>
             <div className="group-country">
-               <div></div>
-               <div></div>
+               {choosenCountries.map((country) => {
+                  return (
+                     <div>
+                        <img src={country.flag} alt="flag image" />
+                     </div>
+                  )
+               })}
+               {/* <div></div>
+               <div></div> */}
             </div>
          </div>
          <div className="group-btn">

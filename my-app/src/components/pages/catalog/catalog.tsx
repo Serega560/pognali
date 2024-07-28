@@ -7,10 +7,12 @@ import Pagination from '../../blocks/pagination/pagination';
 import Filters from '../../blocks/filters/filters';
 import CountrySorting from '../../blocks/country-sorting/country-sorting';
 import "./catalog.module.scss"
+import { useGetCatalogQuery } from '../../../store/catalog-api';
 
 
 function Catalog(): JSX.Element {
-
+  // const {data: cardList, isLoading} = useGetCatalogQuery('');
+  console.log(cardList);
     return (
       <section className="catalog">
         <Heading heading={"попутчики"}/>
@@ -20,6 +22,7 @@ function Catalog(): JSX.Element {
             <Filters />
           </section>
           <section className="catalog__inner-wrapper">
+            {/* {isLoading ? <div>Loading...</div> : <ProfilesList cardsData={cardList} />} */}
             <ProfilesList cardsData={cardList} />
             <div className="catalog__show-more">
               <BtnShowMore />

@@ -3,9 +3,10 @@ import MiniPlan from "../miniplan/miniplan";
 import { ReactComponent as NextStep } from '../../../assets/img/nextstep.svg';
 import { letterArray } from '../../../const';
 import { useAppDispatch, useAppSelector } from '../../../hooks/hooks';
-import { setLetter } from '../../../store/app-slice';
+import { addChoosenCountries, setIsSelectCountryInputActive, setLetter } from '../../../store/app-slice';
 import { useGetCountriesNamesQuery } from '../../../store/countries-api';
 import { Country } from '../../../types';
+import { SelectedCountryInput } from '../selected-coutry-input/selected-country-input';
 
 // type CountriesItemProps = {
 //   countriesData: CountryData[] | null;
@@ -20,6 +21,12 @@ function Route(): JSX.Element {
   const dispatch = useAppDispatch();
   const choosenLetter = useAppSelector(state => state.appSlice.choosenLetter); //здесь выбранная буква
   const { data: filteredCountries, isLoading } = useGetCountriesNamesQuery(choosenLetter); //filteredCountries это массив объектов со странами по выбранной букве
+  const selectedCountries = useAppSelector(state => state.appSlice.choosenCountries); //выбранные страны
+  const handleCountryClick = (country: Country): void => {
+    dispatch(addChoosenCountries(country));
+    dispatch(setIsSelectCountryInputActive());
+  }
+
   return (
     <div className="route" id="route">
       <div className="route__header">
@@ -33,6 +40,11 @@ function Route(): JSX.Element {
       <div>
         <ul className='route__list'>
           <li className='route__item'>
+          {/* {selectedCountries.length > 0 ? selectedCountries.map((selectedCountry) => {
+            return (
+              <SelectedCountryInput selectedCountry={selectedCountry}/>
+            );
+          }) : ''} */}
             <h3>
               Выберите страну
             </h3>
@@ -55,7 +67,9 @@ function Route(): JSX.Element {
               {isLoading && <div>Loading...</div>}
               {filteredCountries?.map((country: Country) => {
                 return (
-                  <li className="route__counties-item counties" key={country.name}>{country.name}</li>
+                  <li className="route__counties-item counties" key={country.name}
+                  onClick={() => handleCountryClick(country)}
+                  >{country.name}</li>
                 )
               })}
             </ul>
