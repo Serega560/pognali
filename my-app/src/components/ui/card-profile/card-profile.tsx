@@ -13,6 +13,13 @@ type CardProfileProps = {
   cardData: CardData;
 };
 
+const transportIcons = [
+  { type: 'Fly', Icon: Plane },
+  { type: 'Bus', Icon: Bus },
+  { type: 'Bicycle', Icon: Bicycle },
+  { type: 'Onfoot', Icon: Onfoot },
+];
+
 function CardProfile({ cardData }: CardProfileProps): JSX.Element {
   const { name, image, hashtags, likes, online, transport, countries, level } = cardData;
   const [isLiked, setIsLiked] = useState(false);
@@ -57,12 +64,9 @@ function CardProfile({ cardData }: CardProfileProps): JSX.Element {
           <span>транспорт:</span>
         </div>
         <ul className="card-profile__transport-list">
-          {Object.entries(transport).map(([key, value]) => (
-            <li key={key} className={`card-profile__transport-item ${value ? 'active' : ''}`}>
-              {key === 'plane' && <Plane />}
-              {key === 'bus' && <Bus />}
-              {key === 'bicycle' && <Bicycle />}
-              {key === 'onfoot' && <Onfoot />}
+          {transportIcons.map(({ type, Icon }) => (
+            <li key={type} className={`card-profile__transport-item ${transport.includes(type) ? 'active' : ''}`}>
+              <Icon />
             </li>
           ))}
         </ul>
