@@ -3,12 +3,15 @@ import {ReactComponent as Plus} from '../../../assets/img/plusbutton.svg'
 import {ReactComponent as Minus} from '../../../assets/img/minusbutton.svg'
 import {ReactComponent as NextStep} from '../../../assets/img/nextstep.svg';
 import {Link} from "react-router-dom";
+import { useAppDispatch } from '../../../hooks/hooks';
+import { setDataToPostCompanions } from '../../../store/app-slice';
 
 interface DatesProps {
    children: React.ReactNode;
 }
 
 const Dates: React.FC<DatesProps> = ({children}) => {
+   const dispatch = useAppDispatch();
    const [companions, setCompanions] = useState(0);
    const [days, setDays] = useState(0);
 
@@ -70,7 +73,7 @@ const Dates: React.FC<DatesProps> = ({children}) => {
                </label>
             </div>
          </div>
-         <a href="#route">
+         <a href="#route" onClick={() => dispatch(setDataToPostCompanions(companions))}>
             <span>Следующий шаг</span>
             <NextStep/>
          </a>
