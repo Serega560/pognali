@@ -8,7 +8,7 @@ import { useAppDispatch } from '../../../hooks/hooks';
 import { setDataToPostTransport} from '../../../store/app-slice';
 
 function InputTransport() {
-    const typeOfTransport = ['plane', 'bus', 'bicycle', 'onfoot'];
+    //const typeOfTransport = ['fly', 'bus', 'bicycle', 'onfoot'];
     const dispatch = useAppDispatch();
     return (
         <fieldset className="input-transport">
@@ -24,7 +24,7 @@ function InputTransport() {
                                 <input 
                                     className="input-transport__input"
                                     type="checkbox"
-                                    value=""
+                                    value={type}
                                     name={type}
                                     onClick={(evt) => dispatch(setDataToPostTransport(evt.currentTarget.name))}
                                 />
@@ -37,6 +37,8 @@ function InputTransport() {
                     </li>
                         )
                     })} */}
+
+
                     <li className="input-transport__item">
                         <div className="input-transport__checkbox">
                             <label className="input-transport__label">
@@ -109,4 +111,3 @@ function InputTransport() {
   }
   
   export default InputTransport;
-  
