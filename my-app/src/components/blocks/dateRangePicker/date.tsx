@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import Flatpickr from 'react-flatpickr';
-import { Options } from 'flatpickr/dist/types/options';
+// import { Options } from 'flatpickr/dist/types/options';
 import 'flatpickr/dist/flatpickr.min.css';
 import 'flatpickr/dist/l10n/ru.js';
 import './DateRangePicker.css';
@@ -9,7 +9,7 @@ import './DateRangePicker.css';
 const DateRangePicker: React.FC = () => {
    const [dateRange, setDateRange] = useState<Date[]>([]);
 
-   const options: Options = {
+   const options = {
       mode: 'range',
       dateFormat: 'Y-m-d',
       locale: 'ru',
