@@ -1,5 +1,5 @@
 import React from 'react';
-import { ReactComponent as Plane } from '../../../assets/img/plane.svg'
+import { ReactComponent as Fly } from '../../../assets/img/fly.svg'
 import { ReactComponent as Bus } from '../../../assets/img/bus.svg'
 import { ReactComponent as Bicycle } from '../../../assets/img/bicycle.svg'
 import { ReactComponent as Onfoot } from '../../../assets/img/onfoot.svg'
@@ -18,11 +18,11 @@ function InputTransport() {
                                 <input 
                                     className="input-transport__input"
                                     type="checkbox"
-                                    value=""
-                                    name="plane"
+                                    value="Fly"
+                                    name="Fly"
                                 />
                                 <span className="input-transport__icon">
-                                    <Plane />
+                                    <Fly />
                                 </span>
                             </label>
                         </div>
@@ -34,8 +34,8 @@ function InputTransport() {
                                 <input 
                                     className="input-transport__input"
                                     type="checkbox"
-                                    value=""
-                                    name="bus"
+                                    value="Bus"
+                                    name="Bus"
                                 />
                                 <span className="input-transport__icon">
                                     <Bus />
@@ -50,8 +50,8 @@ function InputTransport() {
                                 <input 
                                     className="input-transport__input"
                                     type="checkbox"
-                                    value=""
-                                    name="bicycle"
+                                    value="Bicycle"
+                                    name="Bicycle"
                                 />
                                 <span className="input-transport__icon">
                                     <Bicycle />
@@ -65,8 +65,8 @@ function InputTransport() {
                             <input 
                                 className="input-transport__input"
                                 type="checkbox"
-                                value=""
-                                name="onfoot"
+                                value="Onfoot"
+                                name="Onfoot"
                             />
                             <span className="input-transport__icon">
                                 <Onfoot />

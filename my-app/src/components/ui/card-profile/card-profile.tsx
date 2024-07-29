@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ReactComponent as Heart}  from '../../../assets/img/heart.svg'
-import { ReactComponent as Plane } from '../../../assets/img/plane.svg'
+import { ReactComponent as Fly } from '../../../assets/img/fly.svg'
 import { ReactComponent as Bus } from '../../../assets/img/bus.svg'
 import { ReactComponent as Bicycle } from '../../../assets/img/bicycle.svg'
 import { ReactComponent as Onfoot } from '../../../assets/img/onfoot.svg'
@@ -14,7 +14,7 @@ type CardProfileProps = {
 };
 
 const transportIcons = [
-  { type: 'Fly', Icon: Plane },
+  { type: 'Fly', Icon: Fly },
   { type: 'Bus', Icon: Bus },
   { type: 'Bicycle', Icon: Bicycle },
   { type: 'Onfoot', Icon: Onfoot },
