@@ -1,7 +1,10 @@
 import React from 'react';
 import './input-hashtags.module.scss'
+import { useAppDispatch } from '../../../hooks/hooks';
+import { setDataToPostHashTags } from '../../../store/app-slice';
 
 function InputHashtags() {
+  const dispatch = useAppDispatch();
   return (
     <fieldset className="input-hashtags">
       <div className="input-hashtags__wrapper">
@@ -12,6 +15,7 @@ function InputHashtags() {
           name="hashtags"
           id="hashtags"
           placeholder="Коротко о себе в виде 5-8 хештэгов"
+          onChange={(evt) => dispatch(setDataToPostHashTags(evt.currentTarget.value))}
         ></input>
       </div>
     </fieldset>

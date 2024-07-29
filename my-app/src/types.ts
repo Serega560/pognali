@@ -33,14 +33,22 @@ export type PaginateData = {
   data: Companion[]
 };
 
+export type Transport = {
+  plane: boolean;
+  bus: boolean;
+  bicycle: boolean;
+  onfoot: boolean;
+}
+
 export type DataToPost = {
   startDate: string,
   endDate: string,
   companions: number,
   text: string,
-  transport_choice: string,
+  transport_choice: string[],
   name: string,
-  hashtags: string[]
+  hashtags: string[],
+  countries: string[]
 };
 
 export type SubmitFormResult = {

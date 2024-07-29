@@ -1,6 +1,6 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { NameSpace } from '../const';
-import { CountriesToChange, Country } from '../types';
+import { CountriesToChange, Country, DataToPost } from '../types';
 // import { addDays } from 'date-fns';
 
 export type DateState = {
@@ -18,6 +18,7 @@ export type AppSlice = {
  isSelectCountryInputActive: boolean;
  choosenCountries: Country[];
  currentPage: number;
+ dataToPost: DataToPost;
 }
 
 const initialState: AppSlice = {
@@ -35,6 +36,16 @@ const initialState: AppSlice = {
     isSelectCountryInputActive: false,
     choosenCountries: [],
     currentPage: 1,
+    dataToPost: {
+        startDate: '',
+        endDate: '',
+        companions: 0,
+        text: '',
+        transport_choice: [],
+        name: '',
+        hashtags: [],
+        countries: []
+    },
 };
 
 export const slice = {
@@ -45,9 +56,9 @@ export const appSlice = createSlice({
   name: slice.app,
   initialState,
   reducers: {
-  //  setCompanions: (state, action: PayloadAction<number>) => {
-  //   state.companions = action.payload;
-  //  },
+//    setCompanions: (state, action: PayloadAction<number>) => {
+//     state.companions = action.payload;
+//    },
   //  setDuration: (state, action: PayloadAction<number>) => {
   //   state.duration = action.payload;
   //  },
@@ -64,7 +75,7 @@ export const appSlice = createSlice({
     state.isSelectCountryInputActive = !state.isSelectCountryInputActive;
    },
    addChoosenCountries: (state, action: PayloadAction<Country>) => {
-    state.choosenCountries = [...state.choosenCountries, action.payload]
+    state.choosenCountries = [...state.choosenCountries, action.payload];
    },
    changeChoosenCountry: (state, action: PayloadAction<CountriesToChange>) => {
     const index = state.choosenCountries.findIndex(country => country.name === action.payload.currentCountry.name);
@@ -75,6 +86,32 @@ export const appSlice = createSlice({
    },
    setCurrentPage: (state, action: PayloadAction<number>) => {
     state.currentPage = action.payload;
+   },
+   setDataToPostCompanions: (state, action: PayloadAction<number>) => {
+    state.dataToPost.companions = action.payload;
+   },
+   setDataToPostStartDate: (state, action: PayloadAction<string>) => {
+    state.dataToPost.startDate = action.payload;
+   },
+   setDataToPostEndDate: (state, action: PayloadAction<string>) => {
+    state.dataToPost.endDate = action.payload;
+   },
+   setDataToPostText: (state, action: PayloadAction<string>) => {
+    state.dataToPost.text = state.dataToPost.text.concat(action.payload);
+   },
+   setDataToPostTransport: (state, action: PayloadAction<string>) => {
+    if (state.dataToPost.transport_choice.includes(action.payload)) {
+        state.dataToPost.transport_choice = state.dataToPost.transport_choice.filter((transport) => transport !== action.payload);
+    } else {
+        state.dataToPost.transport_choice = [...state.dataToPost.transport_choice, action.payload];
+    }
+    
+   },
+   setDataToPostHashTags: (state, action: PayloadAction<string>) => {
+    state.dataToPost.hashtags = action.payload.split(' ');
+   },
+   setDataToPostCountries: (state) => {
+    state.dataToPost.countries = state.choosenCountries.map((country) => country.name);
    }
   }
 });
@@ -89,5 +126,10 @@ export const {
     addChoosenCountries,
     changeChoosenCountry,
     removeChoosenCountry,
-    setCurrentPage
+    setCurrentPage,
+    setDataToPostCompanions,
+    setDataToPostCountries,
+    setDataToPostText,
+    setDataToPostHashTags,
+    setDataToPostTransport
 } = appSlice.actions;
