@@ -17,15 +17,14 @@
 //             <span className={`country-continent-sorting__toggle-button-icon-tablet ${isExpanded ? 'close' : 'open'}`}></span>
 //           </button>
 //         </div>
-        
 
-//         <div className="country-continent-sorting__toggle-button-wrapper">
+//         <div className={`country-continent-sorting__toggle-button-wrapper ${isExpanded ? 'expanded' : ''}`}>
 //           <button className="country-continent-sorting__toggle-button" onClick={() => setIsExpanded(!isExpanded)}>
 //             <span className={`country-continent-sorting__toggle-button-icon ${isExpanded ? 'close' : 'open'}`}></span>
 //             {isExpanded ? 'свернуть' : 'показать все'}
 //           </button>
 //         </div>
-        
+
 //         {isExpanded && <CountrySorting />}
 //       </div>
 //     </div>
@@ -33,6 +32,7 @@
 // }
 
 // export default CountryContinentSorting;
+
 
 import React, { useState } from 'react';
 import ContinentSorting from '../сontinent-sorting/сontinent-sorting';
@@ -61,12 +61,15 @@ function CountryContinentSorting(): JSX.Element {
           </button>
         </div>
 
-        {isExpanded && <CountrySorting />}
+        {isExpanded && (
+          <div className="country-continent-sorting__expanded-content">
+            <ContinentSorting />
+            <CountrySorting />
+          </div>
+        )}
       </div>
     </div>
   );
 }
 
 export default CountryContinentSorting;
-
-
