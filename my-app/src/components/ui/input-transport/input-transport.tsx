@@ -26,7 +26,7 @@ function InputTransport() {
                                     type="checkbox"
                                     value=""
                                     name={type}
-
+                                    onClick={(evt) => dispatch(setDataToPostTransport(evt.currentTarget.name))}
                                 />
                                 <span className="input-transport__icon">
                                     
