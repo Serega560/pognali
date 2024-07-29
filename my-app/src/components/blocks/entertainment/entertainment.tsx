@@ -16,10 +16,10 @@ function Entertainment() {
             </div>
             <MiniPlan/>
          </div>
-         <div className="entertainment-body">
             <div className="entertainment-form">
                <div className="form-group">
                   <label htmlFor="textarea1">Босния</label>
+                  <div></div>
                   <textarea
                      id="textarea1"
                      name="textarea1"
@@ -31,6 +31,7 @@ function Entertainment() {
                </div>
                <div className="form-group">
                   <label htmlFor="textarea2">Чехия</label>
+                  <div></div>
                   <textarea
                      id="textarea2"
                      name="textarea2"
@@ -45,7 +46,6 @@ function Entertainment() {
                <div></div>
                <div></div>
             </div>
-         </div>
          <div className="group-btn">
             <button className="entertainment-btn" type="button">
                <span>Отправить</span>

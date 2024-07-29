@@ -1,4 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { DataToPost, PaginateData, PaginateParams, SubmitFormResult } from "../types";
 
 export const catalogApi = createApi({
     reducerPath: 'catalogApi',
@@ -7,6 +8,16 @@ export const catalogApi = createApi({
         return {
             getCatalog: build.query({
                 query: () => `api/catalog`
+            }),
+            getPagination: build.query<PaginateData, PaginateParams>({
+                query: ({page, limit}) => `api/paginate?page=${page} ${limit ? `limit=${limit}` : ''}`
+            }),
+            postFormData: build.query<SubmitFormResult, DataToPost>({
+                query: (body) => ({
+                    url: `api/submit-form`,
+                    method: 'POST',
+                    body: body
+                })
             })
         }
     }
@@ -14,4 +25,6 @@ export const catalogApi = createApi({
 
 export const {
     useGetCatalogQuery,
+    useGetPaginationQuery,
+    usePostFormDataQuery
 } = catalogApi;

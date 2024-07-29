@@ -92,57 +92,6 @@
         row-gap: 257px;
         margin-right: 0;
       }
-
-
-      div:nth-child(1n) {
-        width: 70px;
-        height: 47px;
-        background-color: #b6b9c0;
-        border-radius: 3px;
-        position: relative;
-
-        @include vp-767 {
-          height: 24px;
-          width: 35px;
-        }
-      }
-
-      div:nth-child(1n)::before {
-        position: absolute;
-        content: "";
-        width: 14px;
-        height: 14px;
-        background-color: #1D2E5B;
-        top: 17px;
-        left: -49px;
-        border-radius: 50%;
-
-        @include vp-1439 {
-          left: 93px;
-        }
-
-        @include vp-767 {
-          display: none;
-        }
-      }
-
-      div:not(:first-child)::after {
-        position: absolute;
-        content: "";
-        width: 2px;
-        height: 250px;
-        background-color: #1D2E5B;
-        top: -229px;
-        left: -43px;
-
-        @include vp-1439 {
-          left: 99px;
-        }
-
-        @include vp-767 {
-          display: none;
-        }
-      }
     }
   }
 
@@ -167,55 +116,114 @@
     }
 
     .form-group {
-      display: flex;
-      flex-direction: column;
       row-gap: 52px;
-
-      @include vp-1439 {
-        row-gap: 38px;
-      }
+      display: grid;
+      grid-template-columns: 1fr 130px;
+      column-gap: 30px;
 
       @include vp-767 {
         row-gap: 18px;
         position: relative;
+
+        &:nth-child(1n)::before {
+          position: absolute;
+          content: "";
+          width: 6px;
+          height: 6px;
+          top: 6px;
+          left: -3px;
+          background-color: #1D2E5B;
+          border-radius: 50%;
+        }
+
+        &:not(:first-child)::after {
+          position: absolute;
+          content: "";
+          background-color: #1D2E5B;
+          width: 2px;
+          height: 290px;
+          top: -281px;
+          left: -13px;
+        }
       }
 
-      &:nth-child(1n)::before {
+      &:nth-child(1n) div::before {
         position: absolute;
         content: "";
-        width: 6px;
-        height: 6px;
+        width: 14px;
+        height: 14px;
+        top: 14px;
+        left: -33px;
         background-color: #1D2E5B;
-        top: 6px;
-        left: -3px;
         border-radius: 50%;
+
+        @include vp-767 {
+          display: none;
+        }
       }
 
-      &:not(:first-child)::after {
+      &:not(:first-child) div::after {
         position: absolute;
         content: "";
+        height: 260px;
         width: 2px;
-        height: 285px;
+        top: -240px;
+        left: -27px;
         background-color: #1D2E5B;
-        top: -275px;
-        left: -13px;
+
+        @include vp-1439 {
+          top: -275px;
+          height: 297px;
+        }
+
+        @include vp-767 {
+          display: none;
+        }
       }
 
       label {
         font-weight: 600;
         font-size: 30px;
         color: #1D2E5B;
+        position: relative;
+
 
         @include vp-767 {
           margin-left: 10px;
           font-size: 18px;
           line-height: 18px;
+
+          &:before {
+            position: absolute;
+            content: "";
+            width: 14px;
+            height: 2px;
+            background-color: #1D2E5B;
+            top: 8px;
+            left: -23px;
+          }
+        }
+      }
+
+      div:nth-child(1n) {
+        width: 70px;
+        height: 47px;
+        background-color: #b6b9c0;
+        border-radius: 3px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include vp-767 {
+          height: 24px;
+          width: 35px;
         }
       }
 
       textarea {
         max-width: 730px;
-        width: 100%;
+        width: 95%;
         outline: none;
         padding: 25px;
         border-radius: 4px;
@@ -224,7 +232,7 @@
         font-size: 20px;
 
         @include vp-1439 {
-          max-width: 500px;
+          max-width: 900px;
           padding: 18px;
           min-height: 140px;
         }
@@ -365,6 +373,9 @@
     }
   }
 }
+
+
+
 
 
 
