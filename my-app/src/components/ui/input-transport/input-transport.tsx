@@ -1,5 +1,5 @@
 import React from 'react';
-import { ReactComponent as Plane } from '../../../assets/img/plane.svg'
+import { ReactComponent as Fly } from '../../../assets/img/fly.svg'
 import { ReactComponent as Bus } from '../../../assets/img/bus.svg'
 import { ReactComponent as Bicycle } from '../../../assets/img/bicycle.svg'
 import { ReactComponent as Onfoot } from '../../../assets/img/onfoot.svg'
@@ -8,7 +8,7 @@ import { useAppDispatch } from '../../../hooks/hooks';
 import { setDataToPostTransport} from '../../../store/app-slice';
 
 function InputTransport() {
-    const typeOfTransport = ['plane', 'bus', 'bicycle', 'onfoot'];
+    //const typeOfTransport = ['fly', 'bus', 'bicycle', 'onfoot'];
     const dispatch = useAppDispatch();
     return (
         <fieldset className="input-transport">
@@ -24,7 +24,7 @@ function InputTransport() {
                                 <input 
                                     className="input-transport__input"
                                     type="checkbox"
-                                    value=""
+                                    value={type}
                                     name={type}
                                     onClick={(evt) => dispatch(setDataToPostTransport(evt.currentTarget.name))}
                                 />
@@ -37,18 +37,20 @@ function InputTransport() {
                     </li>
                         )
                     })} */}
+
+
                     <li className="input-transport__item">
                         <div className="input-transport__checkbox">
                             <label className="input-transport__label">
                                 <input 
                                     className="input-transport__input"
                                     type="checkbox"
-                                    value=""
-                                    name="plane"
+                                    value="Fly"
+                                    name="Fly"
                                     onClick={(evt) => dispatch(setDataToPostTransport(evt.currentTarget.name))}
                                 />
                                 <span className="input-transport__icon">
-                                    <Plane />
+                                    <Fly />
                                 </span>
                             </label>
                         </div>
@@ -60,8 +62,8 @@ function InputTransport() {
                                 <input 
                                     className="input-transport__input"
                                     type="checkbox"
-                                    value=""
-                                    name="bus"
+                                    value="Bus"
+                                    name="Bus"
                                     onClick={(evt) => dispatch(setDataToPostTransport(evt.currentTarget.name))}
                                 />
                                 <span className="input-transport__icon">
@@ -77,8 +79,8 @@ function InputTransport() {
                                 <input 
                                     className="input-transport__input"
                                     type="checkbox"
-                                    value=""
-                                    name="bicycle"
+                                    value="Bicycle"
+                                    name="Bicycle"
                                     onClick={(evt) => dispatch(setDataToPostTransport(evt.currentTarget.name))}
                                 />
                                 <span className="input-transport__icon">
@@ -93,8 +95,8 @@ function InputTransport() {
                             <input 
                                 className="input-transport__input"
                                 type="checkbox"
-                                value=""
-                                name="onfoot"
+                                value="Onfoot"
+                                name="Onfoot"
                                 onClick={(evt) => dispatch(setDataToPostTransport(evt.currentTarget.name))}
                             />
                             <span className="input-transport__icon">

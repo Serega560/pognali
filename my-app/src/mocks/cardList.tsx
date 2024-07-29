@@ -5,12 +5,9 @@ const cardList = [
         online: false,
         image: "https://i.ibb.co/Cmgp1tP/Rectangle-4.png",
         hashtags: "#ЗОЖ #ПП #Фитнес #пляж  #авокадо #смузи",
-        transport: {
-            plane: true,
-            bus: false,
-            bicycle: false,
-            onfoot: false,
-        },
+        transport: [
+            "Fly",
+        ],
         countries: [
             {name: "Шри-ланка", flag: "https://upload.wikimedia.org/wikipedia/commons/1/11/Flag_of_Sri_Lanka.svg"}, 
             {name: "Таиланд", flag: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Flag_of_Thailand.svg"}, 
@@ -25,12 +22,11 @@ const cardList = [
         online: false,
         image: "https://i.ibb.co/27Mdx7k/Rectangle-4-2.png",
         hashtags: "#бургер #бар #футбол #концерт #крафт",
-        transport: {
-            plane: true,
-            bus: true,
-            bicycle: false,
-            onfoot: true,
-        },
+        transport: [
+            "Fly",
+            "Bus",
+            "Onfoot",
+        ],
         countries: [
             {name: "бельгия", flag: "https://upload.wikimedia.org/wikipedia/commons/6/65/Flag_of_Belgium.svg"}, 
             {name: "чехия", flag: "https://upload.wikimedia.org/wikipedia/commons/c/cb/Flag_of_the_Czech_Republic.svg"}
@@ -44,12 +40,10 @@ const cardList = [
         online: false,
         image: "https://i.ibb.co/Cmgp1tP/Rectangle-4.png",
         hashtags: "#рэп #тату #хайпбист #кроссовки #суприм",
-        transport: {
-            plane: true,
-            bus: false,
-            bicycle: true,
-            onfoot: false,
-        },
+        transport: [
+            "Fly",
+            "Bicycle",
+        ],
         countries: [
             {name: "сша", flag: "https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg"}, 
             {name: "австралия", flag: "https://upload.wikimedia.org/wikipedia/commons/b/b9/Flag_of_Australia.svg"},
@@ -64,12 +58,10 @@ const cardList = [
         online: true,
         image: "https://i.ibb.co/pWkHFrj/Rectangle-4-1.png",
         hashtags: "#образование #карьера #учеба #линкедин",
-        transport: {
-            plane: true,
-            bus: true,
-            bicycle: false,
-            onfoot: false,
-        },
+        transport: [
+            "Fly",
+            "Bus",
+        ],
         countries: [
             {name: "Великобритания", flag: "https://upload.wikimedia.org/wikipedia/commons/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg"}, 
             {name: "Германия", flag: "https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg"}

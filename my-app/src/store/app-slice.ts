@@ -4,16 +4,17 @@ import { CountriesToChange, Country, DataToPost } from '../types';
 // import { addDays } from 'date-fns';
 
 export type DateState = {
-    startDate: Date;
-    endDate: Date;
-    key: string;
-}
+  startDate: Date;
+  endDate: Date;
+  key: string;
+};
 
 export type AppSlice = {
 //  companions: number;
 //  duration: number;
 //  dateState: DateState[];
  choosenLetter: string;
+ choosenContinent: string; // Добавляет состояние для выбранного континента
  isSelectCountryInputActive: boolean;
  choosenCountries: Country[];
  currentPage: number;
@@ -31,6 +32,7 @@ const initialState: AppSlice = {
     //     }
     //   ],
     choosenLetter: 'А',
+    choosenContinent: 'Европа', // Инициализирует выбранный континент
     isSelectCountryInputActive: false,
     choosenCountries: [],
     currentPage: 1,
@@ -47,8 +49,8 @@ const initialState: AppSlice = {
 };
 
 export const slice = {
-    app: NameSpace.appSlice
-}
+  app: NameSpace.appSlice,
+};
 
 export const appSlice = createSlice({
   name: slice.app,
@@ -65,6 +67,9 @@ export const appSlice = createSlice({
   //  },
    setLetter: (state, action: PayloadAction<string>) => {
     state.choosenLetter = action.payload;
+   },
+   setContinent: (state, action: PayloadAction<string>) => { // Добавляет редуктор для установки выбранного континента
+    state.choosenContinent = action.payload;
    },
    setIsSelectCountryInputActive: (state) => {
     state.isSelectCountryInputActive = !state.isSelectCountryInputActive;
@@ -116,6 +121,7 @@ export const {
     // setDateState,
     // setDuration,
     setLetter,
+    setContinent,
     setIsSelectCountryInputActive,
     addChoosenCountries,
     changeChoosenCountry,

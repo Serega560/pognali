@@ -1,0 +1,164 @@
+@import "../../../global/reboot.scss";
+@import "../../../global/utils.scss";
+@import "../../../variables.scss";
+
+.country-sorting {
+  padding: 0 35px 0;
+
+  @include vp-1023 {
+    padding: 7px 73px 59px;
+  }
+
+  @include vp-767 {
+    padding: 0 25px 7px 50px;
+  }
+
+  // десктоп
+  .country-sorting__desktop {
+    display: grid;
+    gap: 20px 0;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+
+    margin: 0 0 50px;
+
+    .country-sorting__letter-title {
+      margin: 0 0 30px;
+      padding: 0 2px;
+
+      font-weight: 700;
+      font-size: 60px;
+      line-height: 1;
+      text-transform: uppercase;
+      color: #192144;
+    }
+
+    .country-sorting__group {
+      margin-bottom: 20px;
+    }
+
+    .country-sorting__counties-list {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+    }
+
+    .country-sorting__counties-item {
+      margin: 0;
+      padding: 0;
+
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 1.5;
+      color: #444444;
+    }
+  }
+
+  // планшет и мобилка
+  .country-sorting__tablet {
+    .country-sorting__inner-wrapper {
+      @include vp-1023 {
+        display: grid;
+        grid-template-columns: 350px 1fr;
+        gap: 95px;
+      }
+
+      @include vp-767 {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+    }
+
+    .country-sorting__letters-list {
+      @include vp-1023 {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+  
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(35px, 1fr));
+        gap: 24px 38px;
+      }
+
+      @include vp-767 {
+        grid-template-columns: repeat(5, minmax(43px, 1fr));
+        grid-template-rows: repeat(5, 40px);
+        gap: 1px;
+        background-color: #CBCED9;
+
+        margin-right: 25px;
+      }
+    }
+
+    .country-sorting__letter-button {
+      @include vp-1023 {
+        margin: 0;
+        padding: 0;
+  
+        font-weight: 700;
+        font-size: 60px;
+        line-height: 1;
+        text-transform: uppercase;
+        color: rgba(#192144, 0.3);
+  
+        background-color: transparent;
+        cursor: pointer;
+        border: none;
+
+        transition: opacity 0.3s ease-in-out, color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+        user-select: none;
+
+        &:hover,
+        &:focus {
+          color: rgba(#192144, 0.6);
+        }
+  
+        &.active,
+        &:active {
+          color: rgba(#192144, 1);
+        }
+      }
+
+      @include vp-767 {
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 1;
+        width: 100%;
+        height: 100%;
+
+        color: rgba(#192144, 1);
+        background-color: #fff;
+
+        &.active {
+          color: rgba(#fff, 1);
+          background-color: #192144;
+        }
+      }
+    }
+
+    .country-sorting__counties-list {
+      @include vp-1023 {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+    }
+
+    .country-sorting__counties-item {
+      @include vp-1023 {
+        margin: 0;
+        padding: 0;
+  
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 1.5;
+        color: #444444;
+      }
+
+      @include vp-767 {
+        font-size: 16px; 
+        line-height: 1.375;
+      }
+    }
+  }
+}

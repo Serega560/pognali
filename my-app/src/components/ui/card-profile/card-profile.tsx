@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ReactComponent as Heart}  from '../../../assets/img/heart.svg'
-import { ReactComponent as Plane } from '../../../assets/img/plane.svg'
+import { ReactComponent as Fly } from '../../../assets/img/fly.svg'
 import { ReactComponent as Bus } from '../../../assets/img/bus.svg'
 import { ReactComponent as Bicycle } from '../../../assets/img/bicycle.svg'
 import { ReactComponent as Onfoot } from '../../../assets/img/onfoot.svg'
@@ -13,8 +13,20 @@ type CardProfileProps = {
   cardData: CardData;
 };
 
+const transportIcons = [
+  { type: 'Fly', Icon: Fly },
+  { type: 'Bus', Icon: Bus },
+  { type: 'Bicycle', Icon: Bicycle },
+  { type: 'Onfoot', Icon: Onfoot },
+];
+
 function CardProfile({ cardData }: CardProfileProps): JSX.Element {
   const { name, image, hashtags, likes, online, transport, countries, level } = cardData;
+  const [isLiked, setIsLiked] = useState(false);
+
+  const handleLikeClick = () => {
+    setIsLiked(!isLiked);
+  };
 
   return (
     <div className="card-profile">
@@ -40,7 +52,7 @@ function CardProfile({ cardData }: CardProfileProps): JSX.Element {
         <button className="card-profile__btn-call btn">Позвать!</button>
       </div>
       
-      <button className="card-profile__btn-like">
+      <button className={`card-profile__btn-like ${isLiked ? 'active' : ''}`} onClick={handleLikeClick}>
         <Heart />
       </button>
       <div className="card-profile__likes-number-wrapper">
@@ -52,12 +64,9 @@ function CardProfile({ cardData }: CardProfileProps): JSX.Element {
           <span>транспорт:</span>
         </div>
         <ul className="card-profile__transport-list">
-          {Object.entries(transport).map(([key, value]) => (
-            <li key={key} className={`card-profile__transport-item ${value ? 'active' : ''}`}>
-              {key === 'plane' && <Plane />}
-              {key === 'bus' && <Bus />}
-              {key === 'bicycle' && <Bicycle />}
-              {key === 'onfoot' && <Onfoot />}
+          {transportIcons.map(({ type, Icon }) => (
+            <li key={type} className={`card-profile__transport-item ${transport.includes(type) ? 'active' : ''}`}>
+              <Icon />
             </li>
           ))}
         </ul>
