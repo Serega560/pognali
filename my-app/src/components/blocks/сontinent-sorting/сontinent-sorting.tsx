@@ -17,7 +17,6 @@ function ContinentSorting(): JSX.Element {
         <span>Фильтрация по странам:</span>
       </div>
       
-      {/* список стран */}
       <ul className="continent-sorting__list">
         {continents.map((continent, index) => (
           <li className="continent-sorting__item" key={index}>
