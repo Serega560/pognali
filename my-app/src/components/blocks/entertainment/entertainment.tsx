@@ -19,7 +19,7 @@ function Entertainment() {
             <div className="entertainment-form">
                <div className="form-group">
                   <label htmlFor="textarea1">Босния</label>
-                  <div>Флаг</div>
+                  <div></div>
                   <textarea
                      id="textarea1"
                      name="textarea1"
@@ -31,7 +31,7 @@ function Entertainment() {
                </div>
                <div className="form-group">
                   <label htmlFor="textarea2">Чехия</label>
-                  <div>Флаг</div>
+                  <div></div>
                   <textarea
                      id="textarea2"
                      name="textarea2"
@@ -41,6 +41,10 @@ function Entertainment() {
                      // value=""
                   />
                </div>
+            </div>
+            <div className="group-country">
+               <div></div>
+               <div></div>
             </div>
          <div className="group-btn">
             <button className="entertainment-btn" type="button">
