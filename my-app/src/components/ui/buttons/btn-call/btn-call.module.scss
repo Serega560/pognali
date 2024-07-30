@@ -1,0 +1,44 @@
+@import "../../../../global/reboot.scss";
+@import "../../../../global/utils.scss";
+@import "../../../../variables.scss";
+
+.btn-call {
+    padding: 18px 24px 12px;
+
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1;
+    text-transform: uppercase;
+    text-align: center;
+    color: #161C35;
+
+    border-radius: 25px;
+    border: none;
+    background-color: #A8D2F4;
+
+    cursor: pointer;
+    user-select: none;
+
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+
+    &:hover,
+    &:focus {
+        background-color: #4D99D6;
+    }
+
+    &:active {
+        color: rgba(#161C35, 0.3);
+    }
+
+    @include vp-1023 {
+        padding: 18px 34px 12px;
+    }
+
+    @include vp-767 {
+        font-size: 17px;
+        line-height: 100%;
+
+        width: 100%;
+        padding: 12px 34px 11px;
+    }
+}

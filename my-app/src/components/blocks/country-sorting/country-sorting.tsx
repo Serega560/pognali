@@ -9,10 +9,15 @@ import './country-sorting.module.scss';
 
 function CountrySorting(): JSX.Element {
   const dispatch = useAppDispatch();
-  const choosenLetter = useAppSelector(state => state.appSlice.choosenLetter); // выбранная буква
-  const { data: filteredCountries, isLoading } = useGetCountriesNamesQuery(choosenLetter); // filteredCountries это массив объектов со странами по выбранной букве
+  const choosenLetter = useAppSelector(state => state.appSlice.choosenLetter);
 
   const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1023px)' });
+
+  // Используем хук для получения стран только для мобильных и планшетов
+  const { data: filteredCountries, isLoading: isLoadingFiltered } = useGetCountriesNamesQuery(choosenLetter);
+
+  // Используем другой подход для получения всех стран для десктопа
+  const { data: allCountries, isLoading: isLoadingAll } = useGetCountriesNamesQuery(''); // Используем пустую строку для получения всех стран
 
   // Функция для группировки стран по первой букве
   const groupCountriesByLetter = (countries: Country[] | undefined) => {
@@ -27,7 +32,7 @@ function CountrySorting(): JSX.Element {
     return grouped;
   };
 
-  const groupedCountries = groupCountriesByLetter(filteredCountries);
+  const groupedCountries = groupCountriesByLetter(allCountries);
 
   return (
     <div className="country-sorting">
@@ -48,7 +53,7 @@ function CountrySorting(): JSX.Element {
               ))}
             </ul>
             <ul className="country-sorting__counties-list">
-              {isLoading && <div>Loading...</div>}
+              {isLoadingFiltered && <div>Loading...</div>}
               {filteredCountries?.map((country: Country) => (
                 <li className="country-sorting__counties-item" key={country.name}>
                   {country.name}
@@ -63,7 +68,7 @@ function CountrySorting(): JSX.Element {
             <div key={index} className="country-sorting__group">
               <h3 className="country-sorting__letter-title">{letter}</h3>
               <ul className="country-sorting__counties-list">
-                {isLoading && <div>Loading...</div>}
+                {isLoadingAll && <div>Loading...</div>}
                 {groupedCountries[letter]?.map((country: Country) => (
                   <li className="country-sorting__counties-item" key={country.name}>
                     {country.name}

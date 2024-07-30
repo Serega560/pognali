@@ -7,6 +7,7 @@ import { ReactComponent as Onfoot } from '../../../assets/img/onfoot.svg'
 import { CardData } from '../../types/card-data';
 import './card-profile.module.scss';
 import Level from '../level/level';
+import BtnCall from '../buttons/btn-call/btn-call';
 
 
 type CardProfileProps = {
@@ -30,6 +31,7 @@ function CardProfile({ cardData }: CardProfileProps): JSX.Element {
 
   return (
     <div className="card-profile">
+      {/* фото профиля */}
       <picture className="card-profile__figure">
         <img
           src={image}
@@ -40,18 +42,23 @@ function CardProfile({ cardData }: CardProfileProps): JSX.Element {
         />
       </picture>
 
+      {/* имя в карточке */}
       <div className="card-profile__name"><b>{name}</b></div>
 
+      {/* статус онлайн */}
       <div className="card-profile__state-wrapper">
         <div className={`card-profile__state ${online ? 'card-profile__state--online' : 'card-profile__state--offline'}`}></div>
       </div>
       
+      {/* хештеги */}
       <p className="card-profile__hashtags">{hashtags}</p>
 
+      {/* кнопка позвать */}
       <div className="card-profile__btn-call-wrapper">
-        <button className="card-profile__btn-call btn">Позвать!</button>
+        <BtnCall />
       </div>
       
+      {/* кнопка лайк и кол-во лайков */}
       <button className={`card-profile__btn-like ${isLiked ? 'active' : ''}`} onClick={handleLikeClick}>
         <Heart />
       </button>
@@ -59,6 +66,7 @@ function CardProfile({ cardData }: CardProfileProps): JSX.Element {
         <span className="card-profile__likes-number">{likes}</span>
       </div>
 
+      {/* список выбранного транспорта */}
       <div className="card-profile__transport">
         <div className="card-profile__transport-badge">
           <span>транспорт:</span>
@@ -72,6 +80,7 @@ function CardProfile({ cardData }: CardProfileProps): JSX.Element {
         </ul>
       </div>
 
+      {/* уровень профиля */}
       <div className="card-profile__level">
         <div className="card-profile__level-badge">
           <span>левел:</span>
@@ -81,6 +90,7 @@ function CardProfile({ cardData }: CardProfileProps): JSX.Element {
         </div>
       </div>
 
+      {/* список стран */}
       <div className="card-profile__country">
         <div className="card-profile__country-badge">
           <span>хочет посетить:</span>
@@ -106,6 +116,7 @@ function CardProfile({ cardData }: CardProfileProps): JSX.Element {
           </ul>
         </div>
       </div>
+      
     </div>
   );
 }
