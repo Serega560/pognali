@@ -3,7 +3,7 @@ import { useAppDispatch, useAppSelector } from "../../../hooks/hooks";
 import { changeChoosenCountry, removeChoosenCountry, setLetter } from "../../../store/app-slice";
 import { useGetCountriesNamesQuery } from "../../../store/countries-api";
 import { CountriesToChange, Country } from "../../../types";
-
+import { ReactComponent as MenuButtonClose } from '../../../assets/img/menu_button_close.svg';
 
 
 type SelectedCoutriesInputProps = {
@@ -24,7 +24,7 @@ export const SelectedCountryInput = ({ selectedCountry }: SelectedCoutriesInputP
 
     return (
         <>
-            <div className={`route__item `}>
+            <div className={`route__item-new `}>
                 <h3
                 onClick={(evt) => {
                     console.log(evt.target);
@@ -34,7 +34,7 @@ export const SelectedCountryInput = ({ selectedCountry }: SelectedCoutriesInputP
                 >
                     {selectedCountry.name}
                 </h3>
-                <div className="step__country-list-wrapper">
+                <div className="route__countries-wrapper">
                     <ul className="route__letters-list">
                         {letterArray.map((letter: string, index: number) => {
                             return (
@@ -47,11 +47,11 @@ export const SelectedCountryInput = ({ selectedCountry }: SelectedCoutriesInputP
                             );
                         })}
                     </ul>
-                    <ol className="step__search-results-list">
+                    <ul className="route__counties-list">
                         {isLoading && <div>Loading...</div>}
                         {filteredCountries?.map((country: Country) => {
                             return (
-                                <li className="step__search-results-item"
+                                <li className="route__counties-item counties"
                                     key={country.name}
                                     onClick={(evt) => {
                                         handleSelectCountryInputClick(country);
@@ -59,12 +59,14 @@ export const SelectedCountryInput = ({ selectedCountry }: SelectedCoutriesInputP
                                     }}>{country.name}</li>
                             );
                         })}
-                    </ol>
+                    </ul>
                 </div>
             </div><div className="step__indicator">
                 <img className="step__flag" src={selectedCountry.flag} alt="country flag image" />
                 <button className="step__button" type="button"
-                    onClick={() => dispatch(removeChoosenCountry(selectedCountry))}></button>
+                    onClick={() => dispatch(removeChoosenCountry(selectedCountry))}>
+                        <MenuButtonClose />
+                    </button>
             </div>
         </>
     )
