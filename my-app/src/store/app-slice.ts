@@ -1,7 +1,7 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { NameSpace } from '../const';
 import { CountriesToChange, Country, DataToPost } from '../types';
-// import { addDays } from 'date-fns';
+import { addDays } from 'date-fns';
 
 export type DateState = {
   startDate: Date;
@@ -10,9 +10,9 @@ export type DateState = {
 };
 
 export type AppSlice = {
-//  companions: number;
-//  duration: number;
-//  dateState: DateState[];
+ companions: number;
+ duration: number;
+ dateState: DateState[];
  choosenLetter: string;
  choosenContinent: string; // Добавляет состояние для выбранного континента
  isSelectCountryInputActive: boolean;
@@ -22,15 +22,15 @@ export type AppSlice = {
 }
 
 const initialState: AppSlice = {
-    // companions: 1,
-    // duration: 2,
-    // dateState: [
-    //     {
-    //       startDate: new Date(),
-    //       endDate: addDays(new Date(), 1),
-    //       key: 'selection'
-    //     }
-    //   ],
+    companions: 1,
+    duration: 2,
+    dateState: [
+        {
+          startDate: new Date(),
+          endDate: addDays(new Date(), 1),
+          key: 'selection'
+        }
+      ],
     choosenLetter: 'А',
     choosenContinent: 'Европа', // Инициализирует выбранный континент
     isSelectCountryInputActive: false,
@@ -56,15 +56,15 @@ export const appSlice = createSlice({
   name: slice.app,
   initialState,
   reducers: {
-//    setCompanions: (state, action: PayloadAction<number>) => {
-//     state.companions = action.payload;
-//    },
-  //  setDuration: (state, action: PayloadAction<number>) => {
-  //   state.duration = action.payload;
-  //  },
-  //  setDateState: (state, action: PayloadAction<DateState[]>) => {
-  //   state.dateState = action.payload;
-  //  },
+   setCompanions: (state, action: PayloadAction<number>) => {
+    state.companions = action.payload;
+   },
+   setDuration: (state, action: PayloadAction<number>) => {
+    state.duration = action.payload;
+   },
+   setDateState: (state, action: PayloadAction<DateState[]>) => {
+    state.dateState = action.payload;
+   },
    setLetter: (state, action: PayloadAction<string>) => {
     state.choosenLetter = action.payload;
    },
@@ -105,7 +105,7 @@ export const appSlice = createSlice({
     } else {
         state.dataToPost.transport_choice = [...state.dataToPost.transport_choice, action.payload];
     }
-    
+
    },
    setDataToPostHashTags: (state, action: PayloadAction<string>) => {
     state.dataToPost.hashtags = action.payload.split(' ');
@@ -117,9 +117,9 @@ export const appSlice = createSlice({
 });
 
 export const {
-    // setCompanions,
-    // setDateState,
-    // setDuration,
+    setCompanions,
+    setDateState,
+    setDuration,
     setLetter,
     setContinent,
     setIsSelectCountryInputActive,
