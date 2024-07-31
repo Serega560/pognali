@@ -7,6 +7,9 @@ import { addChoosenCountries, setDataToPostCountries, setIsSelectCountryInputAct
 import { useGetCountriesNamesQuery } from '../../../store/countries-api';
 import { Country } from '../../../types';
 import { SelectedCountryInput } from '../selected-coutry-input/selected-country-input';
+import {ReactComponent as Plus} from '../../../assets/img/plusbutton.svg'
+import {ReactComponent as ArrowBack} from '../../../assets/img/arrow_back.svg'
+
 
 // type CountriesItemProps = {
 //   countriesData: CountryData[] | null;
@@ -32,21 +35,24 @@ function Route(): JSX.Element {
       <div className="route__header">
         <div className="route__heading">
           <h3 className="route__title">Шаг 2. Маршрут</h3>
-          <p className="route__notion">Укажите страны, которые вы хотели бы посетить. Это может быть одна или
-            сразу несколько.</p>
+          <p className="route__notion">
+            Укажите страны, которые вы хотели бы посетить.<br/>Это может быть одна или сразу несколько.</p>
         </div>
         <MiniPlan />
       </div>
 
       <ul className='route__list'>
-      {selectedCountries.length > 0 ? selectedCountries.map((selectedCountry) => {
-              return (
-                <SelectedCountryInput selectedCountry={selectedCountry}/>
-              );
-            }) : ''}
+        {selectedCountries.length > 0 ? selectedCountries.map((selectedCountry) => {
+          return (
+            <SelectedCountryInput selectedCountry={selectedCountry} />
+          );
+        }) : ''}
         {selectedCountries.length > 3 ? '' : <li className='route__item'>
           <h3 onClick={(evt) => evt.currentTarget.closest('li')?.classList.toggle('active')}>
-            Выберите страну
+            <p className="route__add-country">Добавить страну</p>
+            <p className="route__choose-country">Выберите страну</p>
+            <button className="route__btn-plus"> <Plus /> </button>
+            <button className="route__btn-arrow"> <ArrowBack /> </button>
           </h3>
           <div className='route__countries-wrapper'>
             <ul className="route__letters-list">
@@ -78,7 +84,7 @@ function Route(): JSX.Element {
             </ul>
           </div>
         </li>}
-        
+
       </ul>
 
       <div className="group-btn">
