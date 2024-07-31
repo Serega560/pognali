@@ -221,3 +221,11 @@
   font-weight: 400;
   margin-top: 9px;
 }
+
+.route__countries-wrapper {
+  display: none;
+}
+
+.route__item.active .route__countries-wrapper {
+  display: flex;
+}

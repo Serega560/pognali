@@ -23,18 +23,17 @@ export const SelectedCountryInput = ({ selectedCountry }: SelectedCoutriesInputP
     }
 
     return (
-        <div className="step__country">
-            <div className={`step__input-container `}>
-                <input value={selectedCountry.name}
-                    // onClick={() => dispatch(setIsSelectCountryInputActive())}
-                    onClick={(evt) => {
-                        console.log(evt.target);
-                        evt.currentTarget.closest('div')?.classList.toggle('active');
-                        // dispatch(setIsSelectCountryInputActive());
-                    }}
+        <>
+            <div className={`route__item `}>
+                <h3
+                onClick={(evt) => {
+                    console.log(evt.target);
+                    evt.currentTarget.closest('div')?.classList.toggle('active');
+                    // dispatch(setIsSelectCountryInputActive());
+                }}
                 >
-
-                </input>
+                    {selectedCountry.name}
+                </h3>
                 <div className="step__country-list-wrapper">
                     <ul className="route__letters-list">
                         {letterArray.map((letter: string, index: number) => {
@@ -45,7 +44,7 @@ export const SelectedCountryInput = ({ selectedCountry }: SelectedCoutriesInputP
                                         onClick={() => dispatch(setLetter(letter))}>{letter}
                                     </button>
                                 </li>
-                            )
+                            );
                         })}
                     </ul>
                     <ol className="step__search-results-list">
@@ -58,16 +57,15 @@ export const SelectedCountryInput = ({ selectedCountry }: SelectedCoutriesInputP
                                         handleSelectCountryInputClick(country);
                                         evt.currentTarget.closest('.step__input-container')?.classList.remove('active');
                                     }}>{country.name}</li>
-                            )
+                            );
                         })}
                     </ol>
                 </div>
-            </div>
-            <div className="step__indicator">
+            </div><div className="step__indicator">
                 <img className="step__flag" src={selectedCountry.flag} alt="country flag image" />
                 <button className="step__button" type="button"
                     onClick={() => dispatch(removeChoosenCountry(selectedCountry))}></button>
             </div>
-        </div>
+        </>
     )
 };
