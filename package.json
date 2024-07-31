@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "flatpickr": "^4.6.13",
+    "react-flatpickr": "^3.10.13"
+  },
+  "devDependencies": {
+    "@types/flatpickr": "^3.1.2",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "typescript": "^5.5.4"
+  }
+}

@@ -5,6 +5,7 @@ import {ReactComponent as NextStep} from '../../../assets/img/nextstep.svg';
 import {Link} from "react-router-dom";
 import { useAppDispatch } from '../../../hooks/hooks';
 import { setDataToPostCompanions } from '../../../store/app-slice';
+import StepDates from "../calendar/calendar";
 
 interface DatesProps {
    children: React.ReactNode;
@@ -47,7 +48,7 @@ const Dates: React.FC<DatesProps> = ({children}) => {
                      />
                      <button onClick={incrementCompanions}><Plus/></button>
                   </label>
-                  <span>чел.</span>
+                  <span className="companies-description">чел.</span>
                </div>
                <div className="days">
                   <span className="companies-text">длительность:</span>
@@ -62,7 +63,7 @@ const Dates: React.FC<DatesProps> = ({children}) => {
                      />
                      <button onClick={incrementDays}><Plus/></button>
                   </label>
-                  <span>дн.</span>
+                  <span className="companies-description">дн.</span>
                </div>
             </div>
             <div className="group-checkbox">
@@ -73,6 +74,7 @@ const Dates: React.FC<DatesProps> = ({children}) => {
                </label>
             </div>
          </div>
+         <StepDates/>
          <a href="#route" onClick={() => dispatch(setDataToPostCompanions(companions))}>
             <span>Следующий шаг</span>
             <NextStep/>
