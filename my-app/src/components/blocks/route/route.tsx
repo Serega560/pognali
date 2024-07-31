@@ -37,19 +37,20 @@ function Route(): JSX.Element {
         </div>
         <MiniPlan />
       </div>
-      <div>
-        <ul className='route__list'>
-          <li className='route__item'>
-          {/* {selectedCountries.length > 0 ? selectedCountries.map((selectedCountry) => {
-            return (
-              <SelectedCountryInput selectedCountry={selectedCountry}/>
-            );
-          }) : ''} */}
-            <h3>
-              Выберите страну
-            </h3>
-            {/* отрисовываем буквы */}
+
+      <ul className='route__list'>
+      {selectedCountries.length > 0 ? selectedCountries.map((selectedCountry) => {
+              return (
+                <SelectedCountryInput selectedCountry={selectedCountry}/>
+              );
+            }) : ''}
+        {selectedCountries.length > 3 ? '' : <li className='route__item'>
+          <h3 onClick={(evt) => evt.currentTarget.closest('li')?.classList.toggle('active')}>
+            Выберите страну
+          </h3>
+          <div className='route__countries-wrapper'>
             <ul className="route__letters-list">
+              {/* отрисовываем буквы */}
               {letterArray.map((letter: string, index: number) => {
                 return (
                   <li className="step__letter-item" key={index}>
@@ -61,21 +62,25 @@ function Route(): JSX.Element {
                 )
               })}
             </ul>
-
             {/* отрисовываем названия стран */}
             <ul className="route__counties-list">
               {isLoading && <div>Loading...</div>}
               {filteredCountries?.map((country: Country) => {
                 return (
                   <li className="route__counties-item counties" key={country.name}
-                  onClick={() => handleCountryClick(country)}
+                    onClick={(evt) => {
+                      handleCountryClick(country);
+                      evt.currentTarget.closest('.route__item')?.classList.remove('active');
+                    }}
                   >{country.name}</li>
                 )
               })}
             </ul>
-          </li>
-        </ul>
-      </div>
+          </div>
+        </li>}
+        
+      </ul>
+
       <div className="group-btn">
         <a className="route-btn" href="#entertainment" onClick={() => setDataToPostCountries()}>
           <span>Следующий шаг</span>
