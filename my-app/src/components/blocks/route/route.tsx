@@ -8,7 +8,8 @@ import { useGetCountriesNamesQuery } from '../../../store/countries-api';
 import { Country } from '../../../types';
 import { SelectedCountryInput } from '../selected-coutry-input/selected-country-input';
 import {ReactComponent as Plus} from '../../../assets/img/plusbutton.svg'
-import {ReactComponent as ArrowBack} from '../../../assets/img/arrow_back.svg'
+import { ReactComponent as MenuButtonClose } from '../../../assets/img/menu_button_close.svg';
+
 
 
 // type CountriesItemProps = {
@@ -52,15 +53,15 @@ function Route(): JSX.Element {
             <p className="route__add-country">Добавить страну</p>
             <p className="route__choose-country">Выберите страну</p>
             <button className="route__btn-plus"> <Plus /> </button>
-            <button className="route__btn-arrow"> <ArrowBack /> </button>
+            <button className="route__btn-arrow"> <MenuButtonClose /> </button>
           </h3>
           <div className='route__countries-wrapper'>
             <ul className="route__letters-list">
               {/* отрисовываем буквы */}
               {letterArray.map((letter: string, index: number) => {
                 return (
-                  <li className="step__letter-item" key={index}>
-                    <button className={`step__letter-button ${choosenLetter === letter ? 'active' : ''}`}
+                  <li className="route__letter-item" key={index}>
+                    <button className={`route__letter-button ${choosenLetter === letter ? 'active' : ''}`}
                       type="button"
                       onClick={() => dispatch(setLetter(letter))}>{letter}
                     </button>

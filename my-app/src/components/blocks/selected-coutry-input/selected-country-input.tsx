@@ -4,7 +4,7 @@ import { changeChoosenCountry, removeChoosenCountry, setLetter } from "../../../
 import { useGetCountriesNamesQuery } from "../../../store/countries-api";
 import { CountriesToChange, Country } from "../../../types";
 import { ReactComponent as MenuButtonClose } from '../../../assets/img/menu_button_close.svg';
-
+import {ReactComponent as ArrowBack} from '../../../assets/img/arrow_back.svg'
 
 type SelectedCoutriesInputProps = {
     selectedCountry: Country;
@@ -30,16 +30,17 @@ export const SelectedCountryInput = ({ selectedCountry }: SelectedCoutriesInputP
                     console.log(evt.target);
                     evt.currentTarget.closest('div')?.classList.toggle('active');
                     // dispatch(setIsSelectCountryInputActive());
-                }}
+                }}                
                 >
                     {selectedCountry.name}
+                    <ArrowBack />
                 </h3>
                 <div className="route__countries-wrapper">
                     <ul className="route__letters-list">
                         {letterArray.map((letter: string, index: number) => {
                             return (
-                                <li className="step__letter-item" key={index}>
-                                    <button className={`step__letter-button ${choosenLetter === letter ? 'active' : ''}`}
+                                <li className="route__letter-item" key={index}>
+                                    <button className={`route__letter-button ${choosenLetter === letter ? 'active' : ''}`}
                                         type="button"
                                         onClick={() => dispatch(setLetter(letter))}>{letter}
                                     </button>
@@ -55,15 +56,15 @@ export const SelectedCountryInput = ({ selectedCountry }: SelectedCoutriesInputP
                                     key={country.name}
                                     onClick={(evt) => {
                                         handleSelectCountryInputClick(country);
-                                        evt.currentTarget.closest('.step__input-container')?.classList.remove('active');
+                                        evt.currentTarget.closest('.route__input-container')?.classList.remove('active');
                                     }}>{country.name}</li>
                             );
                         })}
                     </ul>
                 </div>
-            </div><div className="step__indicator">
-                <img className="step__flag" src={selectedCountry.flag} alt="country flag image" />
-                <button className="step__button" type="button"
+            </div><div className="flag__holder">
+                <img className="flag__img" src={selectedCountry.flag} alt="country flag image" />
+                <button className="route__button" type="button"
                     onClick={() => dispatch(removeChoosenCountry(selectedCountry))}>
                         <MenuButtonClose />
                     </button>
