@@ -5,8 +5,8 @@
 .catalog {
     &__wrapper {
         display: flex;
+        flex-direction: column;
         justify-content: space-between;
-        flex-direction: row-reverse;
         gap: 15px;
 
         @include vp-1023 {
