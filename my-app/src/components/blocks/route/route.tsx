@@ -8,7 +8,6 @@ import { useGetCountriesNamesQuery } from '../../../store/countries-api';
 import { Country } from '../../../types';
 import { SelectedCountryInput } from '../selected-coutry-input/selected-country-input';
 import { ReactComponent as Plus } from '../../../assets/img/plusbutton.svg'
-import { ReactComponent as MenuButtonClose } from '../../../assets/img/menu_button_close.svg';
 
 function Route(): JSX.Element {
   const dispatch = useAppDispatch();
@@ -42,7 +41,7 @@ function Route(): JSX.Element {
             <p className="route__add-country">Добавить страну</p>
             <p className="route__choose-country">Выберите страну</p>
             <button className="route__btn-plus"> <Plus /> </button>
-            <button className="route__btn-arrow"> <MenuButtonClose /> </button>
+            <button className="route__btn-arrow"> <Plus /> </button>
           </h3>
           <div className='route__countries-wrapper'>
             <ul className="route__letters-list">

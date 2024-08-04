@@ -103,6 +103,7 @@
   line-height: 20px;
   font-weight: 500;
   color: $color-default-white;
+  transition: opacity $trans-default, color $trans-default, background-color $trans-default;
 
   @include hover-focus {
     @media (hover: hover) {
@@ -138,6 +139,7 @@
     height: 50px;
     border-radius: 50%;
     background-color: $color-jordy-blue;
+    transition: opacity $trans-default, color $trans-default, background-color $trans-default;
 
     @include hover-focus {
       @media (hover: hover) {
@@ -281,7 +283,6 @@
         opacity: 30%;
       }
     }
-
   }
 
   .header__nav-item a {
