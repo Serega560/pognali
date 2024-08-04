@@ -8,6 +8,8 @@ import { ReactComponent as GoImg } from '../../assets/img/goImg.svg';
 import { ReactComponent as Go } from '../../assets/img/go.svg';
 import { ReactComponent as Call } from '../../assets/img/icon_call.svg';
 import { ReactComponent as Mail } from '../../assets/img/icon_mail.svg';
+import { Link } from 'react-router-dom';
+import { AppRoute } from '../../const';
 
 const BurgerMenu = () => {
     // Код для бургерного меню
@@ -46,19 +48,13 @@ const BurgerMenu = () => {
                     <nav className="header__nav">
                         <ul className="header__nav-list">
                             <li className="header__nav-item">
-                                <a href="#">
-                                    о сервисе
-                                </a>
+                                <Link to={AppRoute.Root}>о сервисе</Link>
                             </li>
                             <li className="header__nav-item">
-                                <a href="#">
-                                    направления
-                                </a>
+                                <Link to={AppRoute.Catalog}>направления</Link>
                             </li>
                             <li className="header__nav-item">
-                                <a href="#">
-                                    попутчики
-                                </a>
+                                <Link to={AppRoute.Form}>попутчики</Link>
                             </li>
                         </ul>
                     </nav>

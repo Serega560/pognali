@@ -75,7 +75,7 @@
 .header__nav {
   padding-left: 145px;
 
-  @include vp-1279 {
+  @include vp-1023 {
     display: none;
   }
 }
@@ -190,6 +190,7 @@
   background-color: $color-default-white;
   padding: 0 40px;
   width: 100%;
+  z-index: 100;
 
   .header__button-close {
     display: block;

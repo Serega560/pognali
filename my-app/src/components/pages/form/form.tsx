@@ -12,7 +12,7 @@ function Form(): JSX.Element {
         <Heading heading={"направления"}/>
         <DirectionsProfile />
         <Plan />
-        <div className="form__wrapper"></div>
+        <div className="filters__wrapper"></div>
       </section>
 
       
