@@ -12,11 +12,10 @@ const RangeSlider = () => {
   };
 
   return (
-    <div style={{ width: '300px', margin: '50px auto' }}>
-      <h2>Выберите диапазон</h2>
-      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-        <span>От: {range[0]}</span>
-        <span>До: {range[1]}</span>
+    <div className="slider__holder">
+      <div className="slider__range">
+        <span>{range[0]}</span>
+        <span>{range[1]}</span>
       </div>
       <Slider
         min={0}
@@ -34,12 +33,13 @@ const RangeSlider = () => {
   );
 };
 
-const AppSlider = () => {
+const AddSlider = () => {
   return (
     <div className="filters__slider">
+      <p className="checkboxes__name">Левел:</p>
       <RangeSlider />
     </div>
   );
 };
 
-export default AppSlider;
+export default AddSlider;
