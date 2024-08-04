@@ -1,7 +1,7 @@
 .dates {
   background-color: $color-default-white;
   border-radius: 60px;
-  padding: 101px 152px 106px 159px;
+  padding: 101px 160px 106px 159px;
 
   @include vp-1439 {
     padding: 48px 40px 56px;
@@ -17,10 +17,10 @@
     display: grid;
     grid-template-columns: 660px 1fr;
     grid-template-rows: auto;
-    column-gap: 170px;
+    column-gap: 167px;
     margin-bottom: 30px;
     border-bottom: 1px solid #E1E3E9;
-    padding-bottom: 55px;
+    padding-bottom: 50px;
 
     @include vp-1439 {
       display: flex;
@@ -66,15 +66,11 @@
 
   .group-input-checkbox {
     display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid #E1E3E9;
-    padding-bottom: 30px;
+    column-gap: 107px;
 
     @include vp-1439 {
       flex-direction: column;
       position: relative;
-      border-bottom: 0 solid #E1E3E9;
-      padding-bottom: 0;
     }
   }
 
@@ -120,6 +116,7 @@
           grid-column: 1/2;
           margin-top: 8px;
         }
+
       }
 
       span {
@@ -127,7 +124,8 @@
         font-weight: 500;
         line-height: 18px;
         color: #1D2E5B;
-        width: 160px;
+        width: 192px;
+        text-transform: uppercase;
 
         @include vp-1439 {
           grid-column: 1/2;
@@ -154,7 +152,7 @@
   }
 
   .group-checkbox {
-    margin-top: 25px;
+    margin-top: 18px;
 
     @include vp-1439 {
       position: absolute;
@@ -246,9 +244,10 @@
       font-size: 20px;
       font-weight: 500;
       text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-left: 19px;
+      letter-spacing: 2px;
+      margin-left: 22px;
       vertical-align: middle;
+      width: 214px;
 
       @include vp-1439 {
         margin-left: 0;
@@ -267,6 +266,15 @@
     align-items: center;
     border: 1px solid #CBCED9;
     border-radius: 4px;
+    transition: border-color 0.3s;
+
+    &:hover {
+      border-color: #959BB2;
+    }
+
+    &:active {
+      border-color: #1D2E5B;
+    }
 
     button {
       border: none;
@@ -279,6 +287,7 @@
       @include vp-767 {
         padding: 9px 15px;
       }
+
     }
 
     input {
@@ -292,7 +301,7 @@
       font-size: 20px;
       font-weight: 500;
       line-height: 18px;
-      padding: 23px 20px;
+      padding: 23px 11px;
       text-align: center;
 
       @include vp-767 {
@@ -343,18 +352,18 @@
         opacity: 30%;
       }
     }
-  }
 
-  span {
-    font-size: 24px;
-    font-weight: 700;
-    color: #1D2E5B;
-    line-height: 24px;
+    span {
+      font-size: 24px;
+      font-weight: 700;
+      color: #1D2E5B;
+      line-height: 24px;
 
-    @include vp-767 {
-      font-size: 17px;
-      line-height: 30px;
-      text-transform: uppercase;
+      @include vp-767 {
+        font-size: 17px;
+        line-height: 30px;
+        text-transform: uppercase;
+      }
     }
   }
 

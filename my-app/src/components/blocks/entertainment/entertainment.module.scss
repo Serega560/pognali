@@ -19,7 +19,7 @@
     grid-template-columns: 660px 1fr;
     grid-template-rows: auto;
     column-gap: 170px;
-    margin-bottom: 50px;
+    margin-bottom: 70px;
     border-bottom: 1px solid #E1E3E9;
     padding-bottom: 55px;
 
@@ -116,10 +116,10 @@
     }
 
     .form-group {
-      row-gap: 52px;
+      row-gap: 26px;
       display: grid;
-      grid-template-columns: 1fr 130px;
-      column-gap: 30px;
+      grid-template-columns: 772px 130px;
+      column-gap: 44px;
 
       @include vp-767 {
         row-gap: 18px;
@@ -152,8 +152,8 @@
         content: "";
         width: 14px;
         height: 14px;
-        top: 14px;
-        left: -33px;
+        top: 16px;
+        left: -48px;
         background-color: #1D2E5B;
         border-radius: 50%;
 
@@ -168,7 +168,7 @@
         height: 260px;
         width: 2px;
         top: -240px;
-        left: -27px;
+        left: -41px;
         background-color: #1D2E5B;
 
         @include vp-1439 {
@@ -187,7 +187,7 @@
         color: #1D2E5B;
         position: relative;
         width: 90%;
-
+        margin-top: 9px;
 
         @include vp-767 {
           margin-left: 10px;
@@ -232,6 +232,18 @@
         border: 1px solid #CBCED9;
         font-size: 20px;
 
+        &:hover {
+          border-color: #959BB2;
+        }
+
+        &:active {
+          border-color: #1d2429;
+        }
+
+        &.active-placeholder::placeholder {
+          color: #444444;
+        }
+
         @include vp-1439 {
           max-width: 900px;
           padding: 18px;
@@ -246,7 +258,6 @@
           font-size: 20px;
           font-weight: 400;
           opacity: 30%;
-          text-align: center;
           line-height: 20px;
 
           @include vp-1439 {
@@ -332,6 +343,8 @@
 
     .btn-back {
       background-color: $color-default-white;
+      width: 236px;
+      padding: 29px 26px;
 
       @include vp-1439 {
         width: 249px;

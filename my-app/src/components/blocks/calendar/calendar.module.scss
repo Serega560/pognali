@@ -1,6 +1,7 @@
 .step {
   background-color: #ffffff;
   border-radius: 60px;
+  margin-bottom: 57px;
 
   @include vp-1279 {
     padding: 100px 100px 104px 100px;
@@ -550,7 +551,7 @@
   }
 
   &__calendar {
-    margin-bottom: 57px;
+    margin-top: 29px;
     border-top: 1px solid #e1e3e9;
 
     @include vp-1023 {
