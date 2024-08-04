@@ -30,7 +30,7 @@ function Header() {
 
     useEffect(() => {
         const handleResize = () => {
-            if (window.innerWidth < 1279) {
+            if (window.innerWidth < 1024) {
                 setIsMobile(true);
             } else {
                 setIsMobile(false);
@@ -64,21 +64,12 @@ function Header() {
                         <nav className="header__nav">
                             <ul className="header__nav-list">
                                 <li className="header__nav-item">
-                                    {/* <a href="#">
-                                        о сервисе
-                                    </a> */}
                                     <Link to={AppRoute.Root}>о сервисе</Link>
                                 </li>
                                 <li className="header__nav-item">
-                                    {/* <a href="#">
-                                        направления
-                                    </a> */}
-                                    <Link to={AppRoute.Catalog}>направления</Link>
+                                     <Link to={AppRoute.Catalog}>направления</Link>
                                 </li>
                                 <li className="header__nav-item">
-                                    {/* <a href="#">
-                                        попутчики
-                                    </a> */}
                                     <Link to={AppRoute.Form}>попутчики</Link>
                                 </li>
                             </ul>

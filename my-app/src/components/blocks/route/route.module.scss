@@ -2,11 +2,18 @@
 @import "../../../global/utils.scss";
 @import "../../../variables.scss";
 
-
 .route {
   background-color: $color-default-white;
   border-radius: 60px;
   padding: 101px 159px 106px 159px;
+
+  @include vp-1439 {
+    padding: 101px 59px 106px 59px;
+  }
+
+  @include vp-1023 {
+    padding: 48px 40px 54px 40px;
+  }
 
   ul {
     list-style: none;
@@ -25,6 +32,16 @@
     padding-bottom: 13px;
     min-width: 795px;
 
+    @include vp-1023 {
+      display: flex;
+      min-width: 532px;
+    }
+
+    @include vp-767 {
+      min-width: 220px;
+      border-bottom: none;
+    }
+
     li:nth-child(2) {
       span {
         opacity: 1;
@@ -36,15 +53,44 @@
     grid-column: 2/3;
     grid-row: 1/3;
     padding-left: 94px;
-   }
 
-  .step__button {
+    @include vp-1439 {
+      display: flex;
+    }
+
+    @include vp-1023 {
+      display: none;
+    }
+  }
+
+  .route__button {
     border: none;
     background-color: transparent;
+    cursor: pointer;
+
+    @include vp-767 {
+      position: absolute;
+      width: 21px;
+      height: 21px;
+      border-radius: 50%;
+      background-color: #edeff6;
+      right: -10px;
+      top: -10px;
+
+      svg {
+        width: 13px;
+        height: 13px;
+      }
+    }
   }
 
   .plan-item::before {
     left: -44px;
+  }
+
+  .route__letter-item {
+    width: auto;
+    height: auto;
   }
 }
 
@@ -56,13 +102,13 @@
 }
 
 .route__btn-plus {
-  transform: rotate(45deg);
+  transform: rotate(90deg);
 }
 
 .route__btn-arrow {
-   svg path {
+  svg path {
     fill: #cbCed9;
-   }
+  }
 }
 
 .route__list {
@@ -71,6 +117,19 @@
   grid-template-columns: 1fr 267px;
   row-gap: 15px;
   min-width: 795px;
+
+  @include vp-1023 {
+    grid-template-columns: 1fr 168px;
+  }
+
+  @include vp-1023 {
+    min-width: 532px;
+  }
+
+  @include vp-767 {
+    grid-template-columns: 1fr 53px;
+    min-width: 220px;
+  }
 }
 
 .route__list::after {
@@ -81,6 +140,15 @@
   height: calc(100% + 150px);
   right: 225px;
   top: -50px;
+
+  @include vp-1023 {
+    right: 138px;
+    height: calc(100% + 50px);
+  }
+
+  @include vp-767 {
+    display: none;
+  }
 }
 
 .route__title {
@@ -113,12 +181,25 @@
   top: -32px;
   left: -34px;
   background-color: #d6d9e6;
+
+  @include vp-1279 {
+    left: -14px;
+  }
 }
 
 .group-btn {
   display: flex;
   justify-content: space-between;
   min-width: 795px;
+
+  @include vp-1023 {
+    min-width: 532px;
+  }
+
+  @include vp-767 {
+    min-width: 220px;
+    flex-direction: column;
+  }
 
   .route-btn {
     display: flex;
@@ -131,6 +212,17 @@
     border: none;
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
     cursor: pointer;
+
+    @include vp-767 {
+      font-size: 17px;
+      width: 100%;
+      padding: 10px;
+      justify-content: center;
+
+      svg {
+        display: none;
+      }
+    }
 
     @include hover-focus {
       @media (hover: hover) {
@@ -159,7 +251,6 @@
       line-height: 24px;
     }
   }
-
 
   .btn-back {
     background-color: $color-default-white;
@@ -222,6 +313,22 @@
     border: 1px solid #cbcEd9;
     border-radius: 4px;
 
+    svg path {
+      fill: #CCCCCC;
+    }
+
+    @include vp-767 {
+      height: 42px;
+      font-size: 14px;
+      line-height: 18px;
+      padding-left: 11px;
+      padding-right: 16px;
+
+      svg {
+        width: 16px;
+      }
+    }
+
     .route__choose-country {
       display: none;
     }
@@ -234,8 +341,12 @@
 
 .route__item {
   h3 {
-   color: $color-catalina-blue;
-   background-color: $color-solitude-blue;
+    color: $color-catalina-blue;
+    background-color: $color-solitude-blue;
+  }
+
+  @include vp-767 {
+    grid-column: 1/3;
   }
 }
 
@@ -243,6 +354,11 @@
   h3 {
     color: $color-default-white;
     background-color: $color-catalina-blue;
+
+    svg {
+      width: 16px;
+      height: 12px;
+    }
 
     .route__add-country {
       display: none;
@@ -259,11 +375,15 @@
     .route__btn-arrow {
       display: block;
 
-       svg path {
+      svg path {
         fill: #cbCed9;
-       }
+      }
     }
-   }
+  }
+
+  @include vp-1279 {
+    position: relative;
+  }
 }
 
 .route__item::after,
@@ -276,11 +396,27 @@
   right: -48px;
   top: 25px;
   z-index: 2;
+
+  @include vp-1023 {
+    right: -37px;
+  }
+
+  @include vp-767 {
+    right: -3px;
+    top: 15px;
+    width: 8px;
+    height: 8px;
+  }
 }
 
 .route__item::after {
   border: 1px solid #cbCed9;
   background-color: #edeff6;
+
+  @include vp-767 {
+    right: 48px;
+    top: 15px;
+  }
 }
 
 .route__item-new::after {
@@ -289,10 +425,11 @@
 
 .route__item.active::after {
   background-color: $color-default-white;
-}
 
-.route__item.active {
-  box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.25);
+  @include vp-767 {
+    right: 48px;
+    top: 15px;
+  }
 }
 
 .route__letters-list {
@@ -309,14 +446,15 @@
   font-size: 20px;
   line-height: 20px;
 
-  @include vp-1023 {
-    gap: 0;
+  @include vp-1279 {
+    row-gap: 0;
+    column-gap: 0;
     max-height: 346px;
     max-width: 262px;
   }
 }
 
-.step__letter-button {
+.route__letter-button {
   width: 58px;
   height: 68px;
   font-size: 20px;
@@ -328,7 +466,7 @@
   background-color: transparent;
   cursor: pointer;
 
-  @include vp-1023 {
+  @include vp-1279 {
     border-radius: 0;
     width: 55px;
     height: 70px;
@@ -366,21 +504,54 @@
   grid-template-columns: 1fr 215px;
   padding: 32px 26px 36px 26px;
   width: 100%;
+  box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.25);
+
+  @include vp-1279 {
+    grid-template-columns: 1fr 195px;
+    position: absolute;
+    min-width: 575px;
+    background-color: $color-default-white;
+    z-index: 1;
+  }
 }
 
 .route__item.active .route__countries-wrapper {
   display: grid;
+
+  @include vp-767 {
+    display: flex;
+    flex-direction: column;
+    min-width: 220px;
+  }
 }
 
-.step__indicator {
+.flag__holder {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding-left: 85px;
 
+  @include vp-1023 {
+    padding-left: 53px;
+  }
+
+  @include vp-767 {
+    position: relative;
+    padding: 7px;
+    border: 1px solid #cbcEd9;
+    border-radius: 4px;
+    margin-left: -1px;
+  }
+
   img {
     box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.25);
     max-width: 70px;
     max-height: 47px;
+
+    @include vp-767 {
+      max-width: 35px;
+      max-height: 24px;
+
+    }
   }
 }
