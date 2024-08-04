@@ -13,17 +13,25 @@ export type AppSlice = {
  companions: number;
  duration: number;
  dateState: DateState[];
+ startDate: string;
+ endDate: string;
  choosenLetter: string;
  choosenContinent: string; // Добавляет состояние для выбранного континента
  isSelectCountryInputActive: boolean;
  choosenCountries: Country[];
  currentPage: number;
- dataToPost: DataToPost;
+//  dataToPost: DataToPost;
+ name: string;
+ text: string;
+ hashtags: string[];
+ transport_choice: string[],
 }
 
 const initialState: AppSlice = {
     companions: 1,
     duration: 2,
+    startDate:'',
+    endDate: '',
     dateState: [
         {
           startDate: new Date(),
@@ -36,16 +44,20 @@ const initialState: AppSlice = {
     isSelectCountryInputActive: false,
     choosenCountries: [],
     currentPage: 1,
-    dataToPost: {
-        startDate: '',
-        endDate: '',
-        companions: 0,
-        text: '',
-        transport_choice: [],
-        name: '',
-        hashtags: [],
-        countries: []
-    },
+    name: 'Vasya',
+    text: '',
+    hashtags: [],
+    transport_choice: [],
+    // dataToPost: {
+    //     startDate: '',
+    //     endDate: '',
+    //     companions: 0,
+    //     text: '',
+    //     transport_choice: [],
+    //     name: '',
+    //     hashtags: [],
+    //     countries: []
+    // },
 };
 
 export const slice = {
@@ -87,32 +99,35 @@ export const appSlice = createSlice({
    setCurrentPage: (state, action: PayloadAction<number>) => {
     state.currentPage = action.payload;
    },
-   setDataToPostCompanions: (state, action: PayloadAction<number>) => {
-    state.dataToPost.companions = action.payload;
+  //  setDataToPostCompanions: (state, action: PayloadAction<number>) => {
+  //   state.dataToPost.companions = action.payload;
+  //  },
+   setStartDate: (state, action: PayloadAction<string>) => {
+    state.startDate = action.payload;
    },
-   setDataToPostStartDate: (state, action: PayloadAction<string>) => {
-    state.dataToPost.startDate = action.payload;
+   setEndDate: (state, action: PayloadAction<string>) => {
+    state.endDate = action.payload;
    },
-   setDataToPostEndDate: (state, action: PayloadAction<string>) => {
-    state.dataToPost.endDate = action.payload;
+   setText: (state, action: PayloadAction<string>) => {
+    state.text = state.text.concat(action.payload);
    },
-   setDataToPostText: (state, action: PayloadAction<string>) => {
-    state.dataToPost.text = state.dataToPost.text.concat(action.payload);
-   },
-   setDataToPostTransport: (state, action: PayloadAction<string>) => {
-    if (state.dataToPost.transport_choice.includes(action.payload)) {
-        state.dataToPost.transport_choice = state.dataToPost.transport_choice.filter((transport) => transport !== action.payload);
+   setTransport: (state, action: PayloadAction<string>) => {
+    if (state.transport_choice.includes(action.payload)) {
+        state.transport_choice = state.transport_choice.filter((transport) => transport !== action.payload);
     } else {
-        state.dataToPost.transport_choice = [...state.dataToPost.transport_choice, action.payload];
+        state.transport_choice = [...state.transport_choice, action.payload];
     }
 
    },
-   setDataToPostHashTags: (state, action: PayloadAction<string>) => {
-    state.dataToPost.hashtags = action.payload.split(' ');
+   setHashTags: (state, action: PayloadAction<string>) => {
+    state.hashtags = action.payload.split(' ');
    },
-   setDataToPostCountries: (state) => {
-    state.dataToPost.countries = state.choosenCountries.map((country) => country.name);
+   resetState: (state) => {
+    state = initialState;
    }
+  //  setDataToPostCountries: (state) => {
+  //   state.dataToPost.countries = state.choosenCountries.map((country) => country.name);
+  //  }
   }
 });
 
@@ -127,9 +142,15 @@ export const {
     changeChoosenCountry,
     removeChoosenCountry,
     setCurrentPage,
-    setDataToPostCompanions,
-    setDataToPostCountries,
-    setDataToPostText,
-    setDataToPostHashTags,
-    setDataToPostTransport
+    // setDataToPostCompanions,
+    setEndDate,
+    setStartDate,
+    setHashTags,
+    setText,
+    setTransport,
+    resetState,
+    // setDataToPostCountries,
+    // setDataToPostText,
+    // setDataToPostHashTags,
+    // setDataToPostTransport
 } = appSlice.actions;

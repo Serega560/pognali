@@ -12,3 +12,5 @@ export enum NameSpace {
 
 const ALPHABET = "абвгдезиклмнопрстуфхчшэюя".toUpperCase();
 export const letterArray: any = ALPHABET.split('');
+
+export const LIMIT = 5;

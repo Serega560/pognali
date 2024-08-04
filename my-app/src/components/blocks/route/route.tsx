@@ -3,7 +3,7 @@ import MiniPlan from "../miniplan/miniplan";
 import { ReactComponent as NextStep } from '../../../assets/img/nextstep.svg';
 import { letterArray } from '../../../const';
 import { useAppDispatch, useAppSelector } from '../../../hooks/hooks';
-import { addChoosenCountries, setDataToPostCountries, setIsSelectCountryInputActive, setLetter } from '../../../store/app-slice';
+import { addChoosenCountries, setIsSelectCountryInputActive, setLetter } from '../../../store/app-slice';
 import { useGetCountriesNamesQuery } from '../../../store/countries-api';
 import { Country } from '../../../types';
 import { SelectedCountryInput } from '../selected-coutry-input/selected-country-input';
@@ -78,7 +78,9 @@ function Route(): JSX.Element {
       </ul>
 
       <div className="group-btn">
-        <a className="route-btn" href="#entertainment" onClick={() => setDataToPostCountries()}>
+        <a className="route-btn" href="#entertainment"
+          // onClick={() => setDataToPostCountries()}
+          >
           <span>Следующий шаг</span>
           <NextStep />
         </a>

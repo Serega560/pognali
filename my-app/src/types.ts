@@ -1,3 +1,4 @@
+import { CardData } from "./components/types/card-data";
 import { store } from "./store";
 
 export type State = ReturnType<typeof store.getState>;
@@ -30,7 +31,7 @@ export type PaginateData = {
   limit: number,
   total: number,
   totalPages: number,
-  data: Companion[]
+  data: CardData[]
 };
 
 export type Transport = {

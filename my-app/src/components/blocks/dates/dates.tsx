@@ -3,9 +3,10 @@ import {ReactComponent as Plus} from '../../../assets/img/plusbutton.svg'
 import {ReactComponent as Minus} from '../../../assets/img/minusbutton.svg'
 import {ReactComponent as NextStep} from '../../../assets/img/nextstep.svg';
 import {Link} from "react-router-dom";
-import { useAppDispatch } from '../../../hooks/hooks';
-import { setDataToPostCompanions } from '../../../store/app-slice';
+import { useAppDispatch, useAppSelector } from '../../../hooks/hooks';
+// import { setDataToPostCompanions } from '../../../store/app-slice';
 import StepDates from "../calendar/calendar";
+import { setCompanions, setDuration } from '../../../store/app-slice';
 
 interface DatesProps {
    children: React.ReactNode;
@@ -13,15 +14,23 @@ interface DatesProps {
 
 const Dates: React.FC<DatesProps> = ({children}) => {
    const dispatch = useAppDispatch();
-   const [companions, setCompanions] = useState(0);
-   const [days, setDays] = useState(0);
+   const companions = useAppSelector((state) => state.appSlice.companions);
+   const days = useAppSelector((state) => state.appSlice.duration);
+   // const [companions, setCompanions] = useState(0);
+   // const [days, setDays] = useState(0);
 
    // Обработчики для увеличения и уменьшения значений
-   const incrementCompanions = () => setCompanions(prevCompanions => prevCompanions + 1);
-   const decrementCompanions = () => setCompanions(prevCompanions => Math.max(prevCompanions - 1, 0));
+   // const incrementCompanions = () => setCompanions(prevCompanions => prevCompanions + 1);
+   // const decrementCompanions = () => setCompanions(prevCompanions => Math.max(prevCompanions - 1, 0));
 
-   const incrementDays = () => setDays(prevDays => prevDays + 1);
-   const decrementDays = () => setDays(prevDays => Math.max(prevDays - 1, 0));
+   const incrementCompanions = () => dispatch(setCompanions(companions + 1));
+   const decrementCompanions = () => dispatch(setCompanions(Math.max(companions - 1, 0)));
+
+   // const incrementDays = () => setDays(prevDays => prevDays + 1);
+   // const decrementDays = () => setDays(prevDays => Math.max(prevDays - 1, 0));
+
+   const incrementDays = () => dispatch(setDuration(days + 1));
+   const decrementDays = () => dispatch(setDuration(Math.max(days - 1, 0)));
 
    return (
       <div className="dates" id="dates">
@@ -43,7 +52,7 @@ const Dates: React.FC<DatesProps> = ({children}) => {
                         type="number"
                         id="companions"
                         value={companions}
-                        onChange={(e) => setCompanions(Number(e.target.value))}
+                        onChange={(e) => dispatch(setCompanions(Number(e.target.value)))}
                         min="0"
                      />
                      <button onClick={incrementCompanions}><Plus/></button>
@@ -58,7 +67,7 @@ const Dates: React.FC<DatesProps> = ({children}) => {
                         type="number"
                         id="days"
                         value={days}
-                        onChange={(e) => setDays(Number(e.target.value))}
+                        onChange={(e) => dispatch(setDuration(Number(e.target.value)))}
                         min="0"
                      />
                      <button onClick={incrementDays}><Plus/></button>
@@ -75,7 +84,9 @@ const Dates: React.FC<DatesProps> = ({children}) => {
             </div>
          </div>
          <StepDates/>
-         <a href="#route" onClick={() => dispatch(setDataToPostCompanions(companions))}>
+         <a href="#route"
+            // onClick={() => dispatch(setDataToPostCompanions(companions))}
+            >
             <span>Следующий шаг</span>
             <NextStep/>
          </a>

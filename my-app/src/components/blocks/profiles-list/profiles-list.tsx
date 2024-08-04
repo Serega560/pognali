@@ -5,7 +5,7 @@ import CardProfile from "../../ui/card-profile/card-profile";
 import './profiles-list.module.scss'
 
 type CardsProfileProps = {
-  cardsData: CardData[] | null;
+  cardsData: CardData[];
 };
 
 function ProfilesList({cardsData}: CardsProfileProps): JSX.Element {

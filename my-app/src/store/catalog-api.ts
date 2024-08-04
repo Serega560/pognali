@@ -26,5 +26,6 @@ export const catalogApi = createApi({
 export const {
     useGetCatalogQuery,
     useGetPaginationQuery,
-    usePostFormDataQuery
+    usePostFormDataQuery,
+    useLazyPostFormDataQuery
 } = catalogApi;

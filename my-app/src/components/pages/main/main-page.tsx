@@ -1,8 +1,10 @@
-import { useGetCatalogQuery } from "../../../store/catalog-api";
+import { useGetCatalogQuery, useGetPaginationQuery } from "../../../store/catalog-api";
 
 function MainPage(): React.JSX.Element {
 
     const {data: catalog} = useGetCatalogQuery('');
+    const {data: paginationData} = useGetPaginationQuery({page: 2, limit: 3});
+    console.log(paginationData, 'pagination');
     console.log(catalog, 'catalog');
     return (
         <div>
