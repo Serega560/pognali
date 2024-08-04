@@ -1,5 +1,4 @@
-import React from "react";
-import {Link} from "react-router-dom";
+import React, { useState } from 'react';
 import MiniPlan from "../miniplan/miniplan";
 import {ReactComponent as NextStep} from '../../../assets/img/nextstep.svg';
 import {useAppDispatch, useAppSelector} from "../../../hooks/hooks";
@@ -37,6 +36,7 @@ function Entertainment() {
       dispatch(resetState());
     }
   }
+   const [isActive, setIsActive] = useState(false);
 
    return (
       <div className="entertainment" id="entertainment">
@@ -44,7 +44,7 @@ function Entertainment() {
             <div className="entertainment-heading">
                <h3>Шаг 3. Развлечения</h3>
                <p>Наконец, расскажите о&nbsp;своих планах времяпровождения.
-                  Можно писать в&nbsp;свободной форме и&nbsp;ставить тэги.
+                  Можно&nbsp;писать в&nbsp;свободной форме и&nbsp;ставить тэги.
                </p>
             </div>
             <MiniPlan/>
@@ -58,9 +58,12 @@ function Entertainment() {
                         <img src={country.flag} alt="country flag image"/>
                      </div>
                      <textarea
+                        className={isActive ? 'active-placeholder' : ''}
+                        onFocus={() => setIsActive(true)}
+                        onBlur={() => setIsActive(false)}
                         id="textarea1"
                         name="textarea1"
-                        rows={3}
+                        rows={4}
                         cols={20}
                         placeholder="План действий"
                         onChange={(evt) => dispatch(setText(evt.currentTarget.value))}

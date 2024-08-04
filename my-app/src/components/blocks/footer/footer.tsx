@@ -20,12 +20,12 @@ function Footer() {
                     <ul className="social-list">
                         <li className="social-item">
                             <a href="#">
-                                <Vk/>
+                                <Telegram/>
                             </a>
                         </li>
                         <li className="social-item">
                             <a href="#">
-                                <Telegram/>
+                                <Vk/>
                             </a>
                         </li>
                         <li className="social-item">
