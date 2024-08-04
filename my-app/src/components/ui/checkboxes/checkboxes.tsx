@@ -28,10 +28,10 @@ function Checkboxes() {
     const dispatch = useAppDispatch();
 
     return (
-        <div>
-            <ul className="checkbox__list">
+        <div className="filters__holder checkboxes">
+            <ul className="checkboxes__list">
                 {hobbies.map(({ value }) => (
-                    <li className="checkbox__item" key={value}>
+                    <li className="checkboxes__item checkbox" key={value}>
                         <div className="checkbox__checkbox">
                             <label className="checkbox__label">
                                 <p>{`${value}`}</p>
@@ -47,9 +47,9 @@ function Checkboxes() {
                     </li>
                 ))}
             </ul>
-            <ul className="checkbox__list">
+            <ul className="checkboxes__list">
                 {music.map(({ value }) => (
-                    <li className="checkbox__item" key={value}>
+                    <li className="checkboxes__item checkbox" key={value}>
                         <div className="checkbox__checkbox">
                             <label className="checkbox__label">
                                 <p>{`${value}`}</p>
@@ -65,9 +65,9 @@ function Checkboxes() {
                     </li>
                 ))}
             </ul>
-            <ul className="checkbox__list">
+            <ul className="checkboxes__list">
                 {food.map(({ value }) => (
-                    <li className="checkbox__item" key={value}>
+                    <li className="checkbox__item checkbox" key={value}>
                         <div className="checkbox__checkbox">
                             <label className="checkbox__label">
                                 <p>{`${value}`}</p>
@@ -88,3 +88,7 @@ function Checkboxes() {
 }
 
 export default Checkboxes;
+
+
+
+
