@@ -6,27 +6,10 @@ import { useState, useEffect } from 'react';
 import BurgerMenu from '../../burger/burger';
 import { Link } from 'react-router-dom';
 import { AppRoute } from '../../../const';
-//import { useLocation } from 'react-router-dom'   код для добавления модификатора для хедера в зависимости от адреса текущей страницы
 
 function Header() {
-    /*
-    //код для добавления модификатора для хедера в зависимости от адреса текущей страницы
-
-    const location = useLocation();
-    */
-    let headerClass = '';
-    /*
-    if (location.pathname === '/index.html') {
-        headerClass = 'header--main';
-    } else if (location.pathname === '/catalog.html') {
-        headerClass = 'header--catalog';
-    }
-    */
-    /// код для бургерного меню
-
 
     const [isMobile, setIsMobile] = useState(false);
-   
 
     useEffect(() => {
         const handleResize = () => {
@@ -47,7 +30,7 @@ function Header() {
     }, []);
 
     return (
-        <header className={`header ${headerClass}`}>
+        <header className={`header`}>
             {isMobile ? (
                 <BurgerMenu />
             ) : (
@@ -67,7 +50,7 @@ function Header() {
                                     <Link to={AppRoute.Root}>о сервисе</Link>
                                 </li>
                                 <li className="header__nav-item">
-                                     <Link to={AppRoute.Catalog}>направления</Link>
+                                    <Link to={AppRoute.Catalog}>направления</Link>
                                 </li>
                                 <li className="header__nav-item">
                                     <Link to={AppRoute.Form}>попутчики</Link>
