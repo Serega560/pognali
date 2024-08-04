@@ -16,13 +16,13 @@ type CardProfileProps = {
 
 const transportIcons = [
   { type: 'Fly', Icon: Fly },
-  { type: 'Bus', Icon: Bus },
+  { type: 'Car', Icon: Bus },
   { type: 'Bicycle', Icon: Bicycle },
   { type: 'Onfoot', Icon: Onfoot },
 ];
 
 function CardProfile({ cardData }: CardProfileProps): JSX.Element {
-  const { name, image, hashtags, likes, online, transport, countries, level } = cardData;
+  const { name, image, hashtags, likes, online, transport_choice, country, level } = cardData;
   const [isLiked, setIsLiked] = useState(false);
 
   const handleLikeClick = () => {
@@ -73,7 +73,7 @@ function CardProfile({ cardData }: CardProfileProps): JSX.Element {
         </div>
         <ul className="card-profile__transport-list">
           {transportIcons.map(({ type, Icon }) => (
-            <li key={type} className={`card-profile__transport-item ${transport.includes(type) ? 'active' : ''}`}>
+            <li key={type} className={`card-profile__transport-item ${transport_choice.includes(type) ? 'active' : ''}`}>
               <Icon />
             </li>
           ))}
@@ -97,7 +97,7 @@ function CardProfile({ cardData }: CardProfileProps): JSX.Element {
         </div>
         <div>
           <ul className="card-profile__country-list">
-            {countries.map((country, index) => (
+            {country.map((country, index) => (
               <li key={index} className="card-profile__country-item">
                 <div className="card-profile__country-flag">
                   <picture className="card-profile__country-flag-figure">

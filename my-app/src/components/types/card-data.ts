@@ -4,8 +4,8 @@ export type CardData = {
   online: boolean;
   image: string;
   hashtags: string;
-  transport: string[];
-  countries: Array<{
+  transport_choice: string[];
+  country: Array<{
     name: string;
     flag: string;
   }>;

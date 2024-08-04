@@ -4,7 +4,7 @@ import { ReactComponent as Bus } from '../../../assets/img/bus.svg';
 import { ReactComponent as Bicycle } from '../../../assets/img/bicycle.svg';
 import { ReactComponent as Onfoot } from '../../../assets/img/onfoot.svg';
 import { useAppDispatch } from '../../../hooks/hooks';
-import { setDataToPostTransport } from '../../../store/app-slice';
+import { setTransport } from '../../../store/app-slice';
 import './checkbox-transport.module.scss';
 
 
@@ -29,7 +29,7 @@ function CheckboxTransport() {
                                 type="checkbox"
                                 value={type}
                                 name={type}
-                                onClick={(evt) => dispatch(setDataToPostTransport(evt.currentTarget.name))}
+                                onClick={(evt) => dispatch(setTransport(evt.currentTarget.name))}
                             />
                             <span className="checkbox-transport__icon">
                                 <Icon />
