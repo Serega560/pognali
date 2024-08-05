@@ -9,6 +9,7 @@
 
   @include vp-1439 {
     padding: 101px 59px 106px 59px;
+    border-radius: 30px;
   }
 
   @include vp-1023 {
@@ -20,6 +21,10 @@
     padding: 0;
     margin: 0;
     margin-bottom: 57px;
+
+    @include vp-1439 {
+      margin-bottom: 47px;
+    }
   }
 
   .route__header {
@@ -35,6 +40,8 @@
     @include vp-1023 {
       display: flex;
       min-width: 532px;
+      margin-bottom: 42px;
+      padding-bottom: 32px;
     }
 
     @include vp-767 {
@@ -158,6 +165,10 @@
   font-weight: 700;
   font-size: 36px;
   line-height: 36px;
+
+  @include vp-1439 {
+    margin-bottom: 70px;
+  }
 }
 
 .route__notion {
@@ -199,6 +210,7 @@
   @include vp-767 {
     min-width: 220px;
     flex-direction: column;
+    align-items: center;
   }
 
   .route-btn {
@@ -218,6 +230,7 @@
       width: 100%;
       padding: 10px;
       justify-content: center;
+      text-transform: uppercase;
 
       svg {
         display: none;
