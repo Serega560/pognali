@@ -10,7 +10,7 @@ export const catalogApi = createApi({
                 query: () => `api/catalog`
             }),
             getPagination: build.query<PaginateData, PaginateParams>({
-                query: ({page, limit}) => `api/paginate?page=${page} ${limit ? `limit=${limit}` : ''}`
+                query: ({page, limit}) => `api/paginate?page=${page} ${limit ? `&limit=${limit}` : ''}`
             }),
             postFormData: build.query<SubmitFormResult, DataToPost>({
                 query: (body) => ({
@@ -26,6 +26,7 @@ export const catalogApi = createApi({
 export const {
     useGetCatalogQuery,
     useGetPaginationQuery,
+    useLazyGetPaginationQuery,
     usePostFormDataQuery,
     useLazyPostFormDataQuery
 } = catalogApi;

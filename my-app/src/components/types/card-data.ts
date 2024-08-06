@@ -11,4 +11,5 @@ export type CardData = {
   }>;
   level: number;
   likes: number;
+  is_form_generated: boolean;
 };

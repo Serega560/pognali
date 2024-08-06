@@ -27,9 +27,7 @@ export const SelectedCountryInput = ({ selectedCountry }: SelectedCoutriesInputP
             <div className={`route__item-new `}>
                 <h3
                 onClick={(evt) => {
-                    console.log(evt.target);
                     evt.currentTarget.closest('div')?.classList.toggle('active');
-                    // dispatch(setIsSelectCountryInputActive());
                 }}                
                 >
                     {selectedCountry.name}
