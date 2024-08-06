@@ -41,6 +41,11 @@ export type Transport = {
   onfoot: boolean;
 }
 
+type CountriesToPost = {
+  name: string;
+  flag: string;
+}
+
 export type DataToPost = {
   startDate: string,
   endDate: string,
@@ -48,8 +53,10 @@ export type DataToPost = {
   text: string,
   transport_choice: string[],
   name: string,
-  hashtags: string[],
-  countries: string[]
+  hashtags: string,
+  level: number,
+  country: CountriesToPost[],
+  is_form_generated: boolean
 };
 
 export type SubmitFormResult = {

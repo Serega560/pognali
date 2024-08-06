@@ -7,3 +7,7 @@ export function formatDate (oldDate: string): string {
 
     return formattedDate;
 }
+
+export function getRandomNumber() {
+    return Math.floor(Math.random() * 100) + 1;
+  };

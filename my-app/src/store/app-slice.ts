@@ -1,5 +1,5 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { NameSpace } from '../const';
+import { LIMIT, NameSpace } from '../const';
 import { CountriesToChange, Country, DataToPost } from '../types';
 import { addDays } from 'date-fns';
 
@@ -20,11 +20,11 @@ export type AppSlice = {
  isSelectCountryInputActive: boolean;
  choosenCountries: Country[];
  currentPage: number;
-//  dataToPost: DataToPost;
  name: string;
  text: string;
- hashtags: string[];
+ hashtags: string;
  transport_choice: string[],
+ currentLimit: number
 }
 
 const initialState: AppSlice = {
@@ -44,20 +44,11 @@ const initialState: AppSlice = {
     isSelectCountryInputActive: false,
     choosenCountries: [],
     currentPage: 1,
+    currentLimit: LIMIT,
     name: 'Vasya',
     text: '',
-    hashtags: [],
+    hashtags: '',
     transport_choice: [],
-    // dataToPost: {
-    //     startDate: '',
-    //     endDate: '',
-    //     companions: 0,
-    //     text: '',
-    //     transport_choice: [],
-    //     name: '',
-    //     hashtags: [],
-    //     countries: []
-    // },
 };
 
 export const slice = {
@@ -99,9 +90,6 @@ export const appSlice = createSlice({
    setCurrentPage: (state, action: PayloadAction<number>) => {
     state.currentPage = action.payload;
    },
-  //  setDataToPostCompanions: (state, action: PayloadAction<number>) => {
-  //   state.dataToPost.companions = action.payload;
-  //  },
    setStartDate: (state, action: PayloadAction<string>) => {
     state.startDate = action.payload;
    },
@@ -120,14 +108,14 @@ export const appSlice = createSlice({
 
    },
    setHashTags: (state, action: PayloadAction<string>) => {
-    state.hashtags = action.payload.split(' ');
+    state.hashtags = action.payload;
+   },
+   setLimit: (state) => {
+    state.currentLimit += LIMIT;
    },
    resetState: (state) => {
     state = initialState;
    }
-  //  setDataToPostCountries: (state) => {
-  //   state.dataToPost.countries = state.choosenCountries.map((country) => country.name);
-  //  }
   }
 });
 
@@ -142,15 +130,11 @@ export const {
     changeChoosenCountry,
     removeChoosenCountry,
     setCurrentPage,
-    // setDataToPostCompanions,
+    setLimit,
     setEndDate,
     setStartDate,
     setHashTags,
     setText,
     setTransport,
     resetState,
-    // setDataToPostCountries,
-    // setDataToPostText,
-    // setDataToPostHashTags,
-    // setDataToPostTransport
 } = appSlice.actions;

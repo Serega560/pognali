@@ -5,6 +5,9 @@ import {useAppDispatch, useAppSelector} from "../../../hooks/hooks";
 import {resetState, setText} from "../../../store/app-slice";
 import { useLazyPostFormDataQuery } from "../../../store/catalog-api";
 import { DataToPost } from "../../../types";
+import { getRandomNumber } from '../../../utils';
+import { useNavigate } from 'react-router-dom';
+import { AppRoute } from '../../../const';
 
 
 function Entertainment() {
@@ -16,24 +19,28 @@ function Entertainment() {
    const companions = useAppSelector((state) => state.appSlice.companions);
    const text = useAppSelector((state) => state.appSlice.text);
    const transport = useAppSelector((state) => state.appSlice.transport_choice);
+   const navigate = useNavigate();
 
    const [postData, {isLoading, isError, isSuccess}] = useLazyPostFormDataQuery();
 
   function handlePostData () {
-    const data: DataToPost = {
+   const data: DataToPost = {
       startDate: startDate,
       endDate: endDate,
       companions: companions,
-      text: text,
+      text: Object.entries(text).toString(),
       transport_choice: transport,
       name: 'Vasya',
       hashtags: hashtags,
-      countries: choosenCountries.map((country) => country.name),
+      country: choosenCountries.map(({ name, flag }) => ({ name, flag })),
+      level: getRandomNumber(),
+      is_form_generated: false
     }
     
     postData(data);
     if (isSuccess) {
       dispatch(resetState());
+      navigate(AppRoute.Catalog);
     }
   }
    const [isActive, setIsActive] = useState(false);

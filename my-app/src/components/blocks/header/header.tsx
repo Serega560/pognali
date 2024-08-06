@@ -50,10 +50,10 @@ function Header() {
                                     <Link to={AppRoute.Root}>о сервисе</Link>
                                 </li>
                                 <li className="header__nav-item">
-                                    <Link to={AppRoute.Catalog}>направления</Link>
+                                    <Link to={AppRoute.Form}>направления</Link>
                                 </li>
                                 <li className="header__nav-item">
-                                    <Link to={AppRoute.Form}>попутчики</Link>
+                                    <Link to={AppRoute.Catalog}>попутчики</Link>
                                 </li>
                             </ul>
                         </nav>

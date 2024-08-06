@@ -15,9 +15,9 @@ import { CardData } from '../../types/card-data';
 
 
 function Catalog(): JSX.Element {
-  
+  const currentLimit = useAppSelector((state) => state.appSlice.currentLimit);
   const currentPage = useAppSelector((state) => state.appSlice.currentPage);
-  const { data: paginationData, isLoading, isSuccess } = useGetPaginationQuery({ page: currentPage, limit: LIMIT });
+  const { data: paginationData, isLoading, isSuccess } = useGetPaginationQuery({ page: currentPage, limit: currentLimit });
   
   return (
     <section className="catalog">
@@ -31,7 +31,6 @@ function Catalog(): JSX.Element {
           {isSuccess ? <ProfilesList cardsData={paginationData.data.map((profile): CardData => {
             return { ...profile, image: "https://loremflickr.com/320/240/cat" }
           })} /> : <div>Loading...</div>}
-          {/* <ProfilesList cardsData={cardList} /> */}
           <div className="catalog__show-more">
             <BtnShowMore />
           </div>

@@ -12,8 +12,8 @@ export default function App() {
     <Header />
     <Routes>
       <Route path={AppRoute.Root} element={<MainPage />} />
-      <Route path={AppRoute.Catalog} element={<Form />} />
-      <Route path={AppRoute.Form} element={<Catalog />} />
+      <Route path={AppRoute.Catalog} element={<Catalog />} />
+      <Route path={AppRoute.Form} element={<Form />} />
     </Routes>
     <Footer />
   </>

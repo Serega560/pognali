@@ -22,7 +22,7 @@ const transportIcons = [
 ];
 
 function CardProfile({ cardData }: CardProfileProps): JSX.Element {
-  const { name, image, hashtags, likes, online, transport_choice, country, level } = cardData;
+  const { name, image, hashtags, likes, online, transport_choice, country, level, is_form_generated } = cardData;
   const [isLiked, setIsLiked] = useState(false);
 
   const handleLikeClick = () => {
@@ -54,17 +54,20 @@ function CardProfile({ cardData }: CardProfileProps): JSX.Element {
       <p className="card-profile__hashtags">{hashtags}</p>
 
       {/* кнопка позвать */}
-      <div className="card-profile__btn-call-wrapper">
+      {is_form_generated ? <div className="card-profile__btn-call-wrapper">
         <BtnCall />
-      </div>
+      </div> : ''}
       
       {/* кнопка лайк и кол-во лайков */}
-      <button className={`card-profile__btn-like ${isLiked ? 'active' : ''}`} onClick={handleLikeClick}>
-        <Heart />
-      </button>
-      <div className="card-profile__likes-number-wrapper">
-        <span className="card-profile__likes-number">{likes}</span>
-      </div>
+      {is_form_generated ? <>
+        <button className={`card-profile__btn-like ${isLiked ? 'active' : ''}`} onClick={handleLikeClick}>
+          <Heart />
+        </button>
+        <div className="card-profile__likes-number-wrapper">
+          <span className="card-profile__likes-number">{likes}</span>
+        </div>
+      </> : ''}
+      
 
       {/* список выбранного транспорта */}
       <div className="card-profile__transport">

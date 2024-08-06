@@ -13,7 +13,6 @@ function Pagination() {
     const {data: paginationData} = useGetPaginationQuery({page: currentPage, limit: LIMIT});
     const totalPages = paginationData?.totalPages ?? 1;
 
-    console.log(paginationData, 'pagindata')
     return (
       <section className="pagination">
         <ul className="pagination__page-list">
@@ -25,18 +24,6 @@ function Pagination() {
             </li>
                 )
             } )}
-            {/* <li className="pagination__page-item active">
-                <span>1</span>
-            </li>
-            <li className="pagination__page-item">
-                <span>2</span>
-            </li>
-            <li className="pagination__page-item">
-                <span>3</span>
-            </li>
-            <li className="pagination__page-item">
-                <span>4</span>
-            </li> */}
         </ul>
 
         <div className="pagination__arrows">
