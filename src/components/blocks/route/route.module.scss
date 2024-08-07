@@ -16,6 +16,10 @@
     padding: 48px 40px 54px 40px;
   }
 
+  @include vp-767 {
+    padding: 24px 25px 23px;
+  }
+
   ul {
     list-style: none;
     padding: 0;
@@ -47,6 +51,8 @@
     @include vp-767 {
       min-width: 220px;
       border-bottom: none;
+      margin-bottom: 21px;
+      padding-bottom: 0;
     }
 
     li:nth-child(2) {
@@ -169,12 +175,24 @@
   @include vp-1439 {
     margin-bottom: 70px;
   }
+
+  @include vp-767 {
+    font-size: 20px;
+    line-height: 20px;
+    margin-bottom: 35px;
+  }
 }
 
 .route__notion {
   margin: 0;
   font-size: 20px;
   line-height: 24px;
+
+  @include vp-767 {
+    font-size: 13px;
+    line-height: 20px;
+    margin-bottom: 21px;
+  }
 }
 
 .route__counties-list {
@@ -262,6 +280,11 @@
       font-weight: 700;
       color: #1D2E5B;
       line-height: 24px;
+
+      @include vp-767 {
+        font-size: 17px;
+        line-height: 30px;
+      }
     }
   }
 
@@ -287,6 +310,11 @@
 
     svg {
       transform: rotate(180deg);
+    }
+
+    @include vp-767 {
+      width: 100%;
+      margin-right: 0;
     }
   }
 }
