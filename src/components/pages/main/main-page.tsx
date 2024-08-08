@@ -1,5 +1,3 @@
-import { useGetCatalogQuery, useGetPaginationQuery } from "../../../store/catalog-api";
-
 function MainPage(): React.JSX.Element {
 
     return (
