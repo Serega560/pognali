@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import MiniPlan from "../miniplan/miniplan";
 import {ReactComponent as NextStep} from '../../../assets/img/nextstep.svg';
 import {useAppDispatch, useAppSelector} from "../../../hooks/hooks";
@@ -38,11 +38,15 @@ function Entertainment() {
     }
     
     postData(data);
-    if (isSuccess) {
+  }
+
+  useEffect(() => {
+   if (isSuccess) {
       dispatch(resetState());
       navigate(AppRoute.Catalog);
-    }
-  }
+   }
+
+  }, [isSuccess]);
    const [isActive, setIsActive] = useState(false);
 
    return (
@@ -81,7 +85,7 @@ function Entertainment() {
 
          </div>
          <div className="group-btn">
-            <button className="entertainment-btn" type="button"
+            <button className="entertainment-btn" type="button" disabled={isLoading ? true : false}
                onClick={(evt) => {
                   evt.preventDefault();
                   handlePostData();

@@ -1,6 +1,6 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { LIMIT, NameSpace } from '../const';
-import { CountriesToChange, Country, DataToPost } from '../types';
+import { CountriesToChange, Country } from '../types';
 import { addDays } from 'date-fns';
 
 export type DateState = {
@@ -114,7 +114,21 @@ export const appSlice = createSlice({
     state.currentLimit += LIMIT;
    },
    resetState: (state) => {
-    state = initialState;
+    state.choosenContinent = 'Европа';
+    state.choosenCountries = [];
+    state.choosenLetter = 'А';
+    state.companions = 1;
+    state.currentLimit = LIMIT;
+    state.currentPage = 1;
+    state.dateState = initialState.dateState;
+    state.duration = 2;
+    state.endDate = '';
+    state.hashtags = '';
+    state.isSelectCountryInputActive = false;
+    state.name = 'vasya';
+    state.startDate = '';
+    state.text = '';
+    state.transport_choice = [];
    }
   }
 });
