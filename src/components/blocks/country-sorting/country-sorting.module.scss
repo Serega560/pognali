@@ -29,7 +29,7 @@
       font-size: 60px;
       line-height: 1;
       text-transform: uppercase;
-      color: #192144;
+      color: $color-midnight-express;
     }
 
     .country-sorting__group {
@@ -49,7 +49,7 @@
       font-weight: 400;
       font-size: 20px;
       line-height: 1.5;
-      color: #444444;
+      color: $color-charcoal;
     }
   }
 
@@ -84,7 +84,7 @@
         grid-template-columns: repeat(5, minmax(43px, 1fr));
         grid-template-rows: repeat(5, 40px);
         gap: 1px;
-        background-color: #CBCED9;
+        background-color: $color-link-water;
 
         margin-right: 25px;
       }
@@ -99,7 +99,7 @@
         font-size: 60px;
         line-height: 1;
         text-transform: uppercase;
-        color: rgba(#192144, 0.3);
+        color: rgba($color-midnight-express, 0.3);
   
         background-color: transparent;
         cursor: pointer;
@@ -110,12 +110,12 @@
 
         &:hover,
         &:focus {
-          color: rgba(#192144, 0.6);
+          color: rgba($color-midnight-express, 0.6);
         }
   
         &.active,
         &:active {
-          color: rgba(#192144, 1);
+          color: rgba($color-midnight-express, 1);
         }
       }
 
@@ -126,12 +126,12 @@
         width: 100%;
         height: 100%;
 
-        color: rgba(#192144, 1);
-        background-color: #fff;
+        color: rgba($color-midnight-express, 1);
+        background-color: $color-default-white;
 
         &.active {
-          color: rgba(#fff, 1);
-          background-color: #192144;
+          color: rgba($color-default-white, 1);
+          background-color: $color-midnight-express;
         }
       }
     }
@@ -152,7 +152,7 @@
         font-weight: 400;
         font-size: 20px;
         line-height: 1.5;
-        color: #444444;
+        color: $color-charcoal;
       }
 
       @include vp-767 {
