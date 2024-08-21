@@ -84,7 +84,7 @@
       height: 237px;
       overflow: hidden;
 
-      background-color: #fff;
+      background-color: $color-default-white;
 
       @include vp-1023 {
          grid-row: 1/2;
@@ -94,7 +94,7 @@
          width: 94px;
          height: 94px;
 
-         background-color: #DFE3F0;
+         background-color: $color-hawkes-blue-sec;
       }
 
       @include vp-767 {
@@ -171,7 +171,7 @@
 
       border: none;
       border-radius: 10px;
-      background-color: #DFE3F0;
+      background-color: $color-hawkes-blue-sec;
       padding: 22px 55px 20px;
 
       font-weight: 500;
@@ -180,7 +180,7 @@
       letter-spacing: 0.09em;
       text-transform: uppercase;
       text-align: center;
-      color: #161C35;
+      color: $color-midnight-express-3;
 
       transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 
@@ -193,12 +193,12 @@
 
       &:hover,
       &:focus {
-         background-color: #D1D7E9;
+         background-color: $color-hawkes-blue-3;
       }
 
       &:active {
-         background-color: #DFE3F0;
-         color: rgba(#1D2E5B, 0.3);
+         background-color: $color-hawkes-blue-sec;
+         color: rgba($color-catalina-blue, 0.3);
       }
    }
 

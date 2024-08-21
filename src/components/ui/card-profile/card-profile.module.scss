@@ -3,7 +3,7 @@
 @import "../../../variables.scss";
 
 .card-profile {
-    background-color: #fff;
+    background-color: $color-default-white;
     border-radius: 20px;
     overflow: hidden;
 
@@ -99,7 +99,7 @@
         font-weight: 700;
         font-size: 30px;
         line-height: 1;
-        color: #1D2E5B;
+        color: $color-catalina-blue;
 
         display: flex;
         flex: 0 1 auto;
@@ -187,15 +187,15 @@
     &__state {
         width: 8px;
         height: 8px;
-        background-color: #F97676;
+        background-color: $color-salmon;
         border-radius: 50%;
 
         &--offline {
-            background-color: #F97676; 
+            background-color: $color-salmon; 
         }
 
         &--online {
-            background-color: #81E31E; 
+            background-color: $color-lawn-green; 
         }
 
         @include vp-767 {
@@ -217,7 +217,7 @@
         font-weight: 400;
         font-size: 20px;
         line-height: 1.15;
-        color: #000;
+        color: $color-default-black;
 
         @media (max-width: 1240px) {
             grid-row: 2/3;
@@ -332,7 +332,7 @@
         font-size: 20px;
         line-height: 1;
         text-transform: uppercase;
-        color: #161C35;
+        color: $color-midnight-express-3;
 
         @include vp-767 {
             font-size: 14px;
@@ -387,13 +387,13 @@
           transform: translate(-37px, 0);
           margin: 0;
       
-          background-color: #E2E5F2;
+          background-color: $color-lavender;
         }
       
         svg {
           width: 20px;
           height: 20px;
-          color: rgba(#192144, 0.5);
+          color: rgba($color-midnight-express, 0.5);
           transition: color 0.3s ease-in-out;
       
           @include vp-767 {
@@ -408,50 +408,50 @@
       
         &:hover,
         &:focus {
-          background-color: #E2E5F2;
+          background-color: $color-lavender;
       
           svg {
-            color: rgba(#192144, 0.3);
+            color: rgba($color-midnight-express, 0.3);
           }
         }
       
         &:active {
-          background-color: #E2E5F2;
+          background-color: $color-lavender;
       
           svg {
-            color: rgba(#192144, 0.1);
+            color: rgba($color-midnight-express, 0.1);
           }
         }
       
         &.active {
-          background-color: #F9EAEA;
+          background-color: $color-tutu;
       
           svg {
-            color: rgba(#F02323, 1);
+            color: rgba($color-red-orange, 1);
             path {
-              fill: rgba(#F02323, 1);
+              fill: rgba($color-red-orange, 1);
             }
           }
       
           &:hover,
           &:focus {
-            background-color: #F9D8D8;
+            background-color: $color-remy;
       
             svg {
-              color: rgba(#F02323, 1);
+              color: rgba($color-red-orange, 1);
               path {
-                fill: rgba(#F02323, 1);
+                fill: rgba($color-red-orange, 1);
               }
             }
           }
       
           &:active {
-            background-color: #F9D8D8;
+            background-color: $color-remy;
       
             svg {
-              color: rgba(#F02323, 0.3);
+              color: rgba($color-red-orange, 0.3);
               path {
-                fill: rgba(#F02323, 0.3);
+                fill: rgba($color-red-orange, 0.3);
               }
             }
           }
@@ -545,12 +545,12 @@
             align-items: center;
 
             svg {
-                color: rgba(#1D2E5B, 0.15);
+                color: rgba($color-catalina-blue, 0.15);
             }
 
             &.active {
                 svg {
-                    color: rgba(#1D2E5B, 1);
+                    color: rgba($color-catalina-blue, 1);
                 }
             }
 
@@ -566,7 +566,7 @@
                     width: 32px;
                     height: 32px;
                     border-radius: 50%;
-                    background-color: #EDEFF6;
+                    background-color: $color-solitude-blue;
                 }
 
                 svg {
@@ -593,7 +593,7 @@
             &::after {
                 position: absolute;
                 content: "";
-                background-color: #EDEFF6;
+                background-color: $color-solitude-blue;
                 width: 200%;
                 height: 1px;
                 top:50%;
@@ -610,7 +610,7 @@
                     position: relative;
                     z-index: 2;
 
-                    background-color: #fff;
+                    background-color: $color-default-white;
                     padding: 0 12px;
                 }            
             }
@@ -680,7 +680,7 @@
             &::after {
                 position: absolute;
                 content: "";
-                background-color: #EDEFF6;
+                background-color: $color-solitude-blue;
                 width: 250%;
                 height: 1px;
                 top:50%;
@@ -697,7 +697,7 @@
                     position: relative;
                     z-index: 2;
 
-                    background-color: #fff;
+                    background-color: $color-default-white;
                     padding: 0 12px;
                 }            
             }
@@ -748,7 +748,7 @@
             &::after {
                 position: absolute;
                 content: "";
-                background-color: #EDEFF6;
+                background-color: $color-solitude-blue;
                 width: 200%;
                 height: 1px;
                 top:50%;
@@ -775,7 +775,7 @@
                 position: relative;
                 z-index: 2;
 
-                background-color: #fff;
+                background-color: $color-default-white;
                 padding: 0 12px;
             }
 
@@ -836,7 +836,7 @@
         width: 35px;
         height: 24px;
         border-radius: 2px;
-        background-color: #161C35;
+        background-color: $color-midnight-express-3;
         overflow: hidden;
 
         @include vp-1023 {
@@ -881,7 +881,7 @@
         font-size: 20px;
         line-height: 100%;
         text-transform: uppercase;
-        color: #1D2E5B;
+        color: $color-catalina-blue;
 
         @include vp-767 {
             font-size: 15px;

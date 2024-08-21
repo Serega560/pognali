@@ -23,7 +23,7 @@ function CheckboxTransport() {
             {transportIcons.map(({ type, Icon }) => (
                 <li className="checkbox-transport__item" key={type}>
                     <div className="checkbox-transport__checkbox">
-                        <label className="checkbox-transport__label">
+                        <label className="checkbox-transport__label" tabIndex={0}>
                             <input
                                 className="checkbox-transport__input"
                                 type="checkbox"

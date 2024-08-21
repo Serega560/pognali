@@ -48,7 +48,7 @@
       font-size: 20px;
       line-height: 1;
       text-transform: uppercase;
-      color: #192144;
+      color: $color-midnight-express;
 
       @include vp-767 {
         font-size: 16px;
@@ -91,7 +91,7 @@
     line-height: 1;
     letter-spacing: -1.3px;
     text-transform: uppercase;
-    color: #192144;
+    color: $color-midnight-express;
     opacity: 0.3;
 
     cursor: pointer;

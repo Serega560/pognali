@@ -23,7 +23,7 @@
     &__badge {
         margin: 0;
         padding: 0 11px;
-        background-color: #EDEFF6;
+        background-color: $color-solitude-blue;
 
         position: absolute;
         bottom: 0;
@@ -36,7 +36,7 @@
         line-height: 1;
         letter-spacing: 0.09em;
         text-transform: uppercase;
-        color: #161C35;
+        color: $color-midnight-express-3;
 
         @include vp-1023 {
             letter-spacing: 0.1em;
@@ -48,7 +48,7 @@
             line-height: 1.125;
             text-align: center;
             letter-spacing: 0;
-            color: #1D2E5B;
+            color: $color-catalina-blue;
 
             bottom: unset;
             top: 0;
