@@ -31,6 +31,8 @@
     }
 
     &__label {
+        cursor: pointer;
+
         input {
             display: none;
         }
@@ -86,7 +88,7 @@
         justify-content: center;
         align-items: center;
     
-        width: 45px;
+        width: 43px;
         height: 45px;
         border-radius: 50%;
         background-color: #fff;

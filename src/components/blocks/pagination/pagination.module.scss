@@ -59,7 +59,8 @@
             color: #1D2E5B;
         }
 
-        &:hover {
+        &:hover,
+        &:focus {
             opacity: 0.6;
         }
 
