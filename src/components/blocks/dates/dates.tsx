@@ -38,9 +38,7 @@ const Dates: React.FC<DatesProps> = ({children}) => {
             <div className="dates-heading">
                <h3>Шаг 1. Даты&nbsp;пребывания</h3>
                <p>Укажите предпочтительное количество попутчиков, которых
-                  вы&nbsp;хотели&nbsp;бы позвать в&nbsp;поездку, и&nbsp;ее&nbsp;предполагаемую длительность. dsgdgdsg
-               sdgsdgsdg
-               sgdsggsgsdgsdg</p>
+                  вы&nbsp;хотели&nbsp;бы позвать в&nbsp;поездку, и&nbsp;ее&nbsp;предполагаемую</p>
             </div>
             {children}
          </div>

@@ -2,10 +2,15 @@
   background-color: #AED0EB;
   border-radius: 30px 30px 0 0;
   padding-top: 55px;
-  padding-bottom: 72px;
+  padding-bottom: 74px;
+
+  @include vp-1439 {
+    padding-bottom: 62px;
+  }
 
   @include vp-767 {
     padding-top: 30px;
+    padding-bottom: 43px;
   }
 
   .container-plan {
@@ -20,9 +25,22 @@
     }
   }
 
+  .header-plan {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: fit-content;
+    margin-bottom: 54px;
+
+    @include vp-767 {
+      margin-bottom: 30px;
+      justify-content: normal;
+      column-gap: 27px;
+    }
+  }
+
   h2 {
     margin: 0;
-    margin-bottom: 54px;
     color: #1D2E5B;
     font-size: 36px;
     line-height: 36px;
@@ -35,14 +53,52 @@
     @include vp-767 {
       font-size: 24px;
       line-height: 24px;
-      margin-bottom: 30px;
+      margin-bottom: 28px;
     }
   }
+
+  .pagination-plan {
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    column-gap: 29px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+
+    @include vp-1439 {
+      display: flex;
+      column-gap: 28px;
+    }
+
+    @include vp-767 {
+      column-gap: 16px;
+    }
+
+    li {
+      background-color: #1D2E5B;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      opacity: 30%;
+    }
+
+    li:first-child {
+      opacity: 1;
+    }
+  }
+
 
   .plan-step {
     display: flex;
     flex-direction: column;
-    row-gap: 40px;
+    row-gap: 44px;
+
+    @include vp-767 {
+      row-gap: 10px;
+    }
   }
 
   .plan-item {

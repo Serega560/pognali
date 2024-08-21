@@ -18,13 +18,14 @@
 
   @include vp-767 {
     padding: 24px 25px 23px;
+    border-radius: 10px;
   }
 
   ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    margin-bottom: 57px;
+    margin-bottom: 53px;
 
     @include vp-1439 {
       margin-bottom: 47px;
