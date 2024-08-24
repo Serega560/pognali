@@ -1,6 +1,6 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { LIMIT, NameSpace } from '../const';
-import { CountriesToChange, Country } from '../types';
+import { CountriesToChange, Country, Step } from '../types';
 import { addDays } from 'date-fns';
 
 export type DateState = {
@@ -24,7 +24,8 @@ export type AppSlice = {
  text: string;
  hashtags: string;
  transport_choice: string[],
- currentLimit: number
+ currentLimit: number,
+ activeStep: Step,
 }
 
 const initialState: AppSlice = {
@@ -49,6 +50,7 @@ const initialState: AppSlice = {
     text: '',
     hashtags: '',
     transport_choice: [],
+    activeStep: 'dates',
 };
 
 export const slice = {
@@ -129,7 +131,10 @@ export const appSlice = createSlice({
     state.startDate = '';
     state.text = '';
     state.transport_choice = [];
-   }
+   },
+   setActiveStep: (state, action: PayloadAction<Step>) => {
+    state.activeStep = action.payload;
+   },
   }
 });
 
@@ -151,4 +156,5 @@ export const {
     setText,
     setTransport,
     resetState,
+    setActiveStep
 } = appSlice.actions;

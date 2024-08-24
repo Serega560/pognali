@@ -10,6 +10,9 @@ export const countriesApi = createApi({
             }),
             getCountriesNames: build.query({
                 query: (letter) => `api/countries?letter=${letter}`
+            }),
+            getCountriesByContinent: build.query({
+                query: ({continent}) => `api/countries?continent=${continent}`
             })
         }
     }
@@ -18,4 +21,5 @@ export const countriesApi = createApi({
 export const {
     useGetCountriesQuery,
     useGetCountriesNamesQuery,
+    useLazyGetCountriesByContinentQuery,
 } = countriesApi;

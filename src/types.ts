@@ -68,3 +68,5 @@ export type PaginateParams = {
   page: number;
   limit: number;
 };
+
+export type Step = 'dates' | 'activities' | 'route';

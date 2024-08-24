@@ -6,7 +6,7 @@ import {Link} from "react-router-dom";
 import { useAppDispatch, useAppSelector } from '../../../hooks/hooks';
 // import { setDataToPostCompanions } from '../../../store/app-slice';
 import StepDates from "../calendar/calendar";
-import { setCompanions, setDuration } from '../../../store/app-slice';
+import { setActiveStep, setCompanions, setDuration } from '../../../store/app-slice';
 
 interface DatesProps {
    children: React.ReactNode;
@@ -86,9 +86,7 @@ const Dates: React.FC<DatesProps> = ({children}) => {
             </div>
          </div>
          <StepDates/>
-         <a href="#route"
-            // onClick={() => dispatch(setDataToPostCompanions(companions))}
-            >
+         <a href="#route" onClick={() => dispatch(setActiveStep('route'))}>
             <span>Следующий шаг</span>
             <NextStep/>
          </a>
