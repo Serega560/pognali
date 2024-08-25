@@ -10,11 +10,11 @@
     line-height: 1;
     text-transform: uppercase;
     text-align: center;
-    color: #161C35;
+    color: $color-midnight-express-3;
 
     border-radius: 25px;
     border: none;
-    background-color: #A8D2F4;
+    background-color: $color-pale-cornflower-blue;
 
     cursor: pointer;
     user-select: none;
@@ -23,11 +23,11 @@
 
     &:hover,
     &:focus {
-        background-color: #4D99D6;
+        background-color: $color-picton-blue;
     }
 
     &:active {
-        color: rgba(#161C35, 0.3);
+        color: rgba($color-midnight-express-3, 0.3);
     }
 
     @include vp-1023 {

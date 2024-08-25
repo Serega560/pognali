@@ -23,7 +23,7 @@
     flex-direction: column;
 
     @include vp-1023 {
-      background-color: #E2E5F2;
+      background-color: $color-lavender;
       border-radius: 0 0 60px 60px;
     }
 
@@ -73,9 +73,9 @@
     line-height: 1;
     text-transform: uppercase;
     letter-spacing: -1px;
-    color: #192144;
+    color: $color-midnight-express;
 
-    background-color: #D6DAED;
+    background-color: $color-hawkes-blue;
     border: none;
     border-radius: 20px;
 
@@ -98,12 +98,12 @@
 
     &:hover,
     &:focus {
-      background-color: #C8CEE8;
+      background-color: $color-periwinkle;
     }
 
     &:active {
-      background-color: #C8CEE8;
-      color: rgba(#192144, 0.3);
+      background-color: $color-periwinkle;
+      color: rgba($color-midnight-express, 0.3);
 
       span {
         opacity: 0.3;
@@ -127,7 +127,7 @@
         width: 26px;
         height: 3px;
         border-radius: 2px;
-        background-color: #192144;
+        background-color: $color-midnight-express;
         top: 0;
         left: 0;
 
@@ -140,7 +140,7 @@
         width: 26px;
         height: 3px;
         border-radius: 2px;
-        background-color: #192144;
+        background-color: $color-midnight-express;
         top: 0;
         left: 0;
 
@@ -180,7 +180,7 @@
 
     @include vp-1023 {
       padding: 0 65px 56px 71px;
-      background-color: #E2E5F2;
+      background-color: $color-lavender;
       border-radius: 0 0 60px 60px;
       padding-top: 184px;
       display: flex;
@@ -221,7 +221,7 @@
       font-size: 20px;
       line-height: 1;
       text-transform: uppercase;
-      color: #192144;
+      color: $color-midnight-express;
       letter-spacing: -1px;
 
       cursor: pointer;
@@ -255,7 +255,7 @@
           width: 26px;
           height: 3px;
           border-radius: 2px;
-          background-color: #192144;
+          background-color: $color-midnight-express;
           top: 0;
           left: 0;
           transform: rotate(45deg);
@@ -267,7 +267,7 @@
           width: 26px;
           height: 3px;
           border-radius: 2px;
-          background-color: #192144;
+          background-color: $color-midnight-express;
           top: 0;
           left: 0;
           transform: rotate(-45deg);
@@ -278,7 +278,7 @@
         transform: translate(0, 5px);
         width: 6px;
         height: 6px;
-        background-color: #192144;
+        background-color: $color-midnight-express;
         border-radius: 50%;
         position: relative;
 
@@ -287,7 +287,7 @@
           content: "";
           width: 6px;
           height: 6px;
-          background-color: #192144;
+          background-color: $color-midnight-express;
           border-radius: 50%;
           top: 0;
           left: -13px;
@@ -298,7 +298,7 @@
           content: "";
           width: 6px;
           height: 6px;
-          background-color: #192144;
+          background-color: $color-midnight-express;
           border-radius: 50%;
           top: 0;
           left: 13px;
