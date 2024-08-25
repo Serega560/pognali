@@ -19,7 +19,7 @@ function Pagination() {
             {Array.from({length: totalPages}, (_, index: number) => {
                 return (
                     <li className={`pagination__page-item ${currentPage === index + 1 ? 'active' : ''}`}
-                        onClick={() => dispatch(setCurrentPage(index + 1))}>
+                        onClick={() => dispatch(setCurrentPage(index + 1))} key={index}>
                 <span>{index + 1}</span>
             </li>
                 )

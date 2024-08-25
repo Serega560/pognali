@@ -15,6 +15,8 @@ function Catalog(): JSX.Element {
   const currentLimit = useAppSelector((state) => state.appSlice.currentLimit);
   const currentPage = useAppSelector((state) => state.appSlice.currentPage);
   const { data: paginationData, isSuccess } = useGetPaginationQuery({ page: currentPage, limit: currentLimit });
+
+  console.log(paginationData, 'cardsData')
   
   return (
     <section className="catalog">
