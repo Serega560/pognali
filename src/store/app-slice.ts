@@ -26,6 +26,7 @@ export type AppSlice = {
  transport_choice: string[],
  currentLimit: number,
  activeStep: Step,
+ countryToSearchCompanions: string,
 }
 
 const initialState: AppSlice = {
@@ -51,6 +52,7 @@ const initialState: AppSlice = {
     hashtags: '',
     transport_choice: [],
     activeStep: 'dates',
+    countryToSearchCompanions: '',
 };
 
 export const slice = {
@@ -139,6 +141,9 @@ export const appSlice = createSlice({
    setActiveStep: (state, action: PayloadAction<Step>) => {
     state.activeStep = action.payload;
    },
+   setCountryToSearchCopmanions: (state, action: PayloadAction<string>) => {
+    state.countryToSearchCompanions = action.payload;
+   }
   }
 });
 
@@ -160,5 +165,6 @@ export const {
     setText,
     setTransport,
     resetState,
-    setActiveStep
+    setActiveStep,
+    setCountryToSearchCopmanions
 } = appSlice.actions;
