@@ -23,7 +23,8 @@ export type Companion = {
   name: string,
   hashtags: string[],
   level: number,
-  is_form_generated: boolean
+  is_form_generated: boolean,
+  continent: ContinentsEng,
 };
 
 export type PaginateData = {

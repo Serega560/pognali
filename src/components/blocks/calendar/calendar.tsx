@@ -4,7 +4,7 @@ import '../../vendor/datepicker/datepicker.scss';
 import '../../vendor/datepicker/datepicker-theme.scss';
 import ru from "date-fns/locale/ru";
 import { useAppDispatch, useAppSelector } from "../../../hooks/hooks";
-import { setDateState, setEndDate, setStartDate } from "../../../store/app-slice";
+import { setDateState, setDuration, setEndDate, setStartDate } from "../../../store/app-slice";
 import { formatDate } from '../../../utils';
 
 
@@ -50,6 +50,7 @@ function StepDates() {
       ]));
       dispatch(setStartDate(formatDate(item[0].startDate.toString())));
       dispatch(setEndDate(formatDate((addDays(item[0].startDate, 1)).toString())));
+      dispatch(setDuration(1));
     } else if (result > 31) {
       dispatch(setDateState([
         {
@@ -60,6 +61,7 @@ function StepDates() {
       ]));
       dispatch(setStartDate(formatDate(item[0].startDate.toString())));
       dispatch(setEndDate(formatDate((addMonths(item[0].startDate, 1)).toString())));
+      dispatch(setDuration(31));
     } else {
       dispatch(setDateState([
         {
@@ -70,6 +72,7 @@ function StepDates() {
       ]));
       dispatch(setStartDate(formatDate(item[0].startDate.toString())));
       dispatch(setEndDate(formatDate(item[0].endDate.toString())));
+      dispatch(setDuration(result));
     }
   }
 

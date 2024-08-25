@@ -2,7 +2,7 @@ import React from 'react';
 import { useMediaQuery } from 'react-responsive';
 import { letterArray } from '../../../const';
 import { useAppDispatch, useAppSelector } from '../../../hooks/hooks';
-import { setLetter } from '../../../store/app-slice';
+import { setCountryToSearchCopmanions, setLetter } from '../../../store/app-slice';
 import { useGetCountriesNamesQuery } from '../../../store/countries-api';
 import { Country } from '../../../types';
 import './country-sorting.module.scss';
@@ -63,7 +63,9 @@ function CountrySorting(): JSX.Element {
             <ul className="country-sorting__counties-list">
               {isLoadingFiltered && <div>Loading...</div>}
               {countriesFilteredByContinent(filteredCountries).map((country: Country) => (
-                <li className="country-sorting__counties-item" key={country.name}>
+                <li className="country-sorting__counties-item"
+                  key={country.name}
+                  onClick={() => dispatch(setCountryToSearchCopmanions(country.name))}>
                   {country.name}
                 </li>
               ))}
@@ -78,7 +80,9 @@ function CountrySorting(): JSX.Element {
               <ul className="country-sorting__counties-list">
                 {isLoadingAll && <div>Loading...</div>}
                 {isSuccess && groupedCountries[letter]?.map((country: Country) => (
-                  <li className="country-sorting__counties-item" key={country.name}>
+                  <li className="country-sorting__counties-item"
+                    key={country.name}
+                    onClick={() => dispatch(setCountryToSearchCopmanions(country.name))}>
                     {country.name}
                   </li>
                 ))}

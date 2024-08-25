@@ -1,3 +1,5 @@
+import { ContinentsEng } from "../../types";
+
 export type CardData = {
   id: number;
   name: string;
@@ -12,4 +14,5 @@ export type CardData = {
   level: number;
   likes: number;
   is_form_generated: boolean;
+  continent: ContinentsEng;
 };
