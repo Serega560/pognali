@@ -3,7 +3,7 @@ import MiniPlan from "../miniplan/miniplan";
 import { ReactComponent as NextStep } from '../../../assets/img/nextstep.svg';
 import { letterArray } from '../../../const';
 import { useAppDispatch, useAppSelector } from '../../../hooks/hooks';
-import { addChoosenCountries, setIsSelectCountryInputActive, setLetter } from '../../../store/app-slice';
+import { addChoosenCountries, setActiveStep, setIsSelectCountryInputActive, setLetter } from '../../../store/app-slice';
 import { useGetCountriesNamesQuery } from '../../../store/countries-api';
 import { Country } from '../../../types';
 import { SelectedCountryInput } from '../selected-coutry-input/selected-country-input';
@@ -77,13 +77,11 @@ function Route(): JSX.Element {
       </ul>
 
       <div className="group-btn">
-        <a className="route-btn" href="#entertainment"
-          // onClick={() => setDataToPostCountries()}
-          >
+        <a className="route-btn" href="#entertainment" onClick={() => dispatch(setActiveStep('activities'))}>
           <span>Следующий шаг</span>
           <NextStep />
         </a>
-        <a href="#dates" className="route-btn btn-back">
+        <a href="#dates" className="route-btn btn-back" onClick={() => dispatch(setActiveStep('dates'))}>
           <NextStep />
           <span>На шаг назад</span>
         </a>

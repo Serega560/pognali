@@ -1,6 +1,6 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { LIMIT, NameSpace } from '../const';
-import { CountriesToChange, Country } from '../types';
+import { Continents, LIMIT, NameSpace } from '../const';
+import { Continent, ContinentsEng, ContinentsRus, CountriesToChange, Country, Step } from '../types';
 import { addDays } from 'date-fns';
 
 export type DateState = {
@@ -16,7 +16,7 @@ export type AppSlice = {
  startDate: string;
  endDate: string;
  choosenLetter: string;
- choosenContinent: string; // Добавляет состояние для выбранного континента
+ choosenContinent: ContinentsEng[];
  isSelectCountryInputActive: boolean;
  choosenCountries: Country[];
  currentPage: number;
@@ -24,7 +24,8 @@ export type AppSlice = {
  text: string;
  hashtags: string;
  transport_choice: string[],
- currentLimit: number
+ currentLimit: number,
+ activeStep: Step,
 }
 
 const initialState: AppSlice = {
@@ -40,7 +41,7 @@ const initialState: AppSlice = {
         }
       ],
     choosenLetter: 'А',
-    choosenContinent: 'Европа', // Инициализирует выбранный континент
+    choosenContinent: [], // Инициализирует выбранный континент
     isSelectCountryInputActive: false,
     choosenCountries: [],
     currentPage: 1,
@@ -49,6 +50,7 @@ const initialState: AppSlice = {
     text: '',
     hashtags: '',
     transport_choice: [],
+    activeStep: 'dates',
 };
 
 export const slice = {
@@ -71,8 +73,12 @@ export const appSlice = createSlice({
    setLetter: (state, action: PayloadAction<string>) => {
     state.choosenLetter = action.payload;
    },
-   setContinent: (state, action: PayloadAction<string>) => { // Добавляет редуктор для установки выбранного континента
-    state.choosenContinent = action.payload;
+   setContinent: (state, action: PayloadAction<ContinentsEng>) => {
+    if (state.choosenContinent.includes(action.payload)) {
+      state.choosenContinent = state.choosenContinent.filter((continent) => continent !== action.payload);
+    } else {
+      state.choosenContinent.push(action.payload);
+    }
    },
    setIsSelectCountryInputActive: (state) => {
     state.isSelectCountryInputActive = !state.isSelectCountryInputActive;
@@ -114,7 +120,7 @@ export const appSlice = createSlice({
     state.currentLimit += LIMIT;
    },
    resetState: (state) => {
-    state.choosenContinent = 'Европа';
+    state.choosenContinent = [];
     state.choosenCountries = [];
     state.choosenLetter = 'А';
     state.companions = 1;
@@ -129,7 +135,10 @@ export const appSlice = createSlice({
     state.startDate = '';
     state.text = '';
     state.transport_choice = [];
-   }
+   },
+   setActiveStep: (state, action: PayloadAction<Step>) => {
+    state.activeStep = action.payload;
+   },
   }
 });
 
@@ -151,4 +160,5 @@ export const {
     setText,
     setTransport,
     resetState,
+    setActiveStep
 } = appSlice.actions;

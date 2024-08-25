@@ -10,20 +10,28 @@ import './country-sorting.module.scss';
 function CountrySorting(): JSX.Element {
   const dispatch = useAppDispatch();
   const choosenLetter = useAppSelector(state => state.appSlice.choosenLetter);
+  const choosenContinents = useAppSelector(state => state.appSlice.choosenContinent);
 
   const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1023px)' });
 
-  // Используем хук для получения стран только для мобильных и планшетов
   const { data: filteredCountries, isLoading: isLoadingFiltered } = useGetCountriesNamesQuery(choosenLetter);
 
-  // Используем другой подход для получения всех стран для десктопа
-  const { data: allCountries, isLoading: isLoadingAll } = useGetCountriesNamesQuery(''); // Используем пустую строку для получения всех стран
+  const { data: allCountries, isLoading: isLoadingAll, isSuccess } = useGetCountriesNamesQuery('');
 
-  // Функция для группировки стран по первой букве
+  const countriesFilteredByContinent = (countries: Country[]): Country[] => {
+    if (choosenContinents.length === 0) {
+      return countries;
+    } else {
+      return (choosenContinents.map((cont) => {
+        return countries?.filter((country: Country) => country.continent === cont);
+      })).flat();
+    }
+  } 
+
   const groupCountriesByLetter = (countries: Country[] | undefined) => {
     const grouped: { [key: string]: Country[] } = {};
     countries?.forEach(country => {
-      const firstLetter = country.name.charAt(0).toUpperCase();
+      const firstLetter = country?.name.charAt(0).toUpperCase();
       if (!grouped[firstLetter]) {
         grouped[firstLetter] = [];
       }
@@ -32,7 +40,7 @@ function CountrySorting(): JSX.Element {
     return grouped;
   };
 
-  const groupedCountries = groupCountriesByLetter(allCountries);
+  const groupedCountries = groupCountriesByLetter(countriesFilteredByContinent(allCountries));
 
   return (
     <div className="country-sorting">
@@ -54,7 +62,7 @@ function CountrySorting(): JSX.Element {
             </ul>
             <ul className="country-sorting__counties-list">
               {isLoadingFiltered && <div>Loading...</div>}
-              {filteredCountries?.map((country: Country) => (
+              {countriesFilteredByContinent(filteredCountries).map((country: Country) => (
                 <li className="country-sorting__counties-item" key={country.name}>
                   {country.name}
                 </li>
@@ -69,7 +77,7 @@ function CountrySorting(): JSX.Element {
               <h3 className="country-sorting__letter-title">{letter}</h3>
               <ul className="country-sorting__counties-list">
                 {isLoadingAll && <div>Loading...</div>}
-                {groupedCountries[letter]?.map((country: Country) => (
+                {isSuccess && groupedCountries[letter]?.map((country: Country) => (
                   <li className="country-sorting__counties-item" key={country.name}>
                     {country.name}
                   </li>

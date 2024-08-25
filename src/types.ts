@@ -68,3 +68,13 @@ export type PaginateParams = {
   page: number;
   limit: number;
 };
+
+export type Step = 'dates' | 'activities' | 'route';
+
+export type ContinentsRus = 'Европа' | 'Азия' | 'Америка' | 'Острова' | 'Африка';
+
+export type ContinentsEng = 'Europe' | 'Asia' | 'Americas' | 'Oceania' | 'Africa';
+
+export type Continent = {
+  [key in ContinentsEng]?: ContinentsRus
+}
