@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import MiniPlan from "../miniplan/miniplan";
 import {ReactComponent as NextStep} from '../../../assets/img/nextstep.svg';
 import {useAppDispatch, useAppSelector} from "../../../hooks/hooks";
-import {resetState, setText} from "../../../store/app-slice";
+import {resetState, setActiveStep, setText} from "../../../store/app-slice";
 import { useLazyPostFormDataQuery } from "../../../store/catalog-api";
 import { DataToPost } from "../../../types";
 import { getRandomNumber } from '../../../utils';
@@ -47,7 +47,15 @@ function Entertainment() {
    }
 
   }, [isSuccess]);
+
    const [isActive, setIsActive] = useState(false);
+   const [isSubmitButtonDisabled, setIsSubmitButtonDisabled] = useState<boolean>(true);
+
+   useEffect(() => {
+      if (startDate !== '' || endDate !== '' || transport.length !== 0 && !isLoading) {
+         setIsSubmitButtonDisabled(false);
+      }
+   }, [startDate, endDate, transport.length, isLoading]);
 
    return (
       <div className="entertainment" id="entertainment">
@@ -85,7 +93,7 @@ function Entertainment() {
 
          </div>
          <div className="group-btn">
-            <button className="entertainment-btn" type="button" disabled={isLoading ? true : false}
+            <button className="entertainment-btn" type="button" disabled={isSubmitButtonDisabled}
                onClick={(evt) => {
                   evt.preventDefault();
                   handlePostData();
@@ -94,7 +102,7 @@ function Entertainment() {
                <span>Отправить</span>
                <NextStep/>
             </button>
-            <a href="#route" className="entertainment-btn btn-back">
+            <a href="#route" className="entertainment-btn btn-back" onClick={() => dispatch(setActiveStep('route'))}>
                <NextStep/>
                <span>На шаг назад</span>
             </a>

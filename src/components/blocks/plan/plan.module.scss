@@ -1,11 +1,15 @@
 .plan {
   background-color: #AED0EB;
-  border-radius: 60px 60px 0 0;
+  border-radius: 55px 55px 0 0;
   padding-top: 55px;
   padding-bottom: 140px;
 
   @include vp-1439 {
     padding-bottom: 114px;
+    border-radius: 30px 30px 0 0;
+  }
+
+  @include vp-1023 {
     border-radius: 30px 30px 0 0;
   }
 
@@ -48,8 +52,14 @@
     margin-left: 69px;
     margin-bottom: 54px;
 
+    margin-bottom: 54px;
+
     @include vp-1439 {
       margin-left: 0;
+    }
+
+    @include vp-1023 {
+      margin-bottom: 55px;
     }
 
     @include vp-767 {

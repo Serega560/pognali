@@ -18,17 +18,34 @@
 
 .custom-toggle label {
     position: relative;
-    padding-left: 37px;
+    padding-left: 36px;
     cursor: pointer;
 
     @include vp-1023 {
         padding-left: 32px;
     }
 
+    @include vp-767 {
+        padding-left: 27px;
+    }
+
     span {
         font-size: 20px;
         line-height: 20px;
         font-weight: 400;
+
+        @include vp-1023 {
+            font-size: 15px;
+            line-height: 20px;
+        }
+    }
+
+    &:last-of-type {
+        transform: translate(0, 5px);
+
+        @include vp-1023 {
+            transform: translate(0, 0);
+        }
     }
 }
 
@@ -45,6 +62,12 @@
     background-color: $color-default-white;
     transition: border 0.3s ease;
     border-radius: 2px;
+
+    @include vp-767 {
+        width: 18px;
+        height: 18px;
+        border-radius: 4px;
+    }
 
     &:hover,
     &:focus {
@@ -123,16 +146,19 @@ input:checked+.custom-toggle__icon:disabled::before {
     @include vp-1023 {
         display: flex;
         flex-direction: column;
-        gap: 19px;
+        gap: 26px;
         margin-top: 34px;
     }
 
     @include vp-767 {
-        margin-top: 12px;
+        gap: 2px;
+        margin-top: 0;
     }
 }
 
 .checkboxes__holder {
+    cursor: pointer;
+    
     h3 {
         display: flex;
         justify-content: space-between;
@@ -142,13 +168,17 @@ input:checked+.custom-toggle__icon:disabled::before {
         font-weight: 500;
         text-transform: uppercase;
         margin-bottom: 19px;
+        color: #1D2E5B;
 
         @include vp-1023 {
             margin: 0;
         }
 
         @include vp-767 {
-            margin-bottom: 19px;
+            font-size: 16px;
+            line-height: 18px;
+
+            margin: 10px 0;
         }
     }
 
@@ -184,13 +214,14 @@ input:checked+.custom-toggle__icon:disabled::before {
 .checkboxes__list {
     display: none;
     margin: 0;
-    margin-bottom: 19px;
+    margin-bottom: 34px;
 
     @include vp-1023 {
         margin: 0;
     }
 
     @include vp-767 {
+        margin-top: 3px;
         margin-bottom: 19px;
     }
 }
@@ -233,7 +264,7 @@ input:checked+.custom-toggle__icon:disabled::before {
         @include vp-767 {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 6px;
         }
     }
 }

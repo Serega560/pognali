@@ -16,7 +16,7 @@
     align-items: center;
 
     min-height: 94px;
-    border: 1px solid #CBCED9;
+    border: 1px solid $color-link-water;
     border-radius: 10px;
     background-color: transparent;
 
@@ -31,13 +31,15 @@
     }
 
     &__label {
+        cursor: pointer;
+
         input {
             display: none;
         }
     
         input:checked ~ span {
             svg {
-                color: rgba(#1D2E5B, 1);
+                color: rgba($color-catalina-blue, 1);
             }
         }
     
@@ -47,7 +49,7 @@
                 box-shadow: 0 2px 6px 0 rgba(22, 28, 53, 0.17);
     
                 svg {
-                    color: rgba(#B2B2B2, 1);
+                    color: rgba($color-pink-swan, 1);
                 }
             }
     
@@ -55,27 +57,27 @@
                 box-shadow: 0 2px 6px 0 rgba(22, 28, 53, 0.17);
     
                 svg {
-                    color: rgba(#1D2E5B, 0.7);
+                    color: rgba($color-catalina-blue, 0.7);
                 }
             }
         }
     
         &:active {
             input ~ span {
-                background-color: #E2E5F1;
+                background-color: $color-lavender;
                 box-shadow: none;
     
                 svg {
-                    color: rgba(#1D2E5B, 0.1);
+                    color: rgba($color-catalina-blue, 0.1);
                 }
             }
     
             input:checked ~ span {
-                background-color: #E2E5F1;
+                background-color: $color-lavender;
                 box-shadow: none;
     
                 svg {
-                    color: rgba(#1D2E5B, 0.3);
+                    color: rgba($color-catalina-blue, 0.3);
                 }
             }
         }
@@ -86,15 +88,15 @@
         justify-content: center;
         align-items: center;
     
-        width: 45px;
+        width: 43px;
         height: 45px;
         border-radius: 50%;
-        background-color: #fff;
+        background-color: $color-default-white;
     
         transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     
         svg {
-            color: rgba(#1D2E5B, 0.15);
+            color: rgba($color-catalina-blue, 0.15);
             position: relative;
             z-index: 3;
     
@@ -116,4 +118,26 @@
             }
         }
     }
+}
+
+.filters {
+    .checkbox-transport {
+        justify-content: flex-start;
+        transform: translate(0, -2px);
+
+        @include vp-1023  {
+            transform: translate(2px, 1px);
+            gap: 1px;
+        }
+    }
+
+    .checkbox-transport__icon {
+        width: 44px;
+        height: 44px;
+
+        @include vp-767  {
+            width: 32px;
+            height: 32px;
+        }
+    }  
 }

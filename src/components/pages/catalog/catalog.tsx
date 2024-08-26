@@ -6,7 +6,7 @@ import Pagination from '../../blocks/pagination/pagination';
 import Filters from '../../blocks/filters/filters';
 import CountryContinentSorting from '../../blocks/country-continent-sorting/country-continent-sorting';
 import "./catalog.module.scss"
-import { useGetPaginationQuery } from '../../../store/catalog-api';
+import { useGetCatalogQuery, useGetPaginationQuery } from '../../../store/catalog-api';
 import { useAppSelector } from '../../../hooks/hooks';
 import { CardData } from '../../types/card-data';
 
@@ -14,7 +14,28 @@ import { CardData } from '../../types/card-data';
 function Catalog(): JSX.Element {
   const currentLimit = useAppSelector((state) => state.appSlice.currentLimit);
   const currentPage = useAppSelector((state) => state.appSlice.currentPage);
+  const choosenContinents = useAppSelector((state) => state.appSlice.choosenContinent);
+  const countryToSearchCompanions = useAppSelector((state) => state.appSlice.countryToSearchCompanions)
   const { data: paginationData, isSuccess } = useGetPaginationQuery({ page: currentPage, limit: currentLimit });
+
+  // const filterCardsByContinent = (data: CardData[]): CardData[] => {
+  //   if (choosenContinents.length === 0) {
+  //     return data;
+  //   } else {
+  //     return (
+  //       choosenContinents.map((continent) => data.filter((card) => card.continent === continent))
+  //     ).flat();
+  //   }  
+  // };
+
+  const filterCardsByCountry = (data: CardData[]): CardData[] => {
+    if (countryToSearchCompanions === '') {
+      return data;
+    } else {
+      return data.filter((card) => card.country.some((country) => country.name === countryToSearchCompanions));
+    }
+    
+  }
   
   return (
     <section className="catalog">
@@ -25,7 +46,7 @@ function Catalog(): JSX.Element {
           <Filters />
         </section>
         <section className="catalog__inner-wrapper">
-          {isSuccess ? <ProfilesList cardsData={paginationData.data.map((profile): CardData => {
+          {isSuccess ? <ProfilesList cardsData={filterCardsByCountry(paginationData.data).map((profile): CardData => {
             return { ...profile, image: "https://loremflickr.com/320/240/cat" }
           })} /> : <div>Loading...</div>}
           <div className="catalog__show-more">

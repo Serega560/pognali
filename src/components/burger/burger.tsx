@@ -47,14 +47,14 @@ const BurgerMenu = () => {
                 <div className="header__burger-info">
                     <nav className="header__nav">
                         <ul className="header__nav-list">
-                            <li className="header__nav-item">
+                            <li className="header__nav-item" onClick={() => { toggleMenu(); handleButtonClick(); }}>
                                 <Link to={AppRoute.Root}>о сервисе</Link>
                             </li>
-                            <li className="header__nav-item">
-                                <Link to={AppRoute.Catalog}>направления</Link>
+                            <li className="header__nav-item" onClick={() => { toggleMenu(); handleButtonClick(); }}>
+                                <Link to={AppRoute.Form}>направления</Link>
                             </li>
-                            <li className="header__nav-item">
-                                <Link to={AppRoute.Form}>попутчики</Link>
+                            <li className="header__nav-item" onClick={() => { toggleMenu(); handleButtonClick(); }}>
+                                <Link to={AppRoute.Catalog}>попутчики</Link>
                             </li>
                         </ul>
                     </nav>
