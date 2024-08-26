@@ -25,7 +25,7 @@
     list-style: none;
     padding: 0;
     margin: 0;
-    margin-bottom: 53px;
+    margin-bottom: 49px;
 
     @include vp-1439 {
       margin-bottom: 47px;
@@ -37,9 +37,9 @@
     grid-template-columns: 1fr 267px;
     grid-template-rows: auto;
     column-gap: 170px;
-    margin-bottom: 50px;
+    margin-bottom: 62px;
     border-bottom: 1px solid #e1e3e9;
-    padding-bottom: 13px;
+    padding-bottom: 0;
     min-width: 795px;
 
     @include vp-1023 {
@@ -60,6 +60,10 @@
       span {
         opacity: 1;
       }
+    }
+
+    li:nth-child(2):before {
+      opacity: 1;
     }
   }
 
@@ -154,7 +158,7 @@
   background-color: #e1e3e9;
   height: calc(100% + 150px);
   right: 225px;
-  top: -50px;
+  top: -63px;
 
   @include vp-1023 {
     right: 138px;
@@ -253,6 +257,8 @@
       padding: 10px;
       justify-content: center;
       text-transform: uppercase;
+      padding-top: 7px;
+      padding-bottom: 5px;
 
       svg {
         display: none;

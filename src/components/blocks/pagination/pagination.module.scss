@@ -7,7 +7,7 @@
     background-color: $color-default-white;
     padding: 25px 30px;
     border-radius: 20px;
-    margin-bottom: 62px;
+    margin-bottom: 127px;
 
     display: flex;
     justify-content: space-between;
@@ -19,6 +19,7 @@
 
     @include vp-767 {
         padding: 0;
+        margin-bottom: 172px;
     }
 
     &__page-list {
