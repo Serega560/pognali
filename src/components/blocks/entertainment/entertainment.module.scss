@@ -311,6 +311,8 @@
   .group-btn {
     display: flex;
     justify-content: space-between;
+    column-gap: 20px;
+    flex-wrap: wrap;
 
     @include vp-767 {
       flex-direction: column;
@@ -368,6 +370,7 @@
         font-weight: 700;
         color: #1D2E5B;
         line-height: 24px;
+        max-width: 190px;
 
         @include vp-767 {
           display: flex;
@@ -381,6 +384,10 @@
       background-color: $color-default-white;
       width: 236px;
       padding: 29px 26px;
+
+      span {
+        max-width: 160px;
+      }
 
       @include vp-1439 {
         width: 249px;

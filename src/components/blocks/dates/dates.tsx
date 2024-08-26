@@ -47,7 +47,7 @@ const Dates: React.FC<DatesProps> = ({children}) => {
                <div className="companies">
                   <span className="companies-text">ищу попутчиков:</span>
                   <label className="buttons-input" htmlFor="companions">
-                     <button onClick={decrementCompanions}><Minus/></button>
+                     <button className="buttons-minus" onClick={decrementCompanions}><Minus/></button>
                      <input
                         type="number"
                         id="companions"
@@ -62,7 +62,7 @@ const Dates: React.FC<DatesProps> = ({children}) => {
                <div className="days">
                   <span className="companies-text">длительность:</span>
                   <label className="buttons-input" htmlFor="days">
-                     <button onClick={decrementDays}><Minus/></button>
+                     <button className="buttons-minus" onClick={decrementDays}><Minus/></button>
                      <input
                         type="number"
                         id="days"
@@ -84,9 +84,7 @@ const Dates: React.FC<DatesProps> = ({children}) => {
             </div>
          </div>
          <StepDates/>
-         <a href="#route"
-            // onClick={() => dispatch(setDataToPostCompanions(companions))}
-            >
+         <a className="buttons-step" href="#route">
             <span>Следующий шаг</span>
             <NextStep/>
          </a>
