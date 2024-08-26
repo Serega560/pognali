@@ -6,7 +6,7 @@ import {Link} from "react-router-dom";
 import { useAppDispatch, useAppSelector } from '../../../hooks/hooks';
 // import { setDataToPostCompanions } from '../../../store/app-slice';
 import StepDates from "../calendar/calendar";
-import { setCompanions, setDuration } from '../../../store/app-slice';
+import { setActiveStep, setCompanions, setDuration } from '../../../store/app-slice';
 
 interface DatesProps {
    children: React.ReactNode;

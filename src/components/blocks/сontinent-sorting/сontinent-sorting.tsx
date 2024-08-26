@@ -3,12 +3,14 @@ import { useAppDispatch, useAppSelector } from '../../../hooks/hooks';
 import { setContinent } from '../../../store/app-slice';
 import './сontinent-sorting.module.scss';
 import {ReactComponent as Filter} from '../../../assets/img/filter.svg'
+import { CONTINENTS } from '../../../const';
+import { ContinentsEng } from '../../../types';
 
-const continents = ['Европа', 'Азия', 'Америка', 'Острова'];
+
 
 function ContinentSorting(): JSX.Element {
   const dispatch = useAppDispatch();
-  const choosenContinent = useAppSelector(state => state.appSlice.choosenContinent); // выбранный континент
+  const choosenContinents = useAppSelector(state => state.appSlice.choosenContinent);
 
   return (
     <div className="continent-sorting">
@@ -18,14 +20,14 @@ function ContinentSorting(): JSX.Element {
       </div>
       
       <ul className="continent-sorting__list">
-        {continents.map((continent, index) => (
+        {CONTINENTS.map((continent, index) => (
           <li className="continent-sorting__item" key={index}>
             <button
-              className={`continent-sorting__button ${choosenContinent === continent ? 'active' : ''}`}
+              className={`continent-sorting__button ${choosenContinents.includes((Object.keys(continent).toString()) as ContinentsEng) ? 'active' : ''}`}
               type="button"
-              onClick={() => dispatch(setContinent(continent))}
+              onClick={() => dispatch(setContinent(Object.keys(continent).toString() as ContinentsEng))}
             >
-              {continent}
+              {Object.values(continent).toString()}
             </button>
           </li>
         ))}

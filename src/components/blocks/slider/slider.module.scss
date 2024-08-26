@@ -25,7 +25,7 @@
 
     @include vp-767 {
       flex-direction: column;
-      gap: 21px;
+      gap: 30px;
     }
   }
 
@@ -35,6 +35,8 @@
     @include vp-1023 {
       width: 100%;
       margin: 0;
+
+      transform: translate(0, -5px);
     }
   }
 
@@ -45,15 +47,18 @@
     border-radius: 4px;
     width: 100%;
     background-color: $color-default-white;
-    margin-bottom: 31px;
+    margin-bottom: 36px;
 
     @include vp-1023 {
-      width: 148px;
+      width: 290px;
       margin: 0;
+
+      transform: translate(0, -2px);
     }
 
     @include vp-767 {
       width: 100%;
+      transform: translate(0, 0);
     }
 
     span {

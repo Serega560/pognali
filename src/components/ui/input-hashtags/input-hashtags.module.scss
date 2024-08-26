@@ -27,7 +27,7 @@
     &__badge {
         margin: 0;
         padding: 0 11px;
-        background-color: #EDEFF6;
+        background-color: $color-solitude-blue;
 
         position: absolute;
         bottom: -1px;
@@ -39,7 +39,7 @@
         line-height: 1;
         letter-spacing: 0.07em;
         text-transform: uppercase;
-        color: #161C35;
+        color: $color-midnight-express-3;
 
         @include vp-1023 {
             left: 50%;
@@ -58,7 +58,7 @@
             line-height: 1.125;
             text-align: center;
             letter-spacing: 0;
-            color: #1D2E5B;
+            color: $color-catalina-blue;
         }
     }
 
@@ -66,14 +66,14 @@
         width: 100%;
 
         min-height: 94px;
-        border: 1px solid #CBCED9;
+        border: 1px solid $color-link-water;
         border-radius: 10px;
         background-color: transparent;
 
         font-weight: 400;
         font-size: 20px;
         line-height: 1.1;
-        color: #444;
+        color: $color-charcoal;
         opacity: 0.6;
 
         padding: 35px 40px;
@@ -92,7 +92,7 @@
             font-weight: 400;
             font-size: 20px;
             line-height: 1.1;
-            color: #444;
+            color: $color-charcoal;
             opacity: 0.6;
 
             @include vp-767 {
@@ -102,24 +102,24 @@
         }
 
         &:hover {
-            border: 1px solid #aeb4cb;
+            border: 1px solid $color-echoblue;
         }
 
         &:focus,
         &:active,
         [readonly] {
-            border: 1px solid #161C35;
+            border: 1px solid $color-midnight-express-3;
             outline: none;
             opacity: 1;
 
             &::placeholder {
-                color: #444;
+                color: $color-charcoal;
                 opacity: 1;
             }
         }
 
         &.disabled {
-            border: 1px solid #CBCED9;
+            border: 1px solid $color-link-water;
             opacity: 0.3;
         }
     }

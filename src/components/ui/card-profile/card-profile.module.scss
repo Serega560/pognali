@@ -3,16 +3,18 @@
 @import "../../../variables.scss";
 
 .card-profile {
-    background-color: #fff;
+    background-color: $color-default-white;
     border-radius: 20px;
     overflow: hidden;
 
     display: grid;
     grid-template-columns: minmax(285px, 285px) 55px 153px 53px auto 171px 105px;
-    grid-template-rows: auto auto 1fr;
+    grid-template-rows: auto 1fr auto;
     gap: 0;
     
     min-width: 950px;
+
+    min-height: 286px;
 
     transition: box-shadow 0.3s ease-in-out;
     cursor: pointer;
@@ -35,6 +37,9 @@
         grid-template-columns: minmax(190px, 190px) 202px auto auto 62px;
         grid-template-rows: auto 1fr auto auto;
         padding: 35px 25px 25px 35px;
+        gap: 0;
+
+        min-height: 333px;
     }
 
     @include vp-767 {
@@ -42,6 +47,8 @@
         grid-template-rows: 1fr auto auto auto auto auto;
         gap: 0px 14px;
         padding: 15px 20px 24px;
+
+        min-height: unset;
     }
 
     &:hover {
@@ -67,7 +74,7 @@
             grid-row: 1/3;
             grid-column: 1/2; 
 
-            max-height: 70px;
+            height: 70px;
         }
     }
 
@@ -99,7 +106,7 @@
         font-weight: 700;
         font-size: 30px;
         line-height: 1;
-        color: #1D2E5B;
+        color: $color-catalina-blue;
 
         display: flex;
         flex: 0 1 auto;
@@ -187,15 +194,15 @@
     &__state {
         width: 8px;
         height: 8px;
-        background-color: #F97676;
+        background-color: $color-salmon;
         border-radius: 50%;
 
         &--offline {
-            background-color: #F97676; 
+            background-color: $color-salmon; 
         }
 
         &--online {
-            background-color: #81E31E; 
+            background-color: $color-lawn-green; 
         }
 
         @include vp-767 {
@@ -217,7 +224,7 @@
         font-weight: 400;
         font-size: 20px;
         line-height: 1.15;
-        color: #000;
+        color: $color-default-black;
 
         @media (max-width: 1240px) {
             grid-row: 2/3;
@@ -251,8 +258,6 @@
 
     // кнока позвать
     &__btn-call-wrapper {
-        margin-top: 41px;
-
         grid-row: 3/4;
         grid-column: 3/4;
 
@@ -266,7 +271,7 @@
             grid-column: 2/3; 
 
             margin: 0;
-            padding: 13px 3px 0 29px;
+            padding: 10px 3px 0 29px;
         }
 
         @include vp-767 {
@@ -285,10 +290,12 @@
     &__likes-number-wrapper {
         display: flex;
 
-        margin-top: 41px;
         padding-top: 16px;
 
         min-width: 87px;
+
+        grid-row: 3/4;
+        grid-column: 5/6;
 
         @media (max-width: 1340px) {
             min-width: unset;
@@ -332,7 +339,7 @@
         font-size: 20px;
         line-height: 1;
         text-transform: uppercase;
-        color: #161C35;
+        color: $color-midnight-express-3;
 
         @include vp-767 {
             font-size: 14px;
@@ -342,7 +349,6 @@
 
     &__btn-like {
         margin-right: 3px;
-        margin-top: 41px;
       
         width: 50px;
         height: 50px;
@@ -358,6 +364,9 @@
         user-select: none;
       
         transition: background-color 0.3s ease-in-out;
+
+        grid-row: 3/4;
+        grid-column: 4/5;
       
         @media (max-width: 1240px) {
           grid-row: 4/5;
@@ -387,13 +396,13 @@
           transform: translate(-37px, 0);
           margin: 0;
       
-          background-color: #E2E5F2;
+          background-color: $color-lavender;
         }
       
         svg {
           width: 20px;
           height: 20px;
-          color: rgba(#192144, 0.5);
+          color: rgba($color-midnight-express, 0.5);
           transition: color 0.3s ease-in-out;
       
           @include vp-767 {
@@ -408,50 +417,50 @@
       
         &:hover,
         &:focus {
-          background-color: #E2E5F2;
+          background-color: $color-lavender;
       
           svg {
-            color: rgba(#192144, 0.3);
+            color: rgba($color-midnight-express, 0.3);
           }
         }
       
         &:active {
-          background-color: #E2E5F2;
+          background-color: $color-lavender;
       
           svg {
-            color: rgba(#192144, 0.1);
+            color: rgba($color-midnight-express, 0.1);
           }
         }
       
         &.active {
-          background-color: #F9EAEA;
+          background-color: $color-tutu;
       
           svg {
-            color: rgba(#F02323, 1);
+            color: rgba($color-red-orange, 1);
             path {
-              fill: rgba(#F02323, 1);
+              fill: rgba($color-red-orange, 1);
             }
           }
       
           &:hover,
           &:focus {
-            background-color: #F9D8D8;
+            background-color: $color-remy;
       
             svg {
-              color: rgba(#F02323, 1);
+              color: rgba($color-red-orange, 1);
               path {
-                fill: rgba(#F02323, 1);
+                fill: rgba($color-red-orange, 1);
               }
             }
           }
       
           &:active {
-            background-color: #F9D8D8;
+            background-color: $color-remy;
       
             svg {
-              color: rgba(#F02323, 0.3);
+              color: rgba($color-red-orange, 0.3);
               path {
-                fill: rgba(#F02323, 0.3);
+                fill: rgba($color-red-orange, 0.3);
               }
             }
           }
@@ -460,8 +469,11 @@
 
     // транспорт
     &__transport {
-        margin-top: 41px;
         padding-top: 14px;
+        padding: 14px 0 30px;
+
+        grid-row: 3/4;
+        grid-column: 6/7;
 
         @media (max-width: 1340px) {
             padding-right: 15px;
@@ -470,9 +482,9 @@
 
         @media (max-width: 1240px) {
             margin-top: 0;
-            margin-bottom: 35px;
             padding-right: 0;
             padding-left: 0;
+            padding-top: 0;
 
             grid-row: 5/6;
             grid-column: 3/8;
@@ -517,7 +529,7 @@
             display: flex;
             align-items: center;
             flex-wrap: wrap;
-            gap: 11px;
+            gap: 7px;
 
             margin: 0;
             padding: 0;
@@ -545,12 +557,12 @@
             align-items: center;
 
             svg {
-                color: rgba(#1D2E5B, 0.15);
+                color: rgba($color-catalina-blue, 0.15);
             }
 
             &.active {
                 svg {
-                    color: rgba(#1D2E5B, 1);
+                    color: rgba($color-catalina-blue, 1);
                 }
             }
 
@@ -566,7 +578,7 @@
                     width: 32px;
                     height: 32px;
                     border-radius: 50%;
-                    background-color: #EDEFF6;
+                    background-color: $color-solitude-blue;
                 }
 
                 svg {
@@ -593,7 +605,7 @@
             &::after {
                 position: absolute;
                 content: "";
-                background-color: #EDEFF6;
+                background-color: $color-solitude-blue;
                 width: 200%;
                 height: 1px;
                 top:50%;
@@ -610,7 +622,7 @@
                     position: relative;
                     z-index: 2;
 
-                    background-color: #fff;
+                    background-color: $color-default-white;
                     padding: 0 12px;
                 }            
             }
@@ -619,14 +631,18 @@
     
     // уровень
     &__level {
-        margin-top: 41px;
-        margin-bottom: 15px;
+        margin-bottom: 38px;
 
         transform: translate(1px, -1px);
+
+        grid-row: 3/4;
+        grid-column: 7/8;
 
         @media (max-width: 1240px) {
             grid-row: 4/5;
             grid-column: 7/8;
+
+            margin-bottom: 18px;
         }
 
         @media (max-width: 1100px) {
@@ -680,7 +696,7 @@
             &::after {
                 position: absolute;
                 content: "";
-                background-color: #EDEFF6;
+                background-color: $color-solitude-blue;
                 width: 250%;
                 height: 1px;
                 top:50%;
@@ -697,7 +713,7 @@
                     position: relative;
                     z-index: 2;
 
-                    background-color: #fff;
+                    background-color: $color-default-white;
                     padding: 0 12px;
                 }            
             }
@@ -709,7 +725,7 @@
         grid-row: 1/3;
         grid-column: span 2;
 
-        padding: 49px 0 0;
+        padding: 49px 30px 0 0;
 
         @media (max-width: 1340px) {
             margin-right: 20px;
@@ -718,6 +734,8 @@
         @media (max-width: 1240px) {
             grid-row: 3/4;
             grid-column: 3/8;
+
+            padding-top: 20px;
         }
 
         @include vp-1023 {
@@ -748,7 +766,7 @@
             &::after {
                 position: absolute;
                 content: "";
-                background-color: #EDEFF6;
+                background-color: $color-solitude-blue;
                 width: 200%;
                 height: 1px;
                 top:50%;
@@ -775,7 +793,7 @@
                 position: relative;
                 z-index: 2;
 
-                background-color: #fff;
+                background-color: $color-default-white;
                 padding: 0 12px;
             }
 
@@ -795,6 +813,7 @@
         flex-direction: column;
         flex-wrap: wrap;
         gap: 12px;
+        margin-bottom: 30px;
 
         @media (max-width: 1240px) {
             flex-direction: row;
@@ -804,6 +823,8 @@
         @include vp-1023 {
             flex-direction: row;
             gap: 15px;
+
+            margin-bottom: 0;
         }
 
         @include vp-767 {
@@ -836,7 +857,7 @@
         width: 35px;
         height: 24px;
         border-radius: 2px;
-        background-color: #161C35;
+        background-color: $color-midnight-express-3;
         overflow: hidden;
 
         @include vp-1023 {
@@ -881,7 +902,7 @@
         font-size: 20px;
         line-height: 100%;
         text-transform: uppercase;
-        color: #1D2E5B;
+        color: $color-catalina-blue;
 
         @include vp-767 {
             font-size: 15px;
