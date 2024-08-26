@@ -40,20 +40,20 @@ function Route(): JSX.Element {
           <h3 onClick={(evt) => evt.currentTarget.closest('li')?.classList.toggle('active')}>
             <p className="route__add-country">Добавить страну</p>
             <p className="route__choose-country">Выберите страну</p>
-            <button className="route__btn-plus"> <Plus /> </button>
-            <button className="route__btn-arrow"> <Plus /> </button>
+            <button className="route__btn-plus"><Plus/></button>
+            <button className="route__btn-arrow"><Plus/></button>
           </h3>
           <div className='route__countries-wrapper'>
             <ul className="route__letters-list">
               {/* отрисовываем буквы */}
               {letterArray.map((letter: string, index: number) => {
                 return (
-                  <li className="route__letter-item" key={index}>
-                    <button className={`route__letter-button ${choosenLetter === letter ? 'active' : ''}`}
-                      type="button"
-                      onClick={() => dispatch(setLetter(letter))}>{letter}
-                    </button>
-                  </li>
+                   <li className="route__letter-item" key={index}>
+                     <button className={`route__letter-button ${choosenLetter === letter ? 'active' : ''}`}
+                             type="button"
+                             onClick={() => dispatch(setLetter(letter))}>{letter}
+                     </button>
+                   </li>
                 )
               })}
             </ul>
@@ -62,12 +62,12 @@ function Route(): JSX.Element {
               {isLoading && <div>Loading...</div>}
               {filteredCountries?.map((country: Country) => {
                 return (
-                  <li className="route__counties-item counties" key={country.name}
-                    onClick={(evt) => {
-                      handleCountryClick(country);
-                      evt.currentTarget.closest('.route__item')?.classList.remove('active');
-                    }}
-                  >{country.name}</li>
+                   <li className="route__counties-item counties" key={country.name}
+                       onClick={(evt) => {
+                         handleCountryClick(country);
+                         evt.currentTarget.closest('.route__item')?.classList.remove('active');
+                       }}
+                   >{country.name}</li>
                 )
               })}
             </ul>
@@ -78,13 +78,13 @@ function Route(): JSX.Element {
 
       <div className="group-btn">
         <a className="route-btn" href="#entertainment"
-          // onClick={() => setDataToPostCountries()}
-          >
+           // onClick={() => setDataToPostCountries()}
+        >
           <span>Следующий шаг</span>
-          <NextStep />
+          <NextStep/>
         </a>
         <a href="#dates" className="route-btn btn-back">
-          <NextStep />
+          <NextStep/>
           <span>На шаг назад</span>
         </a>
       </div>

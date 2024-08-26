@@ -9,7 +9,7 @@
   }
 
   @include vp-767 {
-    padding: 24px 25px 0;
+    padding: 24px 25px 23px;
     border-radius: 10px;
   }
 
@@ -199,7 +199,7 @@
       height: 1px;
       margin: 30px;
 
-      &:focus-visible + span{
+      &:focus-visible + span {
         outline: 2px solid $color-default-black;
       }
     }
@@ -336,6 +336,11 @@
 
     .buttons-minus {
       padding: 32px 17px;
+
+      @include vp-767 {
+        padding: 9px 15px;
+        width: 47px;
+      }
     }
 
     input {
@@ -374,10 +379,12 @@
     margin-bottom: 23px;
 
     @include vp-767 {
-      width: 221px;
       border-radius: 30px;
-      padding: 5px 33px;
+      padding: 5px 29px;
       margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      width: 100%;
 
       svg {
         display: none;
@@ -423,6 +430,10 @@
     span {
       opacity: 1;
     }
+  }
+
+  li:nth-child(1):before {
+    opacity: 1;
   }
 }
 
