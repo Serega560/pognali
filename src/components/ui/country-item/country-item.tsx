@@ -1,8 +1,6 @@
 import React from 'react';
 import { CountryData } from '../../types/country-data';
 import './country-item.module.scss';
-// import Level from '../level/level';
-
 
 type CountryItemProps = {
   countryData: CountryData;

@@ -444,6 +444,15 @@
   }
 }
 
+.form-error {
+  color: red;
+  display: none;
+}
+
+.form-error.active {
+  display: block;
+}
+
 
 
 

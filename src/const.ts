@@ -36,9 +36,3 @@ export const CONTINENTS: Continent[] =[
   {Oceania: 'Острова'},
   {Africa: 'Африка'}];
 
-  // export const CONTINENTS: Continent[] =[
-  //   {'Европа': 'Europe' },
-  //   {Asia: 'Азия'},
-  //   {Americas: 'Америка'},
-  //   {Oceania: 'Острова'},
-  //   {Africa: 'Африка'}];

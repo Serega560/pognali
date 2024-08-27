@@ -21,9 +21,14 @@ function Entertainment() {
    const transport = useAppSelector((state) => state.appSlice.transport_choice);
    const navigate = useNavigate();
 
+   const [hasChoosenCountries, setHasChoosenCountries] = useState<boolean>(true);
    const [postData, {isLoading, isError, isSuccess}] = useLazyPostFormDataQuery();
 
   function handlePostData () {
+   if (choosenCountries.length === 0) {
+      setHasChoosenCountries(false);
+      return;
+   }
    const data: DataToPost = {
       startDate: startDate,
       endDate: endDate,
@@ -56,6 +61,13 @@ function Entertainment() {
          setIsSubmitButtonDisabled(false);
       }
    }, [startDate, endDate, transport.length, isLoading]);
+
+   useEffect(() => {
+      if (choosenCountries.length) {
+         setHasChoosenCountries(true);
+      }
+      
+   }, [choosenCountries.length]);
 
    return (
       <div className="entertainment" id="entertainment">
@@ -91,6 +103,9 @@ function Entertainment() {
                )
             })}
 
+         </div>
+         <div className={`form-error ${hasChoosenCountries ? '' : 'active'}`}>
+            <span>Выберите хотя бы одну страну!</span>
          </div>
          <div className="group-btn">
             <button className="entertainment-btn" type="button" disabled={isSubmitButtonDisabled}
