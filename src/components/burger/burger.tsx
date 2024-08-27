@@ -12,8 +12,6 @@ import { Link } from 'react-router-dom';
 import { AppRoute } from '../../const';
 
 const BurgerMenu = () => {
-    // Код для бургерного меню
-
     const [isOpen, setIsOpen] = useState(false);
     const toggleMenu = () => {
         setIsOpen(!isOpen);

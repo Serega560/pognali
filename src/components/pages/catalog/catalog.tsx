@@ -18,16 +18,6 @@ function Catalog(): JSX.Element {
   const countryToSearchCompanions = useAppSelector((state) => state.appSlice.countryToSearchCompanions)
   const { data: paginationData, isSuccess } = useGetPaginationQuery({ page: currentPage, limit: currentLimit });
 
-  // const filterCardsByContinent = (data: CardData[]): CardData[] => {
-  //   if (choosenContinents.length === 0) {
-  //     return data;
-  //   } else {
-  //     return (
-  //       choosenContinents.map((continent) => data.filter((card) => card.continent === continent))
-  //     ).flat();
-  //   }  
-  // };
-
   const filterCardsByCountry = (data: CardData[]): CardData[] => {
     if (countryToSearchCompanions === '') {
       return data;

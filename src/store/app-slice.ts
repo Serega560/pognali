@@ -1,6 +1,6 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { Continents, LIMIT, NameSpace } from '../const';
-import { Continent, ContinentsEng, ContinentsRus, CountriesToChange, Country, Step } from '../types';
+import { LIMIT, NameSpace } from '../const';
+import { ContinentsEng, CountriesToChange, Country, Step } from '../types';
 import { addDays } from 'date-fns';
 
 export type DateState = {
