@@ -6,6 +6,7 @@ import ru from "date-fns/locale/ru";
 import { useAppDispatch, useAppSelector } from "../../../hooks/hooks";
 import { setDateState, setDuration, setEndDate, setStartDate } from "../../../store/app-slice";
 import { formatDate } from '../../../utils';
+import { useEffect } from 'react';
 
 
 
@@ -76,12 +77,19 @@ function StepDates() {
     }
   }
 
+  useEffect(() => {
+    const passiveButtons = document.querySelectorAll('.rdrDayPassive');
+    passiveButtons.forEach((btn) => btn.setAttribute('tabindex', '0'));
+  }, [dateState[0].endDate]);
+
   return (
     <section className="step">
       <div className="step__content">
         <div className="step__calendar">
           <DateRange
             editableDateInputs={true}
+            // calendarFocus='forwards'
+            fixedHeight={false}
             onChange={(item) => onDateChange([item.selection])}
             moveRangeOnFirstSelection={false}
             ranges={[

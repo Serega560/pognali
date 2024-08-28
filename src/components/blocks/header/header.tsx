@@ -49,13 +49,19 @@ function Header() {
                   <nav className="header__nav">
                      <ul className="header__nav-list">
                         <li className="header__nav-item">
-                           <Link to={AppRoute.Root}>о сервисе</Link>
+                           <Link to={AppRoute.Root} className="header__nav-link">
+                              <span className="header__nav-link-text" data-hover="О сервисе">О сервисе</span>
+                           </Link>
                         </li>
                         <li className="header__nav-item">
-                           <Link to={AppRoute.Form}>направления</Link>
+                           <Link to={AppRoute.Form} className="header__nav-link">
+                              <span className="header__nav-link-text" data-hover="Направления">Направления</span>
+                           </Link>
                         </li>
-                        <li className="header__nav-item">
-                           <Link to={AppRoute.Catalog}>попутчики</Link>
+                        <li className="header__nav-item" >
+                           <Link to={AppRoute.Catalog} className="header__nav-link">
+                              <span className="header__nav-link-text" data-hover="Попутчики">Попутчики</span>
+                           </Link>
                         </li>
                      </ul>
                   </nav>

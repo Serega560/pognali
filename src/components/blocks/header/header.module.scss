@@ -397,3 +397,39 @@
     color: $color-default-black;
   }
 }
+
+.header__nav-item {
+  overflow: hidden;
+}
+
+.header__nav-link-text {
+  position: relative;
+  display: block;
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: 500;
+  color: #ffffff;
+  text-transform: uppercase;
+  transition: transform 0.3s;
+
+  &::before {
+    position: absolute;
+    content: attr(data-hover);
+    top: 100%;
+    width: calc(100% + 1px);
+    font-weight: 700;
+    transform: translate3d(0, 0, 0);
+    
+  }
+
+  &:hover {
+    color: #7ebaeb;
+    transform: translateY(-100%);
+
+    @include vp-1023 {
+      transform: none;
+    }
+  }
+
+}
+
