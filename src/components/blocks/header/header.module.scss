@@ -7,7 +7,7 @@
 
   ul {
     list-style: none;
-    padding: 0;
+    // padding: 0;
     margin: 0;
   }
 }
@@ -21,11 +21,19 @@
 
   @include vp-1439 {
     display: flex;
+    // justify-content: space-between;
+  }
+
+  @include vp-1023 {
+    display: flex;
     justify-content: space-between;
+    position: relative;
   }
 
   @include vp-767 {
-    min-height: 55px;
+    // min-height: 55px;
+    display: flex;
+    justify-content: space-between;
   }
 }
 
@@ -53,6 +61,8 @@
 
   @include vp-1439 {
     display: flex;
+    justify-content: space-between;
+    width: 100%;
     border: none;
   }
 }
@@ -124,6 +134,7 @@
 }
 
 .header__nav-list {
+  padding: 0;
   position: relative;
   display: flex;
   flex-wrap: wrap;
@@ -168,13 +179,13 @@
   justify-content: end;
   gap: 7px;
 
-  @include vp-1439 {
+  @include vp-1023 {
     display: none;
   }
 }
 
 .header__contacts-item a {
-  @include vp-1440 {
+  
     display: flex;
     justify-content: center;
     align-items: center;
@@ -192,6 +203,22 @@
       }
     }
 
+    @include vp-1023 {
+      width: unset;
+      border-radius: 0;
+      background-color: inherit;
+
+      @include hover-focus {
+        @media (hover: hover) {
+          &:hover:not(.focus-visible) {
+            background-color: #ffffff;
+          }
+        }
+      }
+    }
+
+    
+
     svg path {
       fill: $color-midnight-express;
     }
@@ -201,7 +228,7 @@
         opacity: 30%;
       }
     }
-  }
+  
 }
 
 .header__burger-button {
@@ -214,7 +241,15 @@
     cursor: pointer;
   }
 
+  @include vp-1023 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
   @include vp-767 {
+    position: unset;
+    // left: 100%;
     transform: translate(6px, 3px);
   }
 }
@@ -223,12 +258,20 @@
   position: absolute;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  // align-items: center;
   width: 100%;
   padding-bottom: 48px;
   background-color: $color-default-white;
-  top: 150px;
+  top: 148px;
   left: 0;
+}
+
+.header__burger-info::after {
+  content: '';
+  width: 100%;
+  height: 20px;
+  border-radius: 0px 0px 22px 22px;
+  background-color: #121936;
 }
 
 .header__button-close {
@@ -255,6 +298,7 @@
     }
 
     @include vp-767 {
+
       svg {
         transform: translate(-13px, 2px);
       }
@@ -268,6 +312,11 @@
     padding-left: 40px;
     margin-left: 0;
     margin-right: auto;
+
+    @include vp-767 {
+      padding-left: 25px;
+      padding-right: 25px;
+    }
   }
 
   .header__contacts-list {
@@ -358,6 +407,12 @@
   justify-self: center;
   width: 186px;
   justify-content: space-between;
+
+  @include vp-1023 {
+    align-self: center;
+    padding-left: 0;
+    padding-bottom: 29px;
+  }
 
   @include vp-767 {
     width: 135px;
