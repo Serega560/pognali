@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ReactComponent as MenuButton } from '../../assets/img/menu_button.svg';
 import { ReactComponent as MenuButtonClose } from '../../assets/img/menu_button_close.svg';
 import { ReactComponent as Telegram } from '../../assets/img/telegram.svg';
@@ -10,6 +10,7 @@ import { ReactComponent as Call } from '../../assets/img/icon_call.svg';
 import { ReactComponent as Mail } from '../../assets/img/icon_mail.svg';
 import { Link } from 'react-router-dom';
 import { AppRoute } from '../../const';
+import Overlay from "../overlay/overlay";
 
 const BurgerMenu = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -22,8 +23,20 @@ const BurgerMenu = () => {
         setIsClicked(!isClicked);
     };
 
+    useEffect(() => {
+
+        const body = document.querySelector('body');
+        if (isClicked) {
+            body?.classList.add('no-scroll');
+        }
+        if (!isClicked && body?.classList.contains('no-scroll')) {
+            body.classList.remove('no-scroll');
+        }
+    }, [isClicked]);
+
 
     return (
+        <>{isClicked && <Overlay handleButtonClick={handleButtonClick} toggleMenu={toggleMenu}/>}
         <div className={isClicked ? 'header__container container header__container--opend' : 'header__container container'}>
             <div className="header__logo">
                 <div className="header__logo-img">
@@ -94,6 +107,7 @@ const BurgerMenu = () => {
                 </div>
             )}
         </div>
+        </>
     );
 };
 

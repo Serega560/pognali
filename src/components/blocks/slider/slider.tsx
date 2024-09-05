@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import Slider from 'react-slider';
 import './slider.module.scss'
 
-
 const RangeSlider = () => {
   const [range, setRange] = useState<number[]>([20, 80]);
 
@@ -14,8 +13,14 @@ const RangeSlider = () => {
   return (
     <div className="slider__holder">
       <div className="slider__range">
-        <span>{range[0]}</span>
-        <span>{range[1]}</span>
+        <input type="number"
+          onChange={(evt) => setRange((current) => [Number(evt.target.value), current[1]])}
+          value={range[0]}
+        />
+        <input type="number"
+          onChange={(evt) => setRange((current) => [current[0], Number(evt.target.value)])}
+          value={range[1]}
+        />
       </div>
       <Slider
         min={0}
