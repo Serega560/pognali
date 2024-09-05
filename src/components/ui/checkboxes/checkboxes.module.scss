@@ -54,6 +54,10 @@
     margin-left: 0;
 }
 
+.custom-toggle label:hover .custom-toggle__icon {
+    border: 1px solid #161c35;
+}
+
 .custom-toggle--checkbox .custom-toggle__icon {
     position: absolute;
     left: 0;
