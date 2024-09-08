@@ -13,7 +13,7 @@ function Header() {
 
    useEffect(() => {
       const handleResize = () => {
-         if (window.innerWidth < 1024) {
+         if (window.innerWidth <= 1024) {
             setIsMobile(true);
          } else {
             setIsMobile(false);
@@ -32,7 +32,7 @@ function Header() {
    return (
       <header className={`header`}>
          {isMobile ? (
-            <BurgerMenu/>
+            <BurgerMenu />
          ) : (
             <div className="header__container container">
                <div className="header__logo">
