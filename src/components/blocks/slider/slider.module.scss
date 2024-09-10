@@ -21,6 +21,7 @@
       flex-direction: row-reverse;
       align-items: center;
       gap: 58px;
+      margin-right: 13px;
     }
 
     @include vp-767 {
@@ -33,9 +34,8 @@
     margin-bottom: 39px;
 
     @include vp-1023 {
-      width: 100%;
+      width: calc(100% - 35px);
       margin: 0;
-
       transform: translate(0, -5px);
     }
   }
@@ -50,9 +50,8 @@
     margin-bottom: 36px;
 
     @include vp-1023 {
-      width: 290px;
+      width: 250px;
       margin: 0;
-
       transform: translate(0, -2px);
     }
 
@@ -68,6 +67,7 @@
       height: 46px;
       width: 100%;
       flex-shrink: 1;
+      font-family: inherit;
       font-size: 20px;
       font-weight: 500;
       color: $color-catalina-blue;
@@ -82,6 +82,10 @@
     input:nth-child(1n) {
       border-radius: 4px 0 0 4px;
       padding: 0 0 0 26px;
+
+      @include vp-1023 {
+        padding-left: 22px;
+      }
 
       @include hover-focus {
         @media (hover: hover) {
@@ -136,7 +140,7 @@
     height: 13px;
     width: 20px;
     background-color: #cbced9;
-    border-top: 6px solid $color-default-white;
+    border-top: 5px solid $color-default-white;
     border-bottom: 6px solid $color-default-white;
     left: calc(50% - 10px);
     top: 16px;

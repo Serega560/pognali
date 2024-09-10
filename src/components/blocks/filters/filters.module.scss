@@ -161,11 +161,13 @@
 
         @include vp-1023 {
             margin-top: 37px;
+            width: calc(100% - 18px);
         }
 
         @include vp-767 {
             margin-top: 22px;
             height: 41px;
+            width: 100%;
 
             span {
                 font-size: 17px;
