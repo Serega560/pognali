@@ -6,8 +6,8 @@
   background: $color-midnight-express;
   padding-top: 45px;
 
-  @include vp-1439 {
-    padding-top: 40px;
+  @include vp-1023 {
+    padding-top: 50px;
   }
 
   @include vp-767 {
