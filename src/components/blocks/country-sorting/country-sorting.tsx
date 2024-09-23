@@ -14,7 +14,7 @@ function CountrySorting(): JSX.Element {
 
   const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1023px)' });
 
-  const { data: filteredCountries, isLoading: isLoadingFiltered } = useGetCountriesNamesQuery(choosenLetter);
+  const { data: filteredCountries, isLoading: isLoadingFiltered, isSuccess: isCountriesByLetterSuccess } = useGetCountriesNamesQuery(choosenLetter);
 
   const { data: allCountries, isLoading: isLoadingAll, isSuccess } = useGetCountriesNamesQuery('');
 
@@ -61,8 +61,8 @@ function CountrySorting(): JSX.Element {
               ))}
             </ul>
             <ul className="country-sorting__counties-list">
-              {isLoadingFiltered && <div>Loading...</div>}
-              {countriesFilteredByContinent(filteredCountries).map((country: Country) => (
+              {isLoadingAll && <div>Loading...</div>}
+              {isCountriesByLetterSuccess && countriesFilteredByContinent(filteredCountries).map((country: Country) => (
                 <li className="country-sorting__counties-item"
                   key={country.name}
                   onClick={() => dispatch(setCountryToSearchCopmanions(country.name))}>
