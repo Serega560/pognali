@@ -201,11 +201,15 @@
   }
 }
 
-.route__counties-list {
+ul.route__counties-list {
   position: relative;
   display: block;
   padding-top: 26px;
   padding-bottom: 32px;
+
+  @include vp-374 {
+    padding: 26px 24px 32px 24px;
+  }
 }
 
 .route__counties-list::before {
@@ -565,10 +569,15 @@
 
   @include vp-1279 {
     border-radius: 0;
-    width: 55px;
+    width: 100%;
     height: 70px;
     margin-left: -1px;
     margin-bottom: -1px;
+  }
+
+  @include vp-374 {
+    width: 100%;
+    height: 41px;
   }
 
   @include hover-focus {
@@ -613,6 +622,10 @@
     min-width: 575px;
     background-color: $color-default-white;
     z-index: 1;
+  }
+
+  @include vp-374 {
+    padding: 0;
   }
 }
 

@@ -14,9 +14,9 @@ function Plan() {
             <div className="header-plan">
                <h2>Добавить план:</h2>
                <ul className="pagination-plan">
-                  <li></li>
-                  <li></li>
-                  <li></li>
+                  <li className={activeStep === 'dates' ? 'active' : ''}></li>
+                  <li className={activeStep === 'route' ? 'active' : ''}></li>
+                  <li className={activeStep === 'activities' ? 'active' : ''}></li>
                </ul>
             </div>
             <div className="plan-step">

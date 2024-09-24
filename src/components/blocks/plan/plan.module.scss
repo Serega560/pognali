@@ -89,11 +89,10 @@
       opacity: 30%;
     }
 
-    li:first-child {
+    li.active {
       opacity: 1;
     }
   }
-
 
   .plan-step {
     display: flex;
