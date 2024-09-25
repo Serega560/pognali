@@ -9,7 +9,7 @@ import { Country } from '../../../types';
 import { SelectedCountryInput } from '../selected-coutry-input/selected-country-input';
 import { ReactComponent as Plus } from '../../../assets/img/plusbutton.svg'
 
-function Route(): JSX.Element {
+function CountryRoute(): JSX.Element {
   const dispatch = useAppDispatch();
   const choosenLetter = useAppSelector(state => state.appSlice.choosenLetter); 
   const { data: filteredCountries, isLoading, isFetching } = useGetCountriesNamesQuery(choosenLetter);
@@ -76,16 +76,16 @@ function Route(): JSX.Element {
       </ul>
 
       <div className="group-btn">
-        <a className="route-btn" href="#entertainment" onClick={() => dispatch(setActiveStep('activities'))}>
+        <button className="route-btn" onClick={() => dispatch(setActiveStep('activities'))}>
           <span>Следующий шаг</span>
           <NextStep />
-        </a>
-        <a href="#dates" className="route-btn btn-back" onClick={() => dispatch(setActiveStep('dates'))}>
+        </button>
+        <button className="route-btn btn-back" onClick={() => dispatch(setActiveStep('dates'))}>
           <NextStep />
           <span>На шаг назад</span>
-        </a>
+        </button>
       </div>
     </div>
   );
 }
-export default Route;
+export default CountryRoute;

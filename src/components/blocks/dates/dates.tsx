@@ -71,10 +71,10 @@ const Dates: React.FC<DatesProps> = ({children}) => {
             </div>
          </div>
          <StepDates/>
-         <a className="buttons-step" href="#route" onClick={() => dispatch(setActiveStep('route'))}>
+         <button className="buttons-step" onClick={() => dispatch(setActiveStep('route'))}>
             <span>Следующий шаг</span>
             <NextStep/>
-         </a>
+         </button>
       </div>
    );
 }
