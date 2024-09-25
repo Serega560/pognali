@@ -1,6 +1,6 @@
 import Dates from "../dates/dates";
 import MiniPlan from "../miniplan/miniplan";
-import Route from "../route/route";
+import CountryRoute from "../route/route";
 import Entertainment from "../entertainment/entertainment";
 import {useAppSelector} from "../../../hooks/hooks";
 
@@ -23,7 +23,7 @@ function Plan() {
                {activeStep === 'dates' ? <Dates>
                   <MiniPlan/>
                </Dates> : ''}
-               {activeStep === 'route' ? <Route/> : ''}
+               {activeStep === 'route' ? <CountryRoute/> : ''}
                {activeStep === 'activities' ? <Entertainment/> : ''}
             </div>
          </div>

@@ -7,6 +7,7 @@ import browserHistory from './browser-history';
 import HistoryRouter from './history-route/history-route';
 import { Provider } from 'react-redux';
 import { store } from './store';
+import { HashRouter } from 'react-router-dom';
 
 
 const root = ReactDOM.createRoot(
@@ -15,9 +16,11 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <HistoryRouter history={browserHistory}>
+      {/* <HistoryRouter history={browserHistory}> */}
+      <HashRouter>
         <App />
-      </HistoryRouter>
+      </HashRouter>
+      {/* </HistoryRouter> */}
     </Provider>
   </React.StrictMode>
 );

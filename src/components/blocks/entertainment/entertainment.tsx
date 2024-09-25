@@ -117,10 +117,10 @@ function Entertainment() {
                <span>Отправить</span>
                <NextStep/>
             </button>
-            <a href="#route" className="entertainment-btn btn-back" onClick={() => dispatch(setActiveStep('route'))}>
+            <button className="entertainment-btn btn-back" onClick={() => dispatch(setActiveStep('route'))}>
                <NextStep/>
                <span>На шаг назад</span>
-            </a>
+            </button>
          </div>
       </div>
    );
